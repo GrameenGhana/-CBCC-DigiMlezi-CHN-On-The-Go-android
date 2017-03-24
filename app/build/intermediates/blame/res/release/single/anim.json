@@ -1,0 +1,150 @@
+[
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/fade_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/fade_out.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/drop_two.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/drop_two.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/slide_in_right.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/slide_in_right.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/drop_one.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/drop_one.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/out_to_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/out_to_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_snackbar_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/slide_down.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/slide_down.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/in_from_rigth.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/in_from_rigth.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_fab_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/slide_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/slide_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/together_animation.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/together_animation.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/drop_three.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/drop_three.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/slide_in_left.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/slide_in_left.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/in_from_bottom.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/out_to_left.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/out_to_left.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/translate_splash_screen.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/translate_splash_screen.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/out_to_top.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/out_to_top.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/slide_up.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/slide_up.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/scale_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/scale_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/in_from_top.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/in_from_top.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/alpha.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/alpha.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_fab_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/fade_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/anim/fade_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/scale_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/anim/scale_out.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_snackbar_in.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/anim/design_bottom_sheet_slide_out.xml"
+    }
+]

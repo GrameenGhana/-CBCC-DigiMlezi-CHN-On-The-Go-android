@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/xml/prefs.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/xml/prefs.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/xml/searchable.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/xml/searchable.xml"
+    }
+]

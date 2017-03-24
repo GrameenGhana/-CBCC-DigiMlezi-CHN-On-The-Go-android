@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/layout-v21/activity_add_event.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout-v21/activity_add_event.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

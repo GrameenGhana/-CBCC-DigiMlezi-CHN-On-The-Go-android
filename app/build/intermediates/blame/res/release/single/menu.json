@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/context_menu.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/context_menu.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/cchlogin.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/cchlogin.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_course.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_course.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_course_index.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_course_index.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_register.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_register.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/course_context_menu.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/course_context_menu.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_monitor.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_monitor.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_main.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_main.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_home.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_home.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_login.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_login.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/custom_action_bar.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/custom_action_bar.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/acivity_download_menu.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/acivity_download_menu.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/release/menu/activity_references.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/menu/activity_references.xml"
+    }
+]

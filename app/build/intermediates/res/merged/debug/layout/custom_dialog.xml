@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/custom_alert_dialog"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_normal"
+
+    >
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_half"
+            android:hint="Email"
+            app:errorTextAppearance="@style/ErrorText"
+            android:theme="@style/MyEditText"
+
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Username"
+                android:maxLines="1"
+                android:textColor="@android:color/primary_text_light"
+                android:text="dhutchful@grameenfoundation.org"
+                android:inputType="textEmailAddress"
+                android:drawableTint="@android:color/tertiary_text_light"
+                />
+
+            <requestFocus />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_half"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@android:color/tertiary_text_light"
+            app:errorTextAppearance="@style/ErrorText"
+            android:hint="Password"
+            android:theme="@style/MyEditText"
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        >
+
+        <TextView
+            android:id="@+id/negative_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:padding="16dp"
+            android:textColor="@color/colorAccent"
+            style="@style/TextAppearance.AppCompat.Button"
+            android:background="?attr/selectableItemBackground"
+            />
+
+        <TextView
+            android:id="@+id/positive_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOG IN"
+            android:layout_marginRight="16dp"
+            android:padding="16dp"
+            android:textColor="@color/colorAccent"
+            style="@style/TextAppearance.AppCompat.Button"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

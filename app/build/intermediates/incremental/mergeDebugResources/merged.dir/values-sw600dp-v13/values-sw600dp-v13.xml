@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_action_bar_content_inset_material">24dp</dimen>
+    <dimen name="abc_action_bar_content_inset_with_nav">80dp</dimen>
+    <dimen name="abc_action_bar_default_height_material">64dp</dimen>
+    <dimen name="abc_action_bar_default_padding_end_material">8dp</dimen>
+    <dimen name="abc_action_bar_default_padding_start_material">8dp</dimen>
+    <dimen name="abc_config_prefDialogWidth">580dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="alert_def_padding">18dp</dimen>
+    <dimen name="design_navigation_max_width">320dp</dimen>
+    <dimen name="design_snackbar_action_inline_max_width">0dp</dimen>
+    <dimen name="design_snackbar_background_corner_radius">2dp</dimen>
+    <dimen name="design_snackbar_extra_spacing_horizontal">24dp</dimen>
+    <dimen name="design_snackbar_max_width">576dp</dimen>
+    <dimen name="design_snackbar_min_width">320dp</dimen>
+    <dimen name="design_snackbar_padding_vertical_2lines">@dimen/design_snackbar_padding_vertical</dimen>
+    <dimen name="design_tab_scrollable_min_width">160dp</dimen>
+    <dimen name="drawer_header_height">190dp</dimen>
+    <dimen name="drawer_header_text_spacing">@dimen/spacing_normal</dimen>
+    <dimen name="drawer_header_textsize">20sp</dimen>
+    <dimen name="genre">13dip</dimen>
+    <dimen name="login_logo_background_size">170dp</dimen>
+    <dimen name="login_logo_size">150dp</dimen>
+    <dimen name="no_session_logo_size">250dp</dimen>
+    <dimen name="rating">15dip</dimen>
+    <dimen name="sections_image_size">70dp</dimen>
+    <dimen name="spacing_2">32dp</dimen>
+    <dimen name="spacing_3">64dp</dimen>
+    <dimen name="spacing_half">16dp</dimen>
+    <dimen name="spacing_normal">24dp</dimen>
+    <dimen name="spacing_quarter">8dp</dimen>
+    <dimen name="sub_sections_image_size">40dp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_medium">22sp</dimen>
+    <dimen name="text_size_normal">18sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="title">17dp</dimen>
+    <dimen name="topics_image_size">20dp</dimen>
+    <dimen name="year">12dip</dimen>
+    <integer name="design_snackbar_text_max_lines">1</integer>
+    <style name="Widget.Design.TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+</resources>

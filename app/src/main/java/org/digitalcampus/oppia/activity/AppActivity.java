@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,41 +17,37 @@
 
 package org.digitalcampus.oppia.activity;
 
-import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.ScheduleReminders;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.listener.APIKeyRequestListener;
 
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.concurrent.Callable;
 
-public class AppActivity extends AppCompatActivity {
+public class AppActivity extends AppCompatActivity implements APIKeyRequestListener {
 	
 	public static final String TAG = AppActivity.class.getSimpleName();
-	
-	private ScheduleReminders reminders;
 
-	
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		if(getSupportActionBar() != null) {
-			getSupportActionBar().setDisplayShowHomeEnabled(true);
-		}
-	}
+    /**
+	 * @param activities: list of activities to show on the ScheduleReminders section
+	 */
 	public void drawReminders(ArrayList<org.digitalcampus.oppia.model.Activity> activities){
-		try {
-			reminders = (ScheduleReminders) findViewById(R.id.schedule_reminders);
-			reminders.initSheduleReminders(activities);
-		} catch (NullPointerException npe) {
-			// do nothing
-		}
+        ScheduleReminders reminders = (ScheduleReminders) findViewById(R.id.schedule_reminders);
+        if (reminders != null){
+            reminders.initSheduleReminders(activities);
+        }
 	}
 	
 	@Override
@@ -65,7 +61,83 @@ public class AppActivity extends AppCompatActivity {
 		return true;
 	}
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+       // ActionBar actionBar = getSupportActionBar();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(true);
 
+            //If we are in a course-related activity, we show its title
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            Bundle bundle = this.getIntent().getExtras();
+            if (bundle != null) {
+                org.digitalcampus.oppia.model.Course course = (org.digitalcampus.oppia.model.Course) bundle.getSerializable(org.digitalcampus.oppia.model.Course.TAG);
+                if (course == null ) return;
+                String title = course.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
+                setTitle(title);
+                getSupportActionBar().setTitle(title);
+            }
+        }
+    }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        //Check if the apiKey of the current user is valid
+        boolean apiKeyValid = SessionManager.isUserApiKeyValid(this);
+        if (!apiKeyValid){
+            apiKeyInvalidated();
+        }
+
+        //We check if the user session time has expired to log him out
+        if (org.digitalcampus.oppia.application.MobileLearning.SESSION_EXPIRATION_ENABLED){
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            long now = System.currentTimeMillis()/1000;
+            long lastTimeActive = prefs.getLong(PrefsActivity.LAST_ACTIVE_TIME, now);
+            long timePassed = now - lastTimeActive;
+
+            prefs.edit().putLong(PrefsActivity.LAST_ACTIVE_TIME, now).apply();
+            if (timePassed > org.digitalcampus.oppia.application.MobileLearning.SESSION_EXPIRATION_TIMEOUT){
+                Log.d(TAG, "Session timeout (passed " + timePassed + " seconds), logging out");
+                logoutAndRestartApp();
+            }
+        }
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        if (org.digitalcampus.oppia.application.MobileLearning.SESSION_EXPIRATION_ENABLED){
+            long now = System.currentTimeMillis()/1000;
+            PreferenceManager
+                .getDefaultSharedPreferences(this).edit()
+                .putLong(PrefsActivity.LAST_ACTIVE_TIME, now).apply();
+        }
+    }
+
+    public void logoutAndRestartApp(){
+        SessionManager.logoutCurrentUser(this);
+
+        Intent restartIntent = new Intent(this, StartUpActivity.class);
+        restartIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        restartIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        this.startActivity(restartIntent);
+        this.finish();
+    }
+
+    @Override
+    public void apiKeyInvalidated() {
+        org.digitalcampus.oppia.utils.UIUtils.showAlert(this, R.string.error, R.string.error_apikey_expired, new Callable<Boolean>() {
+            @Override
+            public Boolean call() throws Exception {
+                logoutAndRestartApp();
+                return true;
+            }
+        });
+    }
 }

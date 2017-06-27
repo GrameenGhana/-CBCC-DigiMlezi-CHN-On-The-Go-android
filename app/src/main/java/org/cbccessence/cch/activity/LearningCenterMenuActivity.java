@@ -1,17 +1,26 @@
 package org.cbccessence.cch.activity;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.AboutActivity;
+import org.cbccessence.R;
+import org.cbccessence.activity.AboutActivity;
+import org.cbccessence.models.User;
 import org.digitalcampus.oppia.activity.AppActivity;
 import org.digitalcampus.oppia.activity.HelpActivity;
-import org.digitalcampus.oppia.activity.MainScreenActivity;
+import org.cbccessence.activity.MainScreenActivity;
+import org.digitalcampus.oppia.activity.OppiaMobileActivity;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.listener.SubmitListener;
+import org.digitalcampus.oppia.model.CbccUser;
+import org.digitalcampus.oppia.service.GCMRegistrationService;
+import org.digitalcampus.oppia.task.LoginTask;
+import org.digitalcampus.oppia.task.Payload;
 import org.digitalcampus.oppia.utils.UIUtils;
 import org.cbccessence.adapters.AntenatalCareBaseAdapter;
 import org.json.JSONObject;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,14 +34,17 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
-public class LearningCenterMenuActivity extends AppActivity {
+import java.util.ArrayList;
+
+public class LearningCenterMenuActivity extends AppActivity implements SubmitListener{
 
 	private Context mContext;
-	private DbHelper dbh;
-	private ListView listView_menu;
+ 	private ListView listView_menu;
 	private Button button_refresh;
 	private Button button_load;
 	DbHelper databaseHelper;
+	private ProgressDialog pDialog;
+
 
 	/** Called when the activity is first created. */
 	@Override
@@ -40,7 +52,7 @@ public class LearningCenterMenuActivity extends AppActivity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_antenatal_care);
 	    mContext = LearningCenterMenuActivity.this;
-	    databaseHelper = new DbHelper(mContext);
+	    databaseHelper =   DbHelper.getInstance(mContext);
         getSupportActionBar().setTitle("Learning Center");
 
 	    listView_menu=(ListView) findViewById(R.id.listView_antenatalCare);
@@ -55,15 +67,31 @@ public class LearningCenterMenuActivity extends AppActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Intent intent;
+
 				switch(position){
 				case 0:
-						intent=new Intent(mContext,CourseGroupActivity.class);
-						startActivity(intent);
-						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+
+
+
+
+
+				if( SessionManager.isLoggedIn(LearningCenterMenuActivity.this))
+				{
+
+					Intent intent = new Intent(mContext, OppiaMobileActivity.class);
+					startActivity(intent);
+					overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+				}else {
+					loginToOppia("spomega", "spomega");
+
+				}
+
+
+
+
 					break;
 				case 1:
-					intent=new Intent(mContext,ReferencesDownloadActivity.class);
+					Intent intent = new Intent(mContext,ReferencesDownloadActivity.class);
 					startActivity(intent);
 					overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
 				}
@@ -76,6 +104,30 @@ public class LearningCenterMenuActivity extends AppActivity {
 	    listView_menu.setAdapter(adapter);
 	    	
 	}
+
+	private void loginToOppia(String username, String password) {
+
+		pDialog = new ProgressDialog(this);
+		pDialog.setTitle(R.string.title_login);
+		pDialog.setMessage(this.getString(R.string.login_process));
+		pDialog.setCancelable(true);
+		pDialog.show();
+
+		ArrayList<Object> users = new ArrayList<>();
+		CbccUser u = new CbccUser();
+		u.setUsername(username);
+		u.setPassword(password);
+		users.add(u);
+
+		Payload p = new Payload(users);
+		LoginTask lt = new LoginTask(this);
+		lt.setLoginListener(this);
+		lt.execute(p);
+
+
+
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_references, menu);
@@ -84,7 +136,7 @@ public class LearningCenterMenuActivity extends AppActivity {
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		UIUtils.showUserData(menu,this);
+		UIUtils.showUserData(menu, this, null);
 	    return super.onPrepareOptionsMenu(menu);
 	}
 	
@@ -173,6 +225,30 @@ public class LearningCenterMenuActivity extends AppActivity {
 
 
 	}
-	
 
+
+	public void submitComplete(Payload response) {
+		try {
+			pDialog.dismiss();
+		} catch (IllegalArgumentException iae){
+			//
+		}
+		if(response.isResult()){
+			CbccUser user = (CbccUser) response.getData().get(0);
+			SessionManager.loginUser(this, user);
+
+			// Start IntentService to re-register the phone with GCM.
+			Intent intent = new Intent(this, GCMRegistrationService.class);
+			startService(intent);
+
+			// return to main activity
+			startActivity(new Intent(this, OppiaMobileActivity.class));
+			//super.getActivity().finish();
+
+		} else {
+
+				UIUtils.showAlert(this, R.string.title_login, response.getResultResponse());
+
+		}
+	}
 }

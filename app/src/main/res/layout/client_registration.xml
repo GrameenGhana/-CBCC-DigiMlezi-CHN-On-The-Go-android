@@ -5,6 +5,7 @@
     android:paddingLeft="@dimen/spacing_2"
     android:paddingRight="@dimen/spacing_2"
     android:layout_width="match_parent"
+              android:background="@color/white"
     android:weightSum="6"
     android:layout_height="match_parent">
 
@@ -46,7 +47,7 @@
 
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/user_name_layout"
+                android:id="@+id/first_name_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_normal"
@@ -57,10 +58,10 @@
                 >
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/user_name"
+                    android:id="@+id/f_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/name"
+                    android:hint="@string/f_name"
                     android:maxLines="1"
                     android:textSize="@dimen/text_size_normal"
                     android:textColor="@android:color/primary_text_light"
@@ -69,7 +70,117 @@
                     />
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/last_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:padding="@dimen/spacing_quarter"
+                android:layout_marginBottom="@dimen/spacing_quarter"
+                app:errorTextAppearance="@style/ErrorText"
 
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/l_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/l_name"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="textCapSentences"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/national_id_no_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:padding="@dimen/spacing_quarter"
+                android:layout_marginBottom="@dimen/spacing_quarter"
+                app:errorTextAppearance="@style/ErrorText"
+
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/national_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/national_id"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="numberDecimal"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/facility_id_no_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:padding="@dimen/spacing_quarter"
+                android:layout_marginBottom="@dimen/spacing_quarter"
+                app:errorTextAppearance="@style/ErrorText"
+
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/facility_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/facility_id"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="numberDecimal"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/user_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_quarter"
+                android:layout_marginTop="@dimen/spacing_half"
+                 app:errorTextAppearance="@style/ErrorText">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/phone"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="numberDecimal"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/language_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_quarter"
+                app:errorTextAppearance="@style/ErrorText">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/prefLanguage"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="textCapSentences"
+                    />
+            </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,6 +276,69 @@
 
                 />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_half"
+                android:layout_marginRight="@dimen/spacing_quarter"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insured?"
+                    android:layout_marginRight="@dimen/spacing_2"
+                    android:textSize="@dimen/text_size_normal"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    android:padding="@dimen/spacing_half"
+                    android:checked="false"
+                    android:layout_marginRight="@dimen/spacing_2"
+                    />
+
+
+                <CheckBox
+                    android:id="@+id/no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:checked="true"
+                    android:padding="@dimen/spacing_half"
+
+                    />
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/location_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:padding="@dimen/spacing_quarter"
+                 app:errorTextAppearance="@style/ErrorText"
+
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/location"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textColorHighlight="@color/colorAccent"
+                    android:inputType="textCapSentences"
+                    />
+            </android.support.design.widget.TextInputLayout>
 
 
             <RelativeLayout
@@ -173,7 +347,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:padding="@dimen/spacing_half"
-                android:layout_marginTop="@dimen/spacing_2"
+                android:layout_marginTop="@dimen/spacing_normal"
                 >
 
                 <TextView
@@ -204,28 +378,24 @@
                 android:orientation="vertical"
                 >
 
-
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/user_phone_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/spacing_quarter"
-                app:errorTextAppearance="@style/ErrorText">
-
-                <android.support.design.widget.TextInputEditText
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/relative_phone_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="@string/phone"
-                    android:maxLines="1"
-                    android:textSize="@dimen/text_size_normal"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_quarter"
+                    app:errorTextAppearance="@style/ErrorText">
 
-                    android:textColor="@android:color/primary_text_light"
-                    android:textColorHighlight="@color/colorAccent"
-                    android:inputType="numberDecimal"
-                    />
-            </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/relative_phone"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textColorHighlight="@color/colorAccent"
+                        android:inputType="numberDecimal"
+                        />
+                </android.support.design.widget.TextInputLayout>
 
 
                 <LinearLayout
@@ -330,6 +500,8 @@
                         android:prompt="@string/week"/>
 
                 </LinearLayout>
+
+
 
 
             </LinearLayout>

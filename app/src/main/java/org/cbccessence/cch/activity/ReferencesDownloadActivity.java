@@ -15,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,12 +27,13 @@ import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.shockwave.pdfium.PdfDocument;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
+import org.cbccessence.activity.MainScreenActivity;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.model.LcReference;
-import org.cbccessence.HttpHandler;
-import org.cbccessence.PlaceHolder;
+import org.cbccessence.models.LcReference;
+import org.cbccessence.utilities.HttpHandler;
+import org.cbccessence.utilities.PlaceHolder;
 import org.cbccessence.adapters.LcReferencesAdapter;
 import org.cbccessence.poc.BaseActivity;
 import org.json.JSONArray;
@@ -48,7 +52,6 @@ import java.util.List;
 
 public class ReferencesDownloadActivity extends BaseActivity implements OnPageChangeListener, OnLoadCompleteListener {
 
-    private static String url = "http://188.166.30.140/gfcare/api/chn-on-the-go/content/references";
     String TAG = ReferencesDownloadActivity.class.getSimpleName();
     ProgressDialog pDialog;
     private File myDirectory;
@@ -65,6 +68,9 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
     long pdf_start_time;
     long pdf_stop_time;
     String pdf_fileName = "";
+    int position = 0;
+    int size = 0;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,7 +78,7 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
         setContentView(R.layout.activity_references_download);
         getSupportActionBar().setTitle("Learning Center");
         getSupportActionBar().setSubtitle("References");
-        databaseHelper = new DbHelper(this);
+        databaseHelper =   DbHelper.getInstance(this);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(ReferencesDownloadActivity.this);
 
@@ -149,7 +155,7 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
 
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
         end_time = System.currentTimeMillis();
         try {
@@ -157,40 +163,77 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
             JSONObject log = new JSONObject();
             log.put("name", "References");
             log.put("start_time", start_time);
-            log.put("end_time", end_time );
-            log.put("time_taken", end_time - start_time );
+            log.put("end_time", end_time);
+            log.put("time_taken", end_time - start_time);
 
-            if(databaseHelper.addLog(log_type, log.toString()))
+            if (databaseHelper.addLog(log_type, log.toString()))
                 Log.i(TAG, "Log added with data\t" + log);
 
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.references_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        Intent intent;
+        switch (item.getItemId()) {
+         /*   case R.id.action_home:
+                intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClass(ReferencesDownloadActivity.this, MainScreenActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                return true;*/
+
+            case R.id.download_all:
+
+                showAlertDialog(true, "Download All", "Do you want to download all reference materials?", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //ToDo Download all PDF's method
+
+
+                        new MassDownloadReferencesTask(ReferencesDownloadActivity.this).execute();
 
 
 
 
+                    }
+                }, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                        dialog.cancel();
+                        dialog.dismiss();
 
+                    }
+                });
 
+                return true;
+            case R.id.action_logout:
+                logout();
 
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
 
+        }
 
-
-
-
-
-
-
-
-
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -231,6 +274,16 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
     }
 
 
+
+
+
+
+
+
+
+
+
+
     private class GetContent extends AsyncTask<String, String, String> {
 
         Intent intent = new Intent(ReferencesDownloadActivity.this, ReferencesDownloadActivity.class);
@@ -255,6 +308,7 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
 
             if (token != null) {
 
+                String url = "http://188.166.30.140/gfcare/api/chn-on-the-go/content/references";
                 String jsonStringFromServer = sh.makeServiceCall(url, token);
 
                 Log.i(TAG, "Response from url: " + jsonStringFromServer);
@@ -274,8 +328,8 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
                         try {
                             JSONArray contentArray = new JSONArray(jsonStringFromServer);
                             Log.i(TAG, "Content Array is " + contentArray);
-                            for (int i =0; i < contentArray.length(); i++){
 
+                            for (int i =0; i < contentArray.length(); i++){
                                 JSONObject reference = contentArray.getJSONObject(i);
 
                                 Integer id = reference.getInt("id");
@@ -283,12 +337,12 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
                                 Integer modifier = reference.getInt("modified_by");
                                 String  name = reference.getString("reference_desc");
                                 String short_name = reference.getString("shortname");
-                                String file_url = reference.getString("reference_url");
+                                String file_url = reference.getString("file_url");
                                 String file_size = reference.getString("size");
                                 String date_created = reference.getString("created_at");
                                 String date_updated = reference.getString("updated_at");
 
-                                LcReference _reference =new LcReference(id, team_id, modifier, name,
+                                LcReference _reference = new LcReference(id, team_id, modifier, name,
                                         short_name, file_url, file_size, date_created, date_updated);
 
                                     references.add(_reference);
@@ -344,58 +398,64 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            final PlaceHolder holder = new PlaceHolder(ReferencesDownloadActivity.this, intent);
-            Log.i(TAG, "" + result);
+            try {
 
-            // Dismiss the progress dialog
-            if (pDialog.isShowing())
-                pDialog.dismiss();
-            if (result.equals("true")) {
+                final PlaceHolder holder = new PlaceHolder(ReferencesDownloadActivity.this, intent);
+                Log.i(TAG, "" + result);
+
+                // Dismiss the progress dialog
+                if (pDialog.isShowing())
+                    pDialog.dismiss();
+                if (result.equals("true")) {
 
 
+                    if (references != null) {
 
-                if(references != null) {
+                        Log.i(TAG, "sectionsList Array is not null with size   " + references.size());
 
-                    Log.i(TAG, "sectionsList Array is not null with size   " + references.size());
+                        adapter = new LcReferencesAdapter(ReferencesDownloadActivity.this, references);
+                        mRecycler.setAdapter(adapter);
 
-                    adapter = new LcReferencesAdapter(ReferencesDownloadActivity.this, references);
-                    mRecycler.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                        adapter.setOnItemClickListener(onItemClickListener);
 
-                    adapter.notifyDataSetChanged();
-                    adapter.setOnItemClickListener(onItemClickListener);
+
+                    }
+
+
+                } else if (result.equals("false")) {
+
+                    android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(ReferencesDownloadActivity.this, R.style.AppAlertDialog);
+                    builder.setCancelable(false);
+                    builder.setTitle("Session has expired!");
+                    builder.setMessage("Please login again");
+                    builder.setPositiveButton("LOGIN", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //Show edit text for password and attepmt login to generate new token
+
+
+                            holder.attemptLogin();
+                        }
+                    });
+                    builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //Dismiss dialog and inflate empty view, if user clicks on login, show edittext and attempt login again
+                            dialog.cancel();
+                            dialog.dismiss();
+
+                            holder.inflateEmptyView();
+                        }
+                    });
+                    builder.show();
 
 
                 }
-
-
-
-            } else if (result.equals("false")) {
-
-                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(ReferencesDownloadActivity.this, R.style.AppAlertDialog);
-                builder.setCancelable(false);
-                builder.setTitle("Session has expired!");
-                builder.setMessage("Please login again");
-                builder.setPositiveButton("LOGIN", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Show edit text for password and attepmt login to generate new token
-
-
-                        holder.attemptLogin();
-                    }
-                });
-                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Dismiss dialog and inflate empty view, if user clicks on login, show edittext and attempt login again
-                        dialog.cancel();
-                        dialog.dismiss();
-
-                        holder.inflateEmptyView();
-                    }
-                });
-                builder.show();
-
-
             }
+        catch (Exception e){
+
+            e.printStackTrace();
+
+        }
         }
 
     }
@@ -417,11 +477,12 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
 
             String file_url = "http://188.166.30.140/gfcare" + reference.getFileUrl();
 
-            Toast.makeText(ReferencesDownloadActivity.this, file_name + "\t" + file_size +
-                    "\t" +   file_url, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(ReferencesDownloadActivity.this, file_short_name + "\t" + file_size +
+             //       "\t" +   file_url, Toast.LENGTH_SHORT).show();
 
 
 
+            Log.i(TAG, file_name + "\t" + file_size + "\t" +   file_url );
 
             //openPdfInWebView(file_url);
            // startWebView("http://188.166.30.140/gfcare/" + file_url);
@@ -441,8 +502,8 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
             }
 
             else {
-                Log.i(TAG, "File dowsn't exist! Initializing download");
-                new DownloadReferencesTask(ReferencesDownloadActivity.this, file_url, file_short_name).execute();
+                Log.i(TAG, "File doesn't exist! Initializing download");
+                new DownloadReferencesTask(ReferencesDownloadActivity.this, file_url, file_name, file_short_name).execute();
             }
 
         }
@@ -530,34 +591,36 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
 //Download task/////////////////////////////////////////////////////////////////////////////////////
 
 
-    public class DownloadReferencesTask extends AsyncTask<String, Integer, String> {
+    class DownloadReferencesTask extends AsyncTask<String, Integer, String> {
 
-        private  Context context;
+        private Context context;
         private PowerManager.WakeLock mWakeLock;
         private DbHelper db;
         private String file_url;
-        private String file_name;
+        private String file_short_name;
+        String file_name;
         String TAG = "Download Ref Task";
-
-
         ProgressDialog mProgressDialog;
+
+
         private int i;
 
-        public DownloadReferencesTask(Context context, String file_url, String file_name) {
+        DownloadReferencesTask(Context context, String file_url, String file_name, String file_short_name) {
             this.context = context;
             this.file_url = file_url;
+            this.file_short_name = file_short_name;
             this.file_name = file_name;
 
 
-
-//instantiate it within the onCreate method
+            //instantiate it within the onCreate method
             mProgressDialog = new ProgressDialog(context);
-            mProgressDialog.setMessage("Downloading Content, Please wait...");
+            mProgressDialog.setTitle("Downloading document, Please wait... ");
             mProgressDialog.setIndeterminate(true);
             mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             mProgressDialog.setCancelable(true);
 
         }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -567,7 +630,21 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
             mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                     getClass().getName());
             mWakeLock.acquire();
-            mProgressDialog.show();
+
+
+            if (!mProgressDialog.isShowing())
+                mProgressDialog.show();
+
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... progress) {
+            super.onProgressUpdate(progress);
+            // if we get here, length is known, now set indeterminate to false
+            mProgressDialog.setIndeterminate(false);
+            mProgressDialog.setMax(100);
+            mProgressDialog.setProgress(progress[0]);
         }
 
         @SuppressWarnings("resource")
@@ -578,9 +655,9 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
             File downloadDirectory = new File(MobileLearning.REFERENCES_ROOT);
 
             Log.i(TAG, "Storage directory is  " + downloadDirectory);
-            i=0;
+            i = 0;
 
-            if(!downloadDirectory.exists()){
+            if (!downloadDirectory.exists()) {
                 downloadDirectory.mkdirs();
             }
 
@@ -599,6 +676,8 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
 
                 // expect HTTP 200 OK, so we don't mistakenly save error report
                 // instead of the file
+
+
                 if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                     return "Server returned HTTP " + connection.getResponseCode()
                             + " " + connection.getResponseMessage();
@@ -611,13 +690,14 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
                 Log.i(TAG, "The file length is " + fileLength);
                 // download the file
                 input = connection.getInputStream();
-                output = new FileOutputStream(downloadDirectory + "/" + file_name + ".pdf");
+                output = new FileOutputStream(downloadDirectory + "/" + file_short_name + ".pdf");
 
 
                 ((AppCompatActivity) context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mProgressDialog.setMessage("Downloading: " + file_name + ".pdf");
+                        mProgressDialog.setMessage("Downloading: " + file_name + ".pdf  ");
+
                     }
                 });
                 //
@@ -655,24 +735,19 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
             }
             return null;
         }
-        @Override
-        protected void onProgressUpdate(Integer... progress) {
-            super.onProgressUpdate(progress);
-            // if we get here, length is known, now set indeterminate to false
-            mProgressDialog.setIndeterminate(false);
-            mProgressDialog.setMax(100);
-            mProgressDialog.setProgress(progress[0]);
-        }
+
         @Override
         protected void onPostExecute(String result) {
+
+
             mWakeLock.release();
             mProgressDialog.dismiss();
 
-            if (result != null){
+            if (result != null) {
                 System.out.println(result);
-                Toast.makeText(context,"Download error: "+result, Toast.LENGTH_LONG).show();
-            } else{
-                Toast.makeText(context,"File downloaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Download error: " + result, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(context, "File downloaded", Toast.LENGTH_SHORT).show();
                 notifyAdapter();
 
 
@@ -681,29 +756,246 @@ public class ReferencesDownloadActivity extends BaseActivity implements OnPageCh
                     public void run() {
 
                         Intent intent = new Intent(ReferencesDownloadActivity.this, VisualAidsPdfView.class);
-                        intent.putExtra("pdf_location", file_name);
+                        intent.putExtra("pdf_location", file_short_name);
                         startActivity(intent);
 
                     }
                 }, 1000);
-
-
-
-
-
-               // displayFromAsset(pdfFileName);
-
-
-
             }
+
+
+        }
+    }
+
+
+
+
+
+    //Mass Download task/////////////////////////////////////////////////////////////////////////////////////
+
+
+    class MassDownloadReferencesTask extends AsyncTask<String, Integer, String> {
+
+        private  Context context;
+        private PowerManager.WakeLock mWakeLock;
+        private DbHelper db;
+        String TAG = "Download Ref Task";
+        ProgressDialog mProgressDialog;
+        File downloadDirectory;
+        String file_name  ;
+        String file_size ;
+        String file_short_name ;
+
+        InputStream input = null;
+        OutputStream output = null;
+        HttpURLConnection connection = null;
+        LcReference reference;
+
+
+
+        MassDownloadReferencesTask(Context context) {
+            this.context = context;
+
+
+
+//instantiate it within the onCreate method
+
+            mProgressDialog = new ProgressDialog(context);
+            mProgressDialog.setTitle("Downloading Content, Please wait... " );
+            mProgressDialog.setIndeterminate(true);
+            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            mProgressDialog.setCancelable(true);
+            downloadDirectory = new File(MobileLearning.REFERENCES_ROOT);
+            if(!downloadDirectory.exists()){
+                downloadDirectory.mkdirs();
+            }
+
+
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // take CPU lock to prevent CPU from going off if the user
+            // presses the power button during download
+
+
+            size = references.size();
+
+
+
+                        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                    getClass().getName());
+            mWakeLock.acquire();
+
+
+
+            if(!mProgressDialog.isShowing())
+                mProgressDialog.show();
+
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... progress) {
+            super.onProgressUpdate(progress);
+            // if we get here, length is known, now set indeterminate to false
+            mProgressDialog.setIndeterminate(false);
+            mProgressDialog.setMax(100);
+            mProgressDialog.setProgress(progress[0]);
+        }
+
+        @SuppressWarnings("resource")
+        @Override
+        protected String doInBackground(String... reqUrl) {
+
+            if(references != null && size != 0){
+
+                for(int i = 0; i < size; i++){
+                    position = i;
+
+                    reference = references.get(i);
+
+                     file_name = reference.getReferenceName();
+                     file_size = reference.getFileSize();
+                     file_short_name = reference.getShortName();
+
+                    String file_url = "http://188.166.30.140/gfcare" + reference.getFileUrl();
+
+                    Log.i(TAG, "Downloading file at " + position  + " " + file_name + " " + file_size + " " +   file_url );
+                    if(!MobileLearning.doesFileExist(file_short_name)) {
+                        Log.i(TAG, "File doesn't exist! Initializing download");
+                    Log.i(TAG, "Storage directory is  " + downloadDirectory);
+
+
+
+            try {
+                URL url = new URL(file_url);
+
+                Log.i(TAG, "The url is " + url.toString());
+
+                connection = (HttpURLConnection) url.openConnection();
+                connection.connect();
+
+                // expect HTTP 200 OK, so we don't mistakenly save error report
+                // instead of the file
+
+
+                if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                    return "Server returned HTTP " + connection.getResponseCode()
+                            + " " + connection.getResponseMessage();
+                }
+
+                // this will be useful to display download percentage
+                // might be -1: server did not report the length
+                int fileLength = connection.getContentLength();
+
+                Log.i(TAG, "The file length is " + fileLength);
+                // download the file
+                input = connection.getInputStream();
+                output = new FileOutputStream(downloadDirectory + "/" + file_short_name + ".pdf");
+
+
+                ((AppCompatActivity) context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mProgressDialog.setTitle("Downloading "  + (position + 1) + " of " + size);
+                        mProgressDialog.setMessage("Downloading: " + file_name + ".pdf  ");
+
+                    }
+                });
+                //
+                byte data[] = new byte[4096];
+                long total = 0;
+                int count;
+                while ((count = input.read(data)) != -1) {
+                    // allow canceling with back button
+                    if (isCancelled()) {
+                        input.close();
+                        return null;
+                    }
+                    total += count;
+                    // publishing the progress....
+                    if (fileLength > 0) // only if total length is known
+                        publishProgress((int) (total * 100 / fileLength));
+                    output.write(data, 0, count);
+
+
+
+
+                }
+                if (output != null)
+                    output.close();
+                if (input != null)
+                    input.close();
+
+                return "OK";
+
+
+
+
+            } catch (Exception e) {
+                return null;
+
+            } finally {
+                try {
+                    if (output != null)
+                        output.close();
+                    if (input != null)
+                        input.close();
+
+                } catch (IOException ignored) {
+                }
+
+                if (connection != null)
+                    connection.disconnect();
+            }
+
+
+
+                    }
+                }
+                return "OK";
+            }
+            else
+                return null;
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+                mWakeLock.release();
+                mProgressDialog.dismiss();
+
+                if (result == null){
+                    System.out.println(result);
+                    Toast.makeText(context,"Download error: "+result, Toast.LENGTH_LONG).show();
+                    notifyAdapter();
+
+                } else {
+                    if (result.equalsIgnoreCase("OK")) {
+                        notifyAdapter();
+                        Toast.makeText(context, "Mass download complete", Toast.LENGTH_LONG).show();
+
+
+                    }else {
+
+
+
+                    }
+
+
+
+                }
+
 
         }
 
 
 
     }
-
-
-
 
 }

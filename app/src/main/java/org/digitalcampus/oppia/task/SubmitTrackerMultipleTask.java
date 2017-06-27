@@ -1,27 +1,21 @@
+/* 
+ * This file is part of OppiaMobile - https://digital-campus.org/
+ * 
+ * OppiaMobile is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * OppiaMobile is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with OppiaMobile. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package org.digitalcampus.oppia.task;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collection;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPatch;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.protocol.HTTP;
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.model.TrackerLog;
-import org.digitalcampus.oppia.utils.HTTPConnectionUtils;
-import org.digitalcampus.oppia.utils.MetaDataUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -30,14 +24,37 @@ import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.bugsense.trace.BugSenseHandler;
 
-public class SubmitTrackerMultipleTask extends AsyncTask<Payload, Object, Payload> {
+import org.cbccessence.cch.model.User;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.listener.TrackerServiceListener;
+import org.digitalcampus.oppia.model.CbccUser;
+import org.digitalcampus.oppia.model.TrackerLog;
+import org.digitalcampus.oppia.utils.HTTPClientUtils;
+import org.digitalcampus.oppia.utils.MetaDataUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+public class SubmitTrackerMultipleTask extends AsyncTask<Payload, Integer, Payload> {
 
 	public final static String TAG = SubmitTrackerMultipleTask.class.getSimpleName();
 
 	private Context ctx;
 	private SharedPreferences prefs;
+	private TrackerServiceListener trackerServiceListener;
 
 	public SubmitTrackerMultipleTask(Context ctx) {
 		this.ctx = ctx;
@@ -46,132 +63,140 @@ public class SubmitTrackerMultipleTask extends AsyncTask<Payload, Object, Payloa
 
 	@Override
 	protected Payload doInBackground(Payload... params) {
-		DbHelper db = new DbHelper(ctx);
-		Payload payload = db.getUnsentLog();
+		Payload payload = new Payload();
 
-		@SuppressWarnings("unchecked")
-		Collection<Collection<TrackerLog>> result = (Collection<Collection<TrackerLog>>) split((Collection<Object>) payload.getData(), MobileLearning.MAX_TRACKER_SUBMIT);
-		
-		HTTPConnectionUtils client = new HTTPConnectionUtils(ctx);
-		
-		String url =client.getFullURL(MobileLearning.TRACKER_PATH);
-		
-		HttpPatch httpPatch = new HttpPatch(url);
-		
-		for (Collection<TrackerLog> trackerBatch : result) {
-			String dataToSend = createDataString(trackerBatch);
+		try {	
+			DbHelper db = DbHelper.getInstance(ctx);
+			ArrayList<CbccUser> cbccUsers = db.getAllUsers();
 			
-			try {
+			for (CbccUser u: cbccUsers) {
+                payload = db.getUnsentTrackers(u.getUserId());
 
-				StringEntity se = new StringEntity(dataToSend,"utf8");
-                se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-                httpPatch.setEntity(se);
-                
-                httpPatch.addHeader(client.getAuthHeader());
+                @SuppressWarnings("unchecked")
+                Collection<Collection<TrackerLog>> userTrackers = split((Collection<Object>) payload.getData(), MobileLearning.MAX_TRACKER_SUBMIT);
+                sendTrackerBatch(userTrackers, u, db, payload);
+            }
 
-                Log.d(TAG,url);
-				Log.d(TAG,dataToSend);
-				
-                // make request
-				HttpResponse response = client.execute(httpPatch);	
-				
-				Log.d(TAG,String.valueOf(response.getStatusLine().getStatusCode()));
-				
-				InputStream content = response.getEntity().getContent();
-				BufferedReader buffer = new BufferedReader(new InputStreamReader(content), 4096);
-				String responseStr = "";
-				String s = "";
-
-				while ((s = buffer.readLine()) != null) {
-					responseStr += s;
-				}
-				
-				Log.d(TAG,responseStr);
-				
-				
-				switch (response.getStatusLine().getStatusCode()){
-					case 200: // submitted
-						DbHelper dbh = new DbHelper(ctx);
-						for(TrackerLog tl: trackerBatch){
-							dbh.markLogSubmitted(tl.getId());
-						}
-						dbh.close();
-						payload.setResult(true);
-						// update points
-						JSONObject jsonResp = new JSONObject(responseStr);
-						Editor editor = prefs.edit();
-						
-						editor.putInt(ctx.getString(R.string.prefs_points), jsonResp.getInt("points"));
-						editor.putInt(ctx.getString(R.string.prefs_badges), jsonResp.getInt("badges"));
-						try {
-							editor.putBoolean(ctx.getString(R.string.prefs_scoring_enabled), jsonResp.getBoolean("scoring"));
-						} catch (JSONException e) {
-							e.printStackTrace();
-						}
-						editor.commit();
-						
-						try {
-							JSONObject metadata = jsonResp.getJSONObject("metadata");
-					        MetaDataUtils mu = new MetaDataUtils(ctx);
-					        mu.saveMetaData(metadata, prefs);
-						} catch (JSONException e) {
-							e.printStackTrace();
-						}
-				    	
-						break;
-					case 400: // submitted but invalid digest - returned 400 Bad Request - so record as submitted so doesn't keep trying
-						DbHelper dbh2 = new DbHelper(ctx);
-						for(TrackerLog tl: trackerBatch){
-							dbh2.markLogSubmitted(tl.getId());
-						};
-						dbh2.close();
-						payload.setResult(true);
-						break;
-					default:
-						payload.setResult(false);
-				}
-
-			} catch (UnsupportedEncodingException e) {
-				payload.setResult(false);
-			} catch (ClientProtocolException e) {
-				payload.setResult(false);
-			} catch (IOException e) {
-				payload.setResult(false);
-			} catch (JSONException e) {
-				if(!MobileLearning.DEVELOPER_MODE){
-					BugSenseHandler.sendException(e);
-				} else {
-					e.printStackTrace();
-				}
-				payload.setResult(false);
-			}
-		}
+	
+		} catch (IllegalStateException ise) {
+			ise.printStackTrace();
+			payload.setResult(false);
+		} 
 		
+		Editor editor = prefs.edit();
+		long now = System.currentTimeMillis()/1000;
+		editor.putLong(PrefsActivity.PREF_TRIGGER_POINTS_REFRESH, now).apply();
 		return payload;
 	}
 
-	protected void onProgressUpdate(String... obj) {
-		// do nothing
+    private void sendTrackerBatch(Collection<Collection<TrackerLog>> trackers, CbccUser cbccUser, DbHelper db, Payload p) {
+            for (Collection<TrackerLog> trackerBatch : trackers) {
+                String dataToSend = createDataString(trackerBatch);
+                Log.d(TAG, dataToSend);
+                try {
+
+                    OkHttpClient client = HTTPClientUtils.getClient(ctx);
+                    Request request = new Request.Builder()
+                            .url(HTTPClientUtils.getFullURL(ctx, MobileLearning.TRACKER_PATH))
+                            .addHeader(HTTPClientUtils.HEADER_AUTH,
+                                    HTTPClientUtils.getAuthHeaderValue(cbccUser.getUsername(), cbccUser.getApiKey()))
+                            .patch(RequestBody.create(HTTPClientUtils.MEDIA_TYPE_JSON, dataToSend))
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    if (response.isSuccessful()) {
+                        for (TrackerLog tl : trackerBatch) {
+                            db.markLogSubmitted(tl.getId());
+                        }
+                        p.setResult(true);
+                        // update points
+                        JSONObject jsonResp = new JSONObject(response.body().string());
+                        db.updateUserPoints(cbccUser.getUserId(), jsonResp.getInt("points"));
+                        db.updateUserBadges(cbccUser.getUserId(), jsonResp.getInt("badges"));
+
+                        Editor editor = prefs.edit();
+                        try {
+                            editor.putBoolean(PrefsActivity.PREF_SCORING_ENABLED, jsonResp.getBoolean("scoring"));
+                            editor.putBoolean(PrefsActivity.PREF_BADGING_ENABLED, jsonResp.getBoolean("badging"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        editor.apply();
+
+                        try {
+                            JSONObject metadata = jsonResp.getJSONObject("metadata");
+                            MetaDataUtils mu = new MetaDataUtils(ctx);
+                            mu.saveMetaData(metadata, prefs);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        if (response.code() == 400) {
+                            // submitted but invalid digest - returned 400 Bad Request -
+                            // so record as submitted so doesn't keep trying
+                            for (TrackerLog tl : trackerBatch) {
+                                db.markLogSubmitted(tl.getId());
+                            }
+                            p.setResult(true);
+                        } else{
+                            p.setResult(false);
+                            if (response.code() == 401) {
+                                //The apiKey of this cbccUser is invalid
+                                SessionManager.setUserApiKeyValid(ctx, cbccUser, false);
+                                //We don't process more of this cbccUser trackers
+                                return;
+                            }
+                        }
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    p.setResult(false);
+                } catch (IOException e) {
+                    p.setResult(false);
+                } catch (JSONException e) {
+                     e.printStackTrace();
+                    p.setResult(false);
+                }
+                publishProgress(0);
+            }
+    }
+
+	@Override
+	protected void onProgressUpdate(Integer... obj) {
+		synchronized (this) {
+            if (trackerServiceListener != null) {
+            	trackerServiceListener.trackerProgressUpdate();
+            }
+        }
 	}
 	
 	@Override
     protected void onPostExecute(Payload p) {
+		synchronized (this) {
+            if (trackerServiceListener != null) {
+            	trackerServiceListener.trackerComplete();
+            }
+        }
 		// reset submittask back to null after completion - so next call can run properly
 		MobileLearning app = (MobileLearning) ctx.getApplicationContext();
-		//app.omSubmitTrackerMultipleTask = null;
+		app.omSubmitTrackerMultipleTask = null;
+		
+    }
+	
+	public void setTrackerServiceListener(TrackerServiceListener tsl) {
+        trackerServiceListener = tsl;
     }
 	
 	private static Collection<Collection<TrackerLog>> split(Collection<Object> bigCollection, int maxBatchSize) {
-		Collection<Collection<TrackerLog>> result = new ArrayList<Collection<TrackerLog>>();
+		Collection<Collection<TrackerLog>> result = new ArrayList<>();
 
 		ArrayList<TrackerLog> currentBatch = null;
 		for (Object obj : bigCollection) {
 			TrackerLog tl = (TrackerLog) obj;
 			if (currentBatch == null) {
-				currentBatch = new ArrayList<TrackerLog>();
+				currentBatch = new ArrayList<>();
 			} else if (currentBatch.size() >= maxBatchSize) {
 				result.add(currentBatch);
-				currentBatch = new ArrayList<TrackerLog>();
+				currentBatch = new ArrayList<>();
 			}
 
 			currentBatch.add(tl);
@@ -185,17 +210,18 @@ public class SubmitTrackerMultipleTask extends AsyncTask<Payload, Object, Payloa
 	}
 	
 	private String createDataString(Collection<TrackerLog> collection){
-		String s = "{\"objects\":[";
+		String jsonString = "{\"objects\":[";
 		int counter = 0;
+        int collectionSize = collection.size();
 		for(TrackerLog tl: collection){
 			counter++;
-			s += tl.getContent();
-			if(counter != collection.size()){
-				s += ",";
+            jsonString += tl.getContent();
+			if(counter != collectionSize){
+                jsonString += ",";
 			}
 		}
-		s += "]}";
-		return s;
+        jsonString += "]}";
+		return jsonString;
 	}
 
 }

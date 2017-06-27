@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 import hirondelle.date4j.DateTime;
 

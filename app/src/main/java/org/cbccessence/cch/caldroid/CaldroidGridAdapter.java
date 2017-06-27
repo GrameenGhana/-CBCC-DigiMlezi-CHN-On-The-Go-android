@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 import hirondelle.date4j.DateTime;
 

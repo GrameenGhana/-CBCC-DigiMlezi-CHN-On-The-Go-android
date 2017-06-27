@@ -18,9 +18,9 @@ import android.widget.TextView;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.model.LcReference;
+import org.cbccessence.models.LcReference;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -64,38 +64,34 @@ public class LcReferencesAdapter extends RecyclerView.Adapter<LcReferencesAdapte
         holder.file_size.setText(reference.getFileSize());
 
 
-        if(MobileLearning.doesFileExist(reference.getShortName()))
-        holder.download.setVisibility(View.GONE);
+        if(MobileLearning.doesFileExist(reference.getShortName())) {
+            holder.download.setVisibility(View.GONE);
 
-        else holder.download.setVisibility(View.VISIBLE);
+            File thumbnail = new File(MobileLearning.REFERENCES_ROOT + "/thumbnails/" + reference.getShortName() + ".png");
 
-
-
-
-
-
-
-
-        File thumbnail = new File(MobileLearning.REFERENCES_ROOT + "/thumbnails/" + reference.getReferenceName() + ".png");
-
-        if(thumbnail.exists()) {
-            Bitmap bitmap = BitmapFactory.decodeFile(thumbnail.toString());
-            holder.file_image.setImageBitmap(bitmap);
-
-        }else{
-
-            String loc = MobileLearning.REFERENCES_ROOT  + reference.getShortName() + ".pdf";
-
-            if (generateImageFromPdf(Uri.parse( "file://" + loc), reference.getReferenceName())){
+            if(thumbnail.exists()) {
                 Bitmap bitmap = BitmapFactory.decodeFile(thumbnail.toString());
                 holder.file_image.setImageBitmap(bitmap);
 
+            }else{
+
+                String loc = MobileLearning.REFERENCES_ROOT  + reference.getShortName() + ".pdf";
+
+                if (generateImageFromPdf(Uri.parse( "file://" + loc), reference.getReferenceName())){
+                    Bitmap bitmap = BitmapFactory.decodeFile(thumbnail.toString());
+                    holder.file_image.setImageBitmap(bitmap);
+
+                }
+
+
+
+
             }
 
-
-
-
         }
+
+        else holder.download.setVisibility(View.VISIBLE);
+
 
 
     }

@@ -5,27 +5,28 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/module_title"
+        android:id="@+id/course_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-       	style="@style/HeaderText"
-       	android:background="@color/background_light"/>
+        android:textColor="@android:color/primary_text_light"
+        style="@style/Base.TextAppearance.AppCompat.Title"
+        android:background="@color/background_light"/>
     
     <TextView
         android:id="@+id/course_shortname"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        style="@style/SmallTextDark"
-        android:background="@color/background_light"/>
+        style="@style/TextAppearance.AppCompat.Caption"
+         android:background="@color/background_light"/>
     
     <TextView
         android:id="@+id/course_versionid"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        style="@style/SmallTextDark"
+        style="@style/TextAppearance.AppCompat.Caption"
         android:background="@color/background_light"/>
 
     <WebView

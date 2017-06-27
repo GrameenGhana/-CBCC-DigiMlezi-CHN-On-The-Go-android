@@ -1,41 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/module_row"
-    android:layout_width="match_parent"
+    android:id="@+id/course_row"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="5dp"
-    android:background="@drawable/card_bakground_selector">
+              android:background="?attr/selectableItemBackground"
+    android:padding="5dp" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:gravity="center_vertical">
-        <ImageView android:id="@+id/course_image"
-             android:layout_width="48dp" 
-             android:layout_height="48dp"
-              android:layout_margin="4dp"
-              android:contentDescription="@string/app_logo_alt"
-               android:gravity="center_vertical" 
-               android:src="@drawable/app_icon"/>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/course_image"
+            android:layout_width="@dimen/course_icon_size"
+            android:layout_height="@dimen/course_icon_size"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/app_logo_alt"
+            android:src="@drawable/mlezi_icon_no_shadow" />
 
         <TextView
-            android:id="@+id/module_title"
+            android:id="@+id/course_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:textColor="@color/TextColorWine"
-            android:textSize="18sp"
+            android:layout_toRightOf="@+id/course_image"
+             android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
             android:textStyle="normal" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/course_description"
+            style="@style/MediumTextItalic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_title"
+            android:layout_toRightOf="@+id/course_image" />
+    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/course_progress_bar"
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        style="@style/ProgressBar.Om"
         android:layout_width="fill_parent"
-        android:layout_height="5dp"
+        android:layout_height="2dp"
         android:layout_margin="5dp"
         android:progressDrawable="@drawable/progress_bar" />
 

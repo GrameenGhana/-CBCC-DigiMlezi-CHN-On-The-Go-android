@@ -1,5 +1,5 @@
 /* 
- 	* This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,13 +17,31 @@
 
 package org.digitalcampus.oppia.widgets;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
+import android.text.Html;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.mobile.quiz.InvalidQuizException;
 import org.digitalcampus.mobile.quiz.Quiz;
 import org.digitalcampus.mobile.quiz.model.QuizQuestion;
@@ -34,14 +52,18 @@ import org.digitalcampus.mobile.quiz.model.questiontypes.MultiSelect;
 import org.digitalcampus.mobile.quiz.model.questiontypes.Numerical;
 import org.digitalcampus.mobile.quiz.model.questiontypes.ShortAnswer;
 import org.digitalcampus.oppia.activity.CourseActivity;
+import org.digitalcampus.oppia.activity.PrefsActivity;
 import org.digitalcampus.oppia.adapter.QuizFeedbackAdapter;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.SessionManager;
 import org.digitalcampus.oppia.application.Tracker;
 import org.digitalcampus.oppia.model.Activity;
 import org.digitalcampus.oppia.model.Course;
+import org.digitalcampus.oppia.model.QuizAttempt;
 import org.digitalcampus.oppia.model.QuizFeedback;
-import org.digitalcampus.oppia.model.Section;
+import org.digitalcampus.oppia.model.QuizStats;
 import org.digitalcampus.oppia.utils.MetaDataUtils;
+import org.digitalcampus.oppia.utils.resources.ExternalResourceOpener;
 import org.digitalcampus.oppia.widgets.quiz.DescriptionWidget;
 import org.digitalcampus.oppia.widgets.quiz.MatchingWidget;
 import org.digitalcampus.oppia.widgets.quiz.MultiChoiceWidget;
@@ -52,35 +74,16 @@ import org.digitalcampus.oppia.widgets.quiz.ShortAnswerWidget;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.text.Html;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 public class QuizWidget extends WidgetFactory {
 
-	private static final String TAG = QuizWidget.class.getSimpleName();
+	public static final String TAG = QuizWidget.class.getSimpleName();
+    private static final int QUIZ_AVAILABLE = -1;
 	private Quiz quiz;
 	private QuestionWidget qw;
 	public Button prevBtn;
@@ -91,13 +94,12 @@ public class QuizWidget extends WidgetFactory {
 	private boolean isOnResultsPage = false;
 	private ViewGroup container;
 
-	public static QuizWidget newInstance(Activity activity, Course course, Section section, boolean isBaseline) {
+	public static QuizWidget newInstance(Activity activity, Course course, boolean isBaseline) {
 		QuizWidget myFragment = new QuizWidget();
 
 		Bundle args = new Bundle();
 		args.putSerializable(Activity.TAG, activity);
 		args.putSerializable(Course.TAG, course);
-		args.putSerializable(Section.TAG, section);
 		args.putBoolean(CourseActivity.BASELINE_TAG, isBaseline);
 		myFragment.setArguments(args);
 
@@ -105,10 +107,10 @@ public class QuizWidget extends WidgetFactory {
 	}
 
 	public QuizWidget() {
-		
+
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({"unchecked", "RestrictedApi"})
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		prefs = PreferenceManager.getDefaultSharedPreferences(super.getActivity());
@@ -116,10 +118,9 @@ public class QuizWidget extends WidgetFactory {
 		this.container = container;
 		course = (Course) getArguments().getSerializable(Course.TAG);
 		activity = ((Activity) getArguments().getSerializable(Activity.TAG));
-		section = ((Section) getArguments().getSerializable(Section.TAG));
 		this.setIsBaseline(getArguments().getBoolean(CourseActivity.BASELINE_TAG));
 		quizContent = ((Activity) getArguments().getSerializable(Activity.TAG)).getContents(prefs.getString(
-				super.getActivity().getString(R.string.prefs_language), Locale.getDefault().getLanguage()));
+				PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
 
 		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		vv.setLayoutParams(lp);
@@ -127,6 +128,7 @@ public class QuizWidget extends WidgetFactory {
 		if ((savedInstanceState != null) && (savedInstanceState.getSerializable("widget_config") != null)){
 			setWidgetConfig((HashMap<String, Object>) savedInstanceState.getSerializable("widget_config"));
 		}
+
 		return vv;
 	}
 
@@ -143,24 +145,89 @@ public class QuizWidget extends WidgetFactory {
 		nextBtn = (Button) getView().findViewById(R.id.mquiz_next_btn);
 		qText = (TextView) getView().findViewById(R.id.question_text);
 		questionImage = (LinearLayout) getView().findViewById(R.id.question_image);
+
+        loadQuiz();
 	}
 	
 	@Override
 	public void onResume(){
 		super.onResume();
-		if (this.quiz == null) {
-			this.quiz = new Quiz();
-			this.quiz.load(quizContent);
-		}
-		if (this.isOnResultsPage) {
-			this.showResults();
-		} else {
-			this.showQuestion();
-		}
+		loadQuiz();
 	}
 
+    public void loadQuiz(){
+        if (this.quiz == null) {
+            this.quiz = new Quiz();
+            this.quiz.load(quizContent,prefs.getString(
+                    PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
+        }
+
+        if (this.isOnResultsPage) {
+            showResults();
+            return;
+        }
+
+        int result = checkQuizAvailability();
+        if (result == QUIZ_AVAILABLE){
+            this.showQuestion();
+        }
+        else{
+            View container = getView();
+            if (container != null){
+                ViewGroup vg = (ViewGroup) container.findViewById(activity.getActId());
+                if (vg!=null){
+                    vg.removeAllViews();
+                    vg.addView(View.inflate(getView().getContext(), R.layout.widget_quiz_unavailable, null));
+
+                    TextView tv = (TextView) getView().findViewById(R.id.quiz_unavailable);
+                    tv.setText(result);
+                }
+            }
+        }
+    }
+
+    private int checkQuizAvailability(){
+
+        DbHelper db = null;
+        if (this.quiz.limitAttempts()){
+            //Check if the user has attempted the quiz the max allowed
+            db = DbHelper.getInstance(getActivity());
+            long userId = db.getUserId(SessionManager.getUsername(getActivity()));
+            QuizStats qs = db.getQuizAttempt(this.activity.getDigest(), userId);
+            if (qs.getNumAttempts() > quiz.getMaxAttempts()){
+                return R.string.widget_quiz_unavailable_attempts;
+            }
+        }
+
+        // determine availability
+        if (this.quiz.getAvailability() == Quiz.AVAILABILITY_ALWAYS){
+            return QUIZ_AVAILABLE;
+
+        } else if (this.quiz.getAvailability() == Quiz.AVAILABILITY_SECTION){
+            // check to see if all previous section activities have been completed
+            if (db == null) db = DbHelper.getInstance(getActivity());
+            long userId = db.getUserId(SessionManager.getUsername(getActivity()));
+
+            if( db.isPreviousSectionActivitiesCompleted(course, activity, userId) )
+                return QUIZ_AVAILABLE;
+            else
+                return R.string.widget_quiz_unavailable_section;
+
+        } else if (this.quiz.getAvailability() == Quiz.AVAILABILITY_COURSE){
+            // check to see if all previous course activities have been completed
+            if (db == null) db = DbHelper.getInstance(getActivity());
+            long userId = db.getUserId(SessionManager.getUsername(getActivity()));
+            if (db.isPreviousCourseActivitiesCompleted(course, activity, userId))
+                return QUIZ_AVAILABLE;
+            else
+                return R.string.widget_quiz_unavailable_course;
+        }
+        //If none of the conditions apply, set it as available
+        return QUIZ_AVAILABLE;
+    }
+
 	public void showQuestion() {
-		QuizQuestion q = null;
+		QuizQuestion q;
 		try {
 			q = this.quiz.getCurrentQuestion();
 		} catch (InvalidQuizException e) {
@@ -170,7 +237,7 @@ public class QuizWidget extends WidgetFactory {
 		}
 		qText.setVisibility(View.VISIBLE);
 		// convert in case has any html special chars
-		qText.setText(Html.fromHtml(q.getTitle()).toString());
+		qText.setText(Html.fromHtml(q.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()))));
 
 		if (q.getProp("image") == null) {
 			questionImage.setVisibility(View.GONE);
@@ -182,25 +249,35 @@ public class QuizWidget extends WidgetFactory {
 			ImageView iv = (ImageView) getView().findViewById(R.id.question_image_image);
 			iv.setImageBitmap(myBitmap);
 			iv.setTag(file);
-			OnImageClickListener oicl = new OnImageClickListener(super.getActivity(), "image/*");
-			iv.setOnClickListener(oicl);
-			questionImage.setVisibility(View.VISIBLE);
+			if (q.getProp("media") == null){
+				OnImageClickListener oicl = new OnImageClickListener(super.getActivity(), "image/*");
+				iv.setOnClickListener(oicl);
+				TextView tv = (TextView) getView().findViewById(R.id.question_image_caption);
+				tv.setText(R.string.widget_quiz_image_caption);
+				questionImage.setVisibility(View.VISIBLE);
+			} else {
+				TextView tv = (TextView) getView().findViewById(R.id.question_image_caption);
+				tv.setText(R.string.widget_quiz_media_caption);
+				OnMediaClickListener omcl = new OnMediaClickListener(q.getProp("media"));
+				iv.setOnClickListener(omcl);
+				questionImage.setVisibility(View.VISIBLE);
+			}
+			
 		}
 
 		if (q instanceof MultiChoice) {
 			qw = new MultiChoiceWidget(super.getActivity(), getView(), container);
 		} else if (q instanceof MultiSelect) {
-			qw = new MultiSelectWidget(super.getActivity(), getView(),container);
+			qw = new MultiSelectWidget(super.getActivity(), getView(), container);
 		} else if (q instanceof ShortAnswer) {
-			qw = new ShortAnswerWidget(super.getActivity(), getView(),container);
+			qw = new ShortAnswerWidget(super.getActivity(), getView(), container);
 		} else if (q instanceof Matching) {
-			qw = new MatchingWidget(super.getActivity(), getView(),container);
+			qw = new MatchingWidget(super.getActivity(), getView(), container);
 		} else if (q instanceof Numerical) {
-			qw = new NumericalWidget(super.getActivity(), getView(),container);
+			qw = new NumericalWidget(super.getActivity(), getView(), container);
 		} else if (q instanceof Description) {
-			qw = new DescriptionWidget(super.getActivity(), getView(),container);
+			qw = new DescriptionWidget(super.getActivity(), getView(), container);
 		} else {
-			Log.d(TAG, "Class for question type not found");
 			return;
 		}
 		qw.setQuestionResponses(q.getResponseOptions(), q.getUserResponses());
@@ -233,19 +310,25 @@ public class QuizWidget extends WidgetFactory {
 			public void onClick(View v) {
 				// save answer
 				if (saveAnswer()) {
-					String feedback = "";
+					String feedback;
 					try {
-						feedback = QuizWidget.this.quiz.getCurrentQuestion().getFeedback();
+						feedback = QuizWidget.this.quiz.getCurrentQuestion().getFeedback(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
+
+						if (!feedback.equals("") &&
+								quiz.getShowFeedback() == Quiz.SHOW_FEEDBACK_ALWAYS
+								&& !QuizWidget.this.quiz.getCurrentQuestion().getFeedbackDisplayed()) {
+                            //We hide the keyboard before showing the dialog
+                            InputMethodManager imm =  (InputMethodManager) QuizWidget.super.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+							showFeedback(feedback);
+						} else if (QuizWidget.this.quiz.hasNext()) {
+							QuizWidget.this.quiz.moveNext();
+							showQuestion();
+						} else {
+							showResults();
+						}
 					} catch (InvalidQuizException e) {
 						e.printStackTrace();
-					}
-					if (!feedback.equals("") && !isBaseline) {
-						showFeedback(feedback);
-					} else if (QuizWidget.this.quiz.hasNext()) {
-						QuizWidget.this.quiz.moveNext();
-						showQuestion();
-					} else {
-						showResults();
 					}
 				} else {
 					CharSequence text = QuizWidget.super.getActivity().getString(R.string.widget_quiz_noanswergiven);
@@ -268,8 +351,7 @@ public class QuizWidget extends WidgetFactory {
 		TextView progress = (TextView) getView().findViewById(R.id.quiz_progress);
 		try {
 			if (quiz.getCurrentQuestion().responseExpected()) {
-				progress.setText(super.getActivity().getString(R.string.widget_quiz_progress, quiz.getCurrentQuestionNo(),
-						quiz.getTotalNoQuestions()));
+				progress.setText(super.getActivity().getString(R.string.widget_quiz_progress, quiz.getCurrentQuestionNo(), quiz.getTotalNoQuestions()));
 			} else {
 				progress.setText("");
 			}
@@ -296,58 +378,73 @@ public class QuizWidget extends WidgetFactory {
 	}
 
 	private void showFeedback(String msg) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(super.getActivity());
+		AlertDialog.Builder builder = new AlertDialog.Builder(super.getActivity(), R.style.AppAlertDialog);
 		builder.setTitle(super.getActivity().getString(R.string.feedback));
 		builder.setMessage(msg);
+		try {
+			if(this.quiz.getCurrentQuestion().getScoreAsPercent() >= Quiz.QUIZ_QUESTION_PASS_THRESHOLD){
+				builder.setIcon(R.drawable.quiz_tick);
+			} else {
+				builder.setIcon(R.drawable.quiz_cross);
+			}
+		} catch (InvalidQuizException e) {
+			e.printStackTrace();
+		}
 		builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface arg0, int arg1) {
 				if (QuizWidget.this.quiz.hasNext()) {
 					QuizWidget.this.quiz.moveNext();
-					showQuestion();
+					QuizWidget.this.showQuestion();
 				} else {
-					showResults();
+					QuizWidget.this.showResults();
 				}
 			}
 		});
 		builder.show();
+		try {
+			this.quiz.getCurrentQuestion().setFeedbackDisplayed(true);
+		} catch (InvalidQuizException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void showResults() {
 
 		// log the activity as complete
 		isOnResultsPage = true;
-		this.saveTracker();
-
+		quiz.mark(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
 		// save results ready to send back to the quiz server
 		String data = quiz.getResultObject().toString();
-		DbHelper db = new DbHelper(super.getActivity());
-		JSONObject json=new JSONObject();
-		Course c=db.getCourse(course.getModId());
-		try {
-			json.put("title", activity.getTitle(prefs.getString(getString(R.string.prefs_language), Locale
-					.getDefault().getLanguage())));
-			json.put("section", section.getTitle(prefs.getString(getString(R.string.prefs_language), Locale
-					.getDefault().getLanguage())));
-			json.put("course", c.getTitle(prefs.getString(getString(R.string.prefs_language), Locale
-					.getDefault().getLanguage())));
-			System.out.println(json.toString());
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		db.insertQuizResult(data, json.toString(),course.getModId());
-		db.close();
-		Log.d(TAG, data);
-		
-		// load new layout
-		View C = getView().findViewById(R.id.quiz_progress);
-	    ViewGroup parent = (ViewGroup) C.getParent();
-	    int index = parent.indexOfChild(C);
-	    parent.removeView(C);
-	    C = super.getActivity().getLayoutInflater().inflate(R.layout.widget_quiz_results, parent, false);
-	    parent.addView(C, index);
-		
+		Log.d(TAG,data);
+
+		DbHelper db = DbHelper.getInstance(super.getActivity());
+		long userId = db.getUserId(SessionManager.getUsername(getActivity()));
+
+		QuizAttempt qa = new QuizAttempt();
+		qa.setCourseId(course.getCourseId());
+		qa.setUserId(userId);
+		qa.setData(data);
+
+		qa.setActivityDigest(activity.getDigest());
+		qa.setScore(quiz.getUserscore());
+		qa.setMaxscore(quiz.getMaxscore());
+		qa.setPassed(this.getActivityCompleted());
+		qa.setSent(false);
+		db.insertQuizAttempt(qa);
+
+		//Check if quiz results layout is already loaded
+        View quizResultsLayout = getView()==null ? null : getView().findViewById(R.id.widget_quiz_results);
+        if (quizResultsLayout == null){
+            // load new layout
+            View C = getView().findViewById(R.id.quiz_progress);
+            ViewGroup parent = (ViewGroup) C.getParent();
+            int index = parent.indexOfChild(C);
+            parent.removeView(C);
+            C = super.getActivity().getLayoutInflater().inflate(R.layout.widget_quiz_results, parent, false);
+            parent.addView(C, index);
+        }
+
 		TextView title = (TextView) getView().findViewById(R.id.quiz_results_score);
 		title.setText(super.getActivity().getString(R.string.widget_quiz_results_score, this.getPercent()));
 
@@ -355,31 +452,41 @@ public class QuizWidget extends WidgetFactory {
 			TextView baselineExtro = (TextView) getView().findViewById(R.id.quiz_results_baseline);
 			baselineExtro.setVisibility(View.VISIBLE);
 			baselineExtro.setText(super.getActivity().getString(R.string.widget_quiz_baseline_completed));
-		} 
-		
-		// TODO add TextView here to give overall feedback if it's in the quiz
-		
-		// Show the detail of which questions were right/wrong
-		ListView questionFeedbackLV = (ListView) getView().findViewById(R.id.quiz_results_feedback);
-		ArrayList<QuizFeedback> quizFeedback = new ArrayList<QuizFeedback>();
-		List<QuizQuestion> questions = this.quiz.getQuestions();
-		for(QuizQuestion q: questions){
-			if(!(q instanceof Description)){
-				QuizFeedback qf = new QuizFeedback();
-				qf.setScore(q.getScoreAsPercent());
-				qf.setQuestionText(q.getTitle());
-				qf.setUserResponse(q.getUserResponses());
-				qf.setFeedbackText(q.getFeedback());
-				quizFeedback.add(qf);
-				
-			}
 		}
-		QuizFeedbackAdapter qfa = new QuizFeedbackAdapter(super.getActivity(), quizFeedback);
-		questionFeedbackLV.setAdapter(qfa);
-		
+
+		// TODO add TextView here to give overall feedback if it's in the quiz
+
+		// Show the detail of which questions were right/wrong
+		if (quiz.getShowFeedback() == Quiz.SHOW_FEEDBACK_ALWAYS || quiz.getShowFeedback() == Quiz.SHOW_FEEDBACK_ATEND){
+			ListView questionFeedbackLV = (ListView) getView().findViewById(R.id.quiz_results_feedback);
+			ArrayList<QuizFeedback> quizFeedback = new ArrayList<QuizFeedback>();
+			List<QuizQuestion> questions = this.quiz.getQuestions();
+			for(QuizQuestion q: questions){
+				if(!(q instanceof Description)){
+					QuizFeedback qf = new QuizFeedback();
+					qf.setScore(q.getScoreAsPercent());
+					qf.setQuestionText(q.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())));
+					qf.setUserResponse(q.getUserResponses());
+					qf.setFeedbackText(q.getFeedback(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())));
+					quizFeedback.add(qf);
+				}
+			}
+			QuizFeedbackAdapter qfa = new QuizFeedbackAdapter(super.getActivity(), quizFeedback);
+			questionFeedbackLV.setAdapter(qfa);
+		}
+
 		// Show restart or continue button
 		Button restartBtn = (Button) getView().findViewById(R.id.quiz_results_button);
-		
+
+        int quizAvailability = checkQuizAvailability();
+        boolean quizAvailable = quizAvailability == QUIZ_AVAILABLE;
+
+        if (!quizAvailable){
+            TextView availabilityMsg = (TextView) getView().findViewById(R.id.quiz_availability_message);
+            availabilityMsg.setText(quizAvailability);
+            availabilityMsg.setVisibility(View.VISIBLE);
+        }
+
 		if (this.isBaseline) {
 			restartBtn.setText(super.getActivity().getString(R.string.widget_quiz_baseline_goto_course));
 			restartBtn.setOnClickListener(new View.OnClickListener() {
@@ -387,7 +494,14 @@ public class QuizWidget extends WidgetFactory {
 					QuizWidget.this.getActivity().finish();
 				}
 			});
-		} else {
+		} else if (this.getActivityCompleted() || !quizAvailable){
+            restartBtn.setText(super.getActivity().getString(R.string.widget_quiz_continue));
+            restartBtn.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    QuizWidget.this.getActivity().finish();
+                }
+            });
+        } else{
 			restartBtn.setText(super.getActivity().getString(R.string.widget_quiz_results_restart));
 			restartBtn.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
@@ -400,9 +514,9 @@ public class QuizWidget extends WidgetFactory {
 	private void restart() {
 		this.setStartTime(System.currentTimeMillis() / 1000);
 		
-		quiz = new Quiz();
-		quiz.load(quizContent);
-		isOnResultsPage = false;
+		this.quiz = new Quiz();
+		this.quiz.load(quizContent,prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
+		this.isOnResultsPage = false;
 		
 		// reload quiz layout
 		View C = getView().findViewById(R.id.widget_quiz_results);
@@ -412,26 +526,30 @@ public class QuizWidget extends WidgetFactory {
 	    C = super.getActivity().getLayoutInflater().inflate(R.layout.widget_quiz, parent, false);
 	    parent.addView(C, index);
 	    
-	    prevBtn = (Button) getView().findViewById(R.id.mquiz_prev_btn);
-		nextBtn = (Button) getView().findViewById(R.id.mquiz_next_btn);
-		qText = (TextView) getView().findViewById(R.id.question_text);
-		questionImage = (LinearLayout) getView().findViewById(R.id.question_image);
-		questionImage.setVisibility(View.GONE);
+	    this.prevBtn = (Button) getView().findViewById(R.id.mquiz_prev_btn);
+	    this.nextBtn = (Button) getView().findViewById(R.id.mquiz_next_btn);
+	    this.qText = (TextView) getView().findViewById(R.id.question_text);
+	    this.questionImage = (LinearLayout) getView().findViewById(R.id.question_image);
+	    this.questionImage.setVisibility(View.GONE);
 		this.showQuestion();
 	}
 
 	@Override
-	protected boolean getActivityCompleted() {
-		if (isOnResultsPage && this.getPercent() > 99) {
-			return true;
+	public boolean getActivityCompleted() {
+		int passThreshold;
+		Log.d(TAG, "Threshold:" + quiz.getPassThreshold() );
+		if (quiz.getPassThreshold() != 0){
+			passThreshold = quiz.getPassThreshold();
 		} else {
-			return false;
+			passThreshold = Quiz.QUIZ_DEFAULT_PASS_THRESHOLD;
 		}
+		Log.d(TAG, "Percent:" + this.getPercent() );
+        return (isOnResultsPage && this.getPercent() >= passThreshold);
 	}
 
 	@Override
 	public void saveTracker() {
-		long timetaken = System.currentTimeMillis() / 1000 - this.getStartTime();
+		long timetaken = this.getSpentTime();
 		Tracker t = new Tracker(super.getActivity());
 		JSONObject obj = new JSONObject();
 		if(!isOnResultsPage){
@@ -442,16 +560,16 @@ public class QuizWidget extends WidgetFactory {
 			MetaDataUtils mdu = new MetaDataUtils(super.getActivity());
 			obj.put("timetaken", timetaken);
 			obj = mdu.getMetaData(obj);
-			String lang = prefs.getString(super.getActivity().getString(R.string.prefs_language), Locale.getDefault().getLanguage());
+			String lang = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
 			obj.put("lang", lang);
 			obj.put("quiz_id", quiz.getID());
 			obj.put("instance_id", quiz.getInstanceID());
 			obj.put("score", this.getPercent());
 			// if it's a baseline activity then assume completed
 			if (this.isBaseline) {
-				t.saveTracker(course.getModId(), activity.getDigest(), obj, true);
+				t.saveTracker(course.getCourseId(), activity.getDigest(), obj, true);
 			} else {
-				t.saveTracker(course.getModId(), activity.getDigest(), obj, this.getActivityCompleted());
+				t.saveTracker(course.getCourseId(), activity.getDigest(), obj, this.getActivityCompleted());
 			}
 		} catch (JSONException e) {
 			// Do nothing
@@ -482,7 +600,6 @@ public class QuizWidget extends WidgetFactory {
 		if (config.containsKey("OnResultsPage")) {
 			this.isOnResultsPage = (Boolean) config.get("OnResultsPage");
 		}
-		Log.d(TAG,"Set quiz widget config");
 	}
 
 	@Override
@@ -490,7 +607,7 @@ public class QuizWidget extends WidgetFactory {
 		// Get the current question text
 		String toRead = "";
 		try {
-			toRead = quiz.getCurrentQuestion().getTitle();
+			toRead = quiz.getCurrentQuestion().getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
 		} catch (InvalidQuizException e) {
 			e.printStackTrace();
 		}
@@ -498,19 +615,12 @@ public class QuizWidget extends WidgetFactory {
 	}
 
 	private float getPercent() {
-		quiz.mark();
+		quiz.mark(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
 		float percent = quiz.getUserscore() * 100 / quiz.getMaxscore();
 		return percent;
 	}
 	
-	// TODO
-	/*private String getOverallFeedback(){
-		String feedback = "";
-		
-		return feedback;
-	}*/
-	
-	private class OnImageClickListener implements OnClickListener{
+	private class OnImageClickListener implements OnClickListener {
 
 		private Context ctx;
 		private String type;
@@ -528,31 +638,27 @@ public class QuizWidget extends WidgetFactory {
 				return;
 			} 
 			Uri targetUri = Uri.fromFile(file);
-			
 			// check there is actually an app installed to open this filetype
-			
-			Intent intent = new Intent();
-			intent.setAction(android.content.Intent.ACTION_VIEW);
-			intent.setDataAndType(targetUri, type);
-			
-			PackageManager pm = this.ctx.getPackageManager();
-
-			List<ResolveInfo> infos = pm.queryIntentActivities(intent, PackageManager.GET_RESOLVED_FILTER);
-			boolean appFound = false;
-			for (ResolveInfo info : infos) {
-				IntentFilter filter = info.filter;
-				if (filter != null && filter.hasAction(Intent.ACTION_VIEW)) {
-					// Found an app with the right intent/filter
-					appFound = true;
-				}
-			}
-
-			if(appFound){
+			Intent intent = ExternalResourceOpener.getIntentToOpenResource(ctx, targetUri, type);
+			if(intent != null){
 				this.ctx.startActivity(intent);
 			} else {
 				Toast.makeText(this.ctx,this.ctx.getString(R.string.error_resource_app_not_found,file.getName()), Toast.LENGTH_LONG).show();
 			}
-			return;
+		}
+		
+	}
+	
+	private class OnMediaClickListener implements OnClickListener {
+
+		private String mediaFileName;
+		
+		public OnMediaClickListener(String mediaFileName){
+			this.mediaFileName = mediaFileName;
+		}
+
+		public void onClick(View v) {
+            QuizWidget.super.startMediaPlayerWithFile(mediaFileName);
 		}
 		
 	}

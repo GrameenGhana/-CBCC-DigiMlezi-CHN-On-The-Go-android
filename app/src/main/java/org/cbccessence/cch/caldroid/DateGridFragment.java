@@ -1,5 +1,5 @@
 package org.cbccessence.cch.caldroid;
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

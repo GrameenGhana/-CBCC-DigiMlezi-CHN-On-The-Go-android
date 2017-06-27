@@ -2,7 +2,7 @@ package org.cbccessence.adapters;
 
 import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.cbccessence.cch.model.RoutineActivity;
 
@@ -24,7 +24,7 @@ public class RoutinesDetailPagerAdapter extends ArrayAdapter<RoutineActivity> {
 	 public RoutinesDetailPagerAdapter(Context c, int resource, ArrayList<RoutineActivity> todos) {
 		 super(c, resource, todos);
 		 mContext = c;
-		 dbh = new DbHelper(c);
+		 dbh =   DbHelper.getInstance(c);
 		 activities = new ArrayList<RoutineActivity>();
 		 activities.addAll(todos);
 	 }
@@ -71,7 +71,7 @@ public class RoutinesDetailPagerAdapter extends ArrayAdapter<RoutineActivity> {
 					RoutineActivity ra = (RoutineActivity) cb.getTag();
 					String message = (cb.isChecked()) ? "Congratulations!" : ":( What happened?";
 					Toast.makeText(mContext, message,  Toast.LENGTH_LONG).show();
-					dbh.insertSWRoutineDoneActivity(ra.getUUID());
+					//dbh.insertSWRoutineDoneActivity(ra.getUUID());
 					ra.setDone(cb.isChecked());
 					cb.setEnabled(false);
 				}  

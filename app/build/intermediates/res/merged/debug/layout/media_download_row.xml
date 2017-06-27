@@ -1,42 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/media_row"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="5dp"
-    android:weightSum="1.0" >
+    android:descendantFocusability="blocksDescendants"
+    android:background="@drawable/background_change_selected"
+    android:padding="5dp" >
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/media_courses"
+        style="@style/SmallTextDark"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.65"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"  >
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@+id/action_btn" />
 
-        <TextView
-            android:id="@+id/media_title"
-            style="@style/NormalTextDark"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/TextColorWine" />
+    <TextView
+        android:id="@+id/media_title"
+        style="@style/NormalTextDark"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/media_courses"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@+id/action_btn"
+        android:singleLine="true"
+        android:ellipsize="end"/>
 
-        <TextView
-            android:id="@+id/media_file_size"
-            style="@style/SmallTextDark"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/TextColorGreen" />
+    <TextView
+        android:id="@+id/media_path"
+        style="@style/SmallTextGrey"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/media_title"
+        android:paddingTop="5dp"
+        android:layout_toLeftOf="@+id/action_btn" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/media_file_size"
+        style="@style/SmallTextDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp" 
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/action_btn"  />
 
-    <Button
+    <ProgressBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/media_path"
+        android:id="@+id/download_progress"
+        android:indeterminate="true"
+        android:indeterminateOnly="false"
+        android:progress="0"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+        android:layout_toLeftOf="@+id/action_btn" />
+
+    <ImageButton
         android:id="@+id/action_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".35"
-        android:text="@string/download" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/download"
+        android:src="@drawable/ic_file_download_grey_500_24dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:scaleType="fitCenter"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
 
-</LinearLayout>
+</RelativeLayout>

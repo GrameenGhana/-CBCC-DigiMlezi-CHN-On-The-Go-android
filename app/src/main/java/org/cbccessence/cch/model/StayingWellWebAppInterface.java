@@ -1,37 +1,18 @@
 package org.cbccessence.cch.model;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.cbccessence.cch.activity.MagicAppRestart;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.text.format.Time;
-import android.util.Log;
-import android.webkit.JavascriptInterface;
-import android.widget.Toast;
-
 public class StayingWellWebAppInterface {
-    
+   /*
 	Context mContext;
     private DbHelper dbh;
     private long thirtydays = 2592000000L;
 	private JSONObject d;
     
 
-    /** Instantiate the interface and set the context */
+    *//** Instantiate the interface and set the context *//*
     public StayingWellWebAppInterface(Context c) {
         mContext = c;
-       dbh = new DbHelper(c);
+       dbh =   DbHelper.getInstance(c);
     }
         
     @JavascriptInterface
@@ -132,7 +113,7 @@ public class StayingWellWebAppInterface {
 		// store results in plan
 		Long time = System.currentTimeMillis();
 		String data = "{'type':'profile', 'profile':'"+profile+"', 'responses':'"+status+"'}";
-		 /*JSONObject d=new JSONObject();
+		 *//*JSONObject d=new JSONObject();
 		    try {
 		    	d.put("type", "profile");
 		    	d.put("profile", profile);
@@ -144,7 +125,7 @@ public class StayingWellWebAppInterface {
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
-		this.saveToCCHLog(d.toString(), time.toString(), time.toString());*/
+		this.saveToCCHLog(d.toString(), time.toString(), time.toString());*//*
     }
      
     @JavascriptInterface
@@ -220,7 +201,7 @@ public class StayingWellWebAppInterface {
     }
     
     
-    /** Show a toast from the web page */
+    *//** Show a toast from the web page *//*
     @JavascriptInterface
     public void showToast(String toast) {
         Toast.makeText(mContext, toast, Toast.LENGTH_LONG).show();
@@ -230,5 +211,5 @@ public class StayingWellWebAppInterface {
     public void restartApp()
     {
          MagicAppRestart.doRestart((Activity) mContext);
-    }
+    }*/
 }

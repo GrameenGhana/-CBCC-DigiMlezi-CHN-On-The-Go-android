@@ -1,6 +1,6 @@
 package org.cbccessence.cch.utils;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 
 

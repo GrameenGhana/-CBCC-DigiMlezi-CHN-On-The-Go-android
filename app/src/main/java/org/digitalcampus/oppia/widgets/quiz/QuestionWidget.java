@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,11 +17,6 @@
 
 package org.digitalcampus.oppia.widgets.quiz;
 
-import java.util.List;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.mobile.quiz.model.Response;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.ContextThemeWrapper;
@@ -29,6 +24,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import org.cbccessence.R;
+import org.digitalcampus.mobile.quiz.model.Response;
+
+import java.util.List;
 
 public abstract class QuestionWidget {
 
@@ -49,6 +49,10 @@ public abstract class QuestionWidget {
 		LayoutInflater localInflater = ((LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).cloneInContext(ctx);
 		View vv = localInflater.inflate(layout ,container, false);
 		ll.addView(vv);
+	}
+
+	protected void setResponseMarginInLayoutParams(LinearLayout.LayoutParams params){
+		params.setMargins(0, (int) ctx.getResources().getDimension(R.dimen.quiz_response_margin), 0, 0);
 	}
 
 }

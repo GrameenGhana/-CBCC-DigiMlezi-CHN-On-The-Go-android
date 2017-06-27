@@ -1,43 +1,123 @@
 [
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_file_download_white_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_file_download_white_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_file_download_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_file_download_grey_500_24dp.png"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_date_range_grey_500_24dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_date_range_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_error_outline_white_18dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_error_outline_white_18dp.png"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_local_hospital_grey_500_48dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_local_hospital_grey_500_48dp.png"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_forward_black_24dp.png",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_forward_black_24dp.png"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_cancel_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_cancel_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_error_outline_white_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_error_outline_white_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_search_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_search_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_aspect_ratio_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_aspect_ratio_grey_500_24dp.png"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_vpn_key_white_24dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_vpn_key_white_24dp.png"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_forward_white_24dp.png",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_forward_white_24dp.png"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_check_circle_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_check_circle_grey_500_24dp.png"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_create_new_folder_black_36dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_create_new_folder_black_36dp.png"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_perm_contact_calendar_grey_700_24dp.png",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_perm_contact_calendar_grey_700_24dp.png"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_play_arrow_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_play_arrow_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_add_circle_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_add_circle_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_refresh_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_refresh_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_home_white_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_home_white_24dp.png"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_create_new_folder_white_24dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_create_new_folder_white_24dp.png"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_perm_contact_calendar_grey_600_24dp.png",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_perm_contact_calendar_grey_600_24dp.png"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_cloud_download_white_24dp.png",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_cloud_download_white_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_settings_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_settings_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_forward_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_forward_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_forward_black_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_forward_black_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_forward_white_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_forward_white_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_more_vert_white_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_more_vert_white_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_sync_black_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_delete_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_delete_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_compare_arrows_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_compare_arrows_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_arrow_back_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_arrow_back_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_perm_contact_calendar_grey_700_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_perm_contact_calendar_grey_700_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_pause_grey_500_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_pause_grey_500_24dp.png"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_perm_contact_calendar_grey_600_24dp.png",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/drawable-xxxhdpi/ic_perm_contact_calendar_grey_600_24dp.png"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_perm_contact_calendar_grey_500_24dp.png",

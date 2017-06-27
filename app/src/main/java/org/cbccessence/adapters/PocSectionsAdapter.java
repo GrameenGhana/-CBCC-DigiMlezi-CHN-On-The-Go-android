@@ -12,8 +12,8 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.model.POCSection;
+import org.cbccessence.R;
+import org.cbccessence.models.POCSection;
 
 import java.util.List;
 

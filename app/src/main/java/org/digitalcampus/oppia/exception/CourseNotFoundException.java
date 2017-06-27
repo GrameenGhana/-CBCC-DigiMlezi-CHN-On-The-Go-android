@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,9 +17,9 @@
 
 package org.digitalcampus.oppia.exception;
 
-import org.digitalcampus.oppia.application.DbHelper;
-
 import android.app.Activity;
+
+import org.digitalcampus.oppia.application.DbHelper;
 
 public class CourseNotFoundException extends Exception {
 
@@ -27,9 +27,8 @@ public class CourseNotFoundException extends Exception {
 	private static final long serialVersionUID = 6941152461497123259L;
 	
 	public void deleteCourse(Activity act, int id){
-		DbHelper db = new DbHelper(act);
+		DbHelper db = DbHelper.getInstance(act);
 		db.deleteCourse(id);
-		db.close();
 	}
 
 }

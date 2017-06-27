@@ -3,10 +3,11 @@ package org.cbccessence.cch.activity;
 import java.io.File;
 import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.AboutActivity;
+import org.cbccessence.R;
+import org.cbccessence.activity.AboutActivity;
+import org.cbccessence.poc.BaseActivity;
 import org.digitalcampus.oppia.activity.HelpActivity;
-import org.digitalcampus.oppia.activity.StartUpActivity;
+import org.cbccessence.activity.StartUpActivity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -39,7 +40,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class LearningReferencesActivity extends ActionBarActivity {
+public class LearningReferencesActivity extends BaseActivity {
 
 	private ListView listView_menu;
 	private String[] list;
@@ -262,7 +263,7 @@ public class LearningReferencesActivity extends ActionBarActivity {
 		}
 		return true;
 	}
-	private void logout() {
+	/*private void logout() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setCancelable(false);
 		builder.setTitle(R.string.logout);
@@ -270,9 +271,9 @@ public class LearningReferencesActivity extends ActionBarActivity {
 		builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				// wipe activity data
-				/*DbHelper db = new DbHelper(LearningReferencesActivity.this);
+				*//*DbHelper db = new DbHelper(LearningReferencesActivity.this);
 				db.onLogout();
-				db.close();*/
+				db.close();*//*
 
 				// restart the app
 				LearningReferencesActivity.this.startActivity(new Intent(LearningReferencesActivity.this, StartUpActivity.class));
@@ -287,7 +288,7 @@ public class LearningReferencesActivity extends ActionBarActivity {
 			}
 		});
 		builder.show();
-	}
+	}*/
 	
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,

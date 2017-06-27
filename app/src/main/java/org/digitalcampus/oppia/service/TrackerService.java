@@ -1,5 +1,5 @@
 /* 
-S * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,6 @@ S * This file is part of OppiaMobile - http://oppia-mobile.org/
 
 package org.digitalcampus.oppia.service;
 
-import java.util.ArrayList;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.DownloadActivity;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.listener.APIRequestListener;
-import org.digitalcampus.oppia.model.User;
-import org.digitalcampus.oppia.task.APIRequestTask;
-import org.digitalcampus.oppia.task.Payload;
-import org.digitalcampus.oppia.task.SubmitQuizTask;
-import org.digitalcampus.oppia.task.SubmitTrackerMultipleTask;
-import org.cbccessence.cch.tasks.StayingWellNotifyTask;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -41,8 +24,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Binder;
@@ -52,7 +33,23 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.bugsense.trace.BugSenseHandler;
+
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.DownloadActivity;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.listener.APIRequestListener;
+import org.digitalcampus.oppia.model.QuizAttempt;
+import org.digitalcampus.oppia.task.APIUserRequestTask;
+import org.digitalcampus.oppia.task.Payload;
+import org.digitalcampus.oppia.task.SubmitQuizAttemptsTask;
+import org.digitalcampus.oppia.task.SubmitTrackerMultipleTask;
+import org.digitalcampus.oppia.utils.ui.OppiaNotificationBuilder;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class TrackerService extends Service implements APIRequestListener {
 
@@ -60,65 +57,32 @@ public class TrackerService extends Service implements APIRequestListener {
 
 	private final IBinder mBinder = new MyBinder();
 	private SharedPreferences prefs;
-
-	private String name;
-
-	private ArrayList<User> userdetails;
-
-	private DbHelper db;
-
-	private String zonename;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		BugSenseHandler.initAndStartSession(this,MobileLearning.BUGSENSE_API_KEY);
-		prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		 name=prefs.getString("first_name", "name");
-		 db=new DbHelper(this);
-		 try{
-		 userdetails=new ArrayList<User>();
-	     //userdetails=db.getUserFirstName(name);
-		 zonename=userdetails.get(0).getUserZone();
-		 }catch(Exception e){
-			 e.printStackTrace();
-		 }
-	}
+ 	}
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		try{
-		Log.v(TAG, "Starting Tracker Service");
-		
+
 		boolean backgroundData = true;
 		Bundle b = intent.getExtras();
 		if (b != null) {
 			backgroundData = b.getBoolean("backgroundData");
 		}
-		
-		
+
 		if (isOnline() && backgroundData) {
-			DbHelper db = new DbHelper(this);
+			
 			Payload p = null;
 			
-			MobileLearning app = (MobileLearning) this.getApplication();
-		
-			// check for updated courses and new content
+			// check for updated courses
 			// should only do this once a day or so....
 			prefs = PreferenceManager.getDefaultSharedPreferences(this);
 			long lastRun = prefs.getLong("lastCourseUpdateCheck", 0);
-			long now = System.currentTimeMillis();
-			/* CCH: Check to see if the CCH log needs any updating */
-			
-			//if((lastRun + (3600*12)) < now) {
-			if(lastRun < now) {
-				if(app.omUpdateCCHLogTask == null){
-					Log.v(TAG, "Updating CCH logs");
-					//Payload mqp = db.getCCHUnsentLog();
-					//app.omUpdateCCHLogTask = new UpdateCCHLogTask(this);
-					//app.omUpdateCCHLogTask.execute(mqp);
-				Log.v(TAG, "Syncing background data");
-				APIRequestTask task = new APIRequestTask(this);
+			long now = System.currentTimeMillis()/1000;
+			if((lastRun + (3600*12)) < now){
+				APIUserRequestTask task = new APIUserRequestTask(this);
 				p = new Payload(MobileLearning.SERVER_COURSES_PATH);
 				task.setAPIRequestListener(this);
 				task.execute(p);
@@ -126,33 +90,33 @@ public class TrackerService extends Service implements APIRequestListener {
 				Editor editor = prefs.edit();
 				editor.putLong("lastCourseUpdateCheck", now);
 				editor.commit();
+			}
+
+			// send activity trackers
+			MobileLearning app = (MobileLearning) this.getApplication();
+			if(app.omSubmitTrackerMultipleTask == null){
+				Log.d(TAG,"Submitting trackers multiple task");
+				app.omSubmitTrackerMultipleTask = new SubmitTrackerMultipleTask(this);
+				app.omSubmitTrackerMultipleTask.execute();
+			}
+			
+			// send quiz results
+			if(app.omSubmitQuizAttemptsTask == null){
+				Log.d(TAG,"Submitting quiz task");
+				DbHelper db = DbHelper.getInstance(this);
+				ArrayList<QuizAttempt> unsent = db.getUnsentQuizAttempts();
+		
+				if (unsent.size() > 0){
+					p = new Payload(unsent);
+					app.omSubmitQuizAttemptsTask = new SubmitQuizAttemptsTask(this);
+					app.omSubmitQuizAttemptsTask.execute(p);
 				}
 			}
 
-			/*if(app.omSubmitTrackerMultipleTask == null){
-				app.omSubmitTrackerMultipleTask = new SubmitTrackerMultipleTask(this);
-				app.omSubmitTrackerMultipleTask.execute();
-			}*/
-			// notify user on routines
-			if (app.omStayingWellNotifyTask == null) {
-				app.omStayingWellNotifyTask = new StayingWellNotifyTask(this);
-				app.omStayingWellNotifyTask.execute();
-			}
-			// send quiz results
-			if(app.omSubmitQuizTask == null){
-				Payload mqp = db.getUnsentQuizResults();
-				app.omSubmitQuizTask = new SubmitQuizTask(this);
-				app.omSubmitQuizTask.execute(mqp);
-			}
+			
 
-			db.close();
-
-		}
-		}catch(Exception e){
-			e.printStackTrace();
 		}
 		return Service.START_NOT_STICKY;
-
 	}
 
 	@Override
@@ -160,7 +124,12 @@ public class TrackerService extends Service implements APIRequestListener {
 		return mBinder;
 	}
 
-	public class MyBinder extends Binder {
+    @Override
+    public void apiKeyInvalidated() {
+        SessionManager.logoutCurrentUser(this);
+    }
+
+    public class MyBinder extends Binder {
 		public TrackerService getService() {
 			return TrackerService.this;
 		}
@@ -177,58 +146,49 @@ public class TrackerService extends Service implements APIRequestListener {
 	}
 
 	public void apiRequestComplete(Payload response) {
-		DbHelper db = new DbHelper(this);
-		Log.d(TAG,"completed getting course list");
+		
 		
 		boolean updateAvailable = false;
-		System.out.println("Update status: "+updateAvailable);
 		try {
+			
 			JSONObject json = new JSONObject(response.getResultResponse());
+			Log.d(TAG,json.toString(4));
+			DbHelper db = DbHelper.getInstance(this);
 			for (int i = 0; i < (json.getJSONArray("courses").length()); i++) {
 				JSONObject json_obj = (JSONObject) json.getJSONArray("courses").get(i);
 				String shortName = json_obj.getString("shortname");
 				Double version = json_obj.getDouble("version");
+				
 				if(db.toUpdate(shortName,version)){
 					updateAvailable = true;
-					System.out.println("Update status: "+updateAvailable);
 				}
 				if(json_obj.has("schedule")){
 					Double scheduleVersion = json_obj.getDouble("schedule");
 					if(db.toUpdateSchedule(shortName, scheduleVersion)){
 						updateAvailable = true;
-						System.out.println("Update status: "+updateAvailable);
 					}
 				}
 			}
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}	
-		db.close();
+		} 
 		
 		if(updateAvailable){
-			Bitmap icon = BitmapFactory.decodeResource(getResources(),
-	                R.drawable.app_icon);
-			NotificationCompat.Builder mBuilder =
-				    new NotificationCompat.Builder(this)
-				    .setSmallIcon(R.drawable.app_icon)
-				    .setLargeIcon(icon)
-				    .setContentTitle(getString(R.string.notification_course_update_title))
-				    .setContentText(getString(R.string.notification_course_update_text));
-			NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-			Intent resultIntent = new Intent(this, DownloadActivity.class);
-			PendingIntent resultPendingIntent =
-				    PendingIntent.getActivity(
-				    this,
-				    0,
-				    resultIntent,
-				    PendingIntent.FLAG_UPDATE_CURRENT
-				);
-			mBuilder.setContentIntent(resultPendingIntent);
+            Intent resultIntent = new Intent(this, DownloadActivity.class);
+            PendingIntent resultPendingIntent = PendingIntent.getActivity(this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            NotificationCompat.Builder mBuilder = OppiaNotificationBuilder.getBaseBuilder(this, true);
+            mBuilder
+                .setContentTitle(getString(R.string.notification_course_update_title))
+                .setContentText(getString(R.string.notification_course_update_text))
+			    .setContentIntent(resultPendingIntent);
 			int mId = 001;
-			Notification notification = mBuilder.build();
-			notification.flags |= Notification.FLAG_AUTO_CANCEL;
-			notificationManager.notify(mId, mBuilder.getNotification());		
+
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(mId, mBuilder.build());
 		}
 	}
-	
+
+
 }

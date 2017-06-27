@@ -3,7 +3,7 @@ package org.cbccessence.poc;
 import java.io.File;
 import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.utils.UIUtils;
@@ -42,15 +42,15 @@ public class QuickReadsMenuActivity extends BaseActivity {
 	    mContext=QuickReadsMenuActivity.this;
         getSupportActionBar().setTitle("Point of Care");
         getSupportActionBar().setSubtitle("PNC Quick References");
-	    dbh=new DbHelper(mContext);
+	   // dbh=new DbHelper(mContext);
 		list=new ArrayList<POCSections>();
-		list=dbh.getPocSections("PNC References");
+		//list=dbh.getPocSections("PNC References");
 		listView_postnatalSections=(ListView) findViewById(R.id.listView_postnatalCareSections);
 		ListAdapter adapter=new ListAdapter(mContext, list);
 		listView_postnatalSections.setAdapter(adapter);
 	    start_time=System.currentTimeMillis();
 	    json=new JSONObject();
-	    try {
+	   /* try {
 			json.put("page", "PNC References");
 			json.put("section", MobileLearning.CCH_REFERENCES);
 			json.put("ver", dbh.getVersionNumber(mContext));
@@ -59,7 +59,7 @@ public class QuickReadsMenuActivity extends BaseActivity {
 			json.put("imei", dbh.getDeviceImei(mContext));
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
+		}*/
 	   /*
 	    String[] items={"Treatment of some dehydration with ORS",
 	    		"  Treatment of uncomplicated malaria in adolescent & adults",

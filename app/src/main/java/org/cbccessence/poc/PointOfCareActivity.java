@@ -1,14 +1,14 @@
 package org.cbccessence.poc;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.model.POCSection;
-import org.digitalcampus.oppia.model.SubSection;
-import org.digitalcampus.oppia.model.Topic;
-import org.cbccessence.HttpHandler;
-import org.cbccessence.PlaceHolder;
-import org.cbccessence.RecyclerItemViewAnimator;
-import org.cbccessence.SpacesItemDecoration;
+import org.cbccessence.models.POCSection;
+import org.cbccessence.models.SubSection;
+import org.cbccessence.models.Topic;
+import org.cbccessence.utilities.HttpHandler;
+import org.cbccessence.utilities.PlaceHolder;
+import org.cbccessence.utilities.RecyclerItemViewAnimator;
+import org.cbccessence.utilities.SpacesItemDecoration;
 import org.cbccessence.adapters.PocSectionsAdapter;
 import org.cbccessence.cch.utils.Utils;
 import org.json.JSONArray;
@@ -48,12 +48,6 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
     private Long start_time;
     private Long end_time;
     String log_type = "module_usage";
-
-
-
-
-
-
 	private String TAG = PointOfCareActivity.class.getSimpleName();
 
 	private ProgressDialog pDialog;
@@ -70,7 +64,7 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.activity_point_of_care);
 
-        databaseHelper = new DbHelper(this);
+
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 
@@ -140,13 +134,17 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
 		protected String doInBackground(String... params) {
 			String result = null;
 
-
+            databaseHelper =   DbHelper.getInstance(PointOfCareActivity.this);
+           // databaseHelper.getWritableDatabase();
 
 			// Making a request to url and getting response
 
 			//token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzE4OC4xNjYuMzAuMTQwXC9nZmNhcmVcL2FwaVwvdXNlcnNcL2xvZ2luIiwiaWF0IjoxNDg2NDA2MTQzLCJleHAiOjE0ODY0Mjc3NDMsIm5iZiI6MTQ4NjQwNjE0MywianRpIjoiYWM3ZDhiNjNjMTM4YWVmN2RiOWFhM2ExY2RiY2I1OTUifQ.JaOoXgNkqPLqyI5JTEegk-2nZq6Tqof4vKwRuT6rcr0";
 
-			if (token != null) {
+			if (token != null)
+
+
+			if(sh.checkInternetConnection()){
 				String jsonStringFromServer = sh.makeServiceCall(url, token);
 
 
@@ -160,13 +158,17 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
 
 
 					} else {
-						result = "true";
+						//result = "true";
 
 						Log.i(TAG, jsonStringFromServer);
 
 						try {
 
-							JSONObject jsonString = new JSONObject(jsonStringFromServer);
+                          //  PreferenceManager.getDefaultSharedPreferences(PointOfCareActivity.this).edit().putString("lastContentUpdate", "null").apply();
+
+
+
+                            JSONObject jsonString = new JSONObject(jsonStringFromServer);
 
                             //Get last time content was updated, save in sharedPrefs
                             String last_update_date = jsonString.getString("last_update");
@@ -176,6 +178,8 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
                             String last_saved_date = prefs.getString("lastContentUpdate", "null");
 
                             Log.i(TAG, "Last saved date was " + last_saved_date);
+
+
 
                             if(!last_update_date.equalsIgnoreCase(last_saved_date)) {
 
@@ -279,10 +283,15 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
 
                                 sectionList = databaseHelper.getAllSections();
 
+                                result = "true";
+
+
                             }else { //same content as last updated, just load content from db and populate into view
 
 
                                 sectionList = databaseHelper.getAllSections();
+                                result = "true";
+
 
                             }
 
@@ -311,11 +320,31 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
 					});
 
 				}
-			} else { //Token is empty
-				//Login
-				Log.i(TAG, "token is empty");
-				result = "false";
-			}
+			} else { //No internet
+
+                if(!prefs.getString("lastContentUpdate", "null").equalsIgnoreCase("null")){
+
+                    //We have loaded content before
+
+                    sectionList = databaseHelper.getAllSections();
+                    result = "true";
+
+
+                }else{
+
+                    sh.showAlertDialog(PointOfCareActivity.this, "No Data Loaded!", "Looks like you have not loaded sections before. Please connect to the internet, load data from server at least once and try again");
+
+                }
+
+
+
+
+
+			}else{
+                Log.i(TAG, "token is empty");
+                result = "false";
+
+            }
 
 			return result;
 		}
@@ -387,6 +416,8 @@ public class PointOfCareActivity extends BaseActivity implements OnItemClickList
 
                 }
             }
+
+
 
 		}
 

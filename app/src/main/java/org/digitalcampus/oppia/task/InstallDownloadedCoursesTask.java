@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,27 +17,31 @@
 
 package org.digitalcampus.oppia.task;
 
-import java.io.File;
-import java.util.Locale;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.exception.InvalidXMLException;
-import org.digitalcampus.oppia.listener.InstallCourseListener;
-import org.digitalcampus.oppia.model.Course;
-import org.digitalcampus.oppia.model.DownloadProgress;
-import org.digitalcampus.oppia.utils.CourseScheduleXMLReader;
-import org.digitalcampus.oppia.utils.CourseTrackerXMLReader;
-import org.digitalcampus.oppia.utils.CourseXMLReader;
-import org.digitalcampus.oppia.utils.FileUtils;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 
-public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadProgress, Payload>{
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.exception.InvalidXMLException;
+import org.digitalcampus.oppia.listener.InstallCourseListener;
+import org.digitalcampus.oppia.model.Course;
+import org.digitalcampus.oppia.model.DownloadProgress;
+import org.digitalcampus.oppia.utils.SearchUtils;
+import org.digitalcampus.oppia.utils.storage.FileUtils;
+import org.digitalcampus.oppia.utils.storage.Storage;
+import org.digitalcampus.oppia.utils.xmlreaders.CourseScheduleXMLReader;
+import org.digitalcampus.oppia.utils.xmlreaders.CourseTrackerXMLReader;
+import org.digitalcampus.oppia.utils.xmlreaders.CourseXMLReader;
+
+import java.io.File;
+import java.util.Locale;
+
+public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadProgress, Payload> {
 	
 	public final static String TAG = InstallDownloadedCoursesTask.class.getSimpleName();
 	private Context ctx;
@@ -55,7 +59,7 @@ public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadPro
 		Payload payload = params[0];
 		
 		// get folder
-		File dir = new File(MobileLearning.DOWNLOAD_PATH);
+		File dir = new File(Storage.getDownloadPath(ctx));
 		DownloadProgress dp = new DownloadProgress();
 		String[] children = dir.list();
 		if (children != null) {
@@ -63,29 +67,46 @@ public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadPro
 			for (int i = 0; i < children.length; i++) {
 
 				// extract to temp dir and check it's a valid package file
-				File tempdir = new File(MobileLearning.OPPIAMOBILE_ROOT + "temp/");
+				File tempdir = new File(Storage.getStorageLocationRoot(ctx) + "temp/");
 				tempdir.mkdirs();
-				boolean unzipResult = FileUtils.unzipFiles(MobileLearning.DOWNLOAD_PATH, children[i], tempdir.getAbsolutePath());
+
+                dp.setMessage(ctx.getString(R.string.installing_course, children[i]));
+                dp.setProgress(0);
+                publishProgress(dp);
+
+				File testDir = new File(Storage.getDownloadPath(ctx), children[i]);
+				
+				if (testDir.isDirectory()){
+					continue;
+				}
+				boolean unzipResult = FileUtils.unzipFiles(Storage.getDownloadPath(ctx), children[i], tempdir.getAbsolutePath());
+
 				
 				if (!unzipResult){
 					//then was invalid zip file and should be removed
-					FileUtils.cleanUp(tempdir, MobileLearning.DOWNLOAD_PATH + children[i]);
+					FileUtils.cleanUp(tempdir, Storage.getDownloadPath(ctx) + children[i]);
 					break;
+
 				}
-				String[] courseDirs = tempdir.list(); // use this to get the course
-													// name
-				
+				String[] courseDirs = tempdir.list(); // use this to get the course name
+
+                dp.setMessage(ctx.getString(R.string.installing_course, children[i]));
+                dp.setProgress(10);
+                publishProgress(dp);
+
 				String courseXMLPath = "";
 				String courseScheduleXMLPath = "";
 				String courseTrackerXMLPath = "";
 				// check that it's unzipped etc correctly
 				try {
-					courseXMLPath = tempdir + "/" + courseDirs[0] + "/" + MobileLearning.COURSE_XML;
-					courseScheduleXMLPath = tempdir + "/" + courseDirs[0] + "/" + MobileLearning.COURSE_SCHEDULE_XML;
-					courseTrackerXMLPath = tempdir + "/" + courseDirs[0] + "/" + MobileLearning.COURSE_TRACKER_XML;
+					courseXMLPath = tempdir + File.separator + courseDirs[0] + File.separator + MobileLearning.COURSE_XML;
+					courseScheduleXMLPath = tempdir + File.separator + courseDirs[0] + File.separator + MobileLearning.COURSE_SCHEDULE_XML;
+					courseTrackerXMLPath = tempdir + File.separator + courseDirs[0] + File.separator + MobileLearning.COURSE_TRACKER_XML;
 				} catch (ArrayIndexOutOfBoundsException aioobe){
-					FileUtils.cleanUp(tempdir, MobileLearning.DOWNLOAD_PATH + children[i]);
-					break;
+					FileUtils.cleanUp(tempdir, Storage.getDownloadPath(ctx) + children[i]);
+					payload.setResult(false);
+					payload.setResultResponse(ctx.getString(R.string.error_installing_course, children[i]));
+					continue;
 				}
 				
 				// check a module.xml file exists and is a readable XML file
@@ -93,46 +114,68 @@ public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadPro
 				CourseScheduleXMLReader csxr;
 				CourseTrackerXMLReader ctxr;
 				try {
-					cxr = new CourseXMLReader(courseXMLPath);
+					cxr = new CourseXMLReader(courseXMLPath, 0, ctx);
 					csxr = new CourseScheduleXMLReader(courseScheduleXMLPath);
-					ctxr = new CourseTrackerXMLReader(courseTrackerXMLPath);
+					File trackerXML = new File(courseTrackerXMLPath);
+					ctxr = new CourseTrackerXMLReader(trackerXML);
 				} catch (InvalidXMLException e) {
+					FileUtils.cleanUp(tempdir, Storage.getDownloadPath(ctx) + children[i]);
 					payload.setResult(false);
-					return payload;
+					payload.setResultResponse(ctx.getString(R.string.error_installing_course, children[i]));
+					continue;
 				}
-				
-				
-				//HashMap<String, String> hm = mxr.getMeta();
-				Course c = new Course();
+
+				Course c = new Course(prefs.getString(PrefsActivity.PREF_STORAGE_LOCATION, ""));
 				c.setVersionId(cxr.getVersionId());
 				c.setTitles(cxr.getTitles());
-				c.setLocation(MobileLearning.COURSES_PATH + courseDirs[0]);
 				c.setShortname(courseDirs[0]);
-				c.setImageFile(MobileLearning.COURSES_PATH + courseDirs[0] + "/" + cxr.getCourseImage());
+				c.setImageFile(cxr.getCourseImage());
 				c.setLangs(cxr.getLangs());
-				String title = c.getTitle(prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage()));
+				c.setDescriptions(cxr.getDescriptions());
+				c.setPriority(cxr.getPriority());
+                String sequencingMode = cxr.getCourseSequencingMode();
+                if ((sequencingMode!=null) && (sequencingMode.equals(Course.SEQUENCING_MODE_COURSE) ||
+                        sequencingMode.equals(Course.SEQUENCING_MODE_SECTION) || sequencingMode.equals(Course.SEQUENCING_MODE_NONE))){
+                    c.setSequencingMode(sequencingMode);
+                }
+
+				String title = c.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage()));
 				
 				dp.setMessage(ctx.getString(R.string.installing_course, title));
+                dp.setProgress(20);
 				publishProgress(dp);
 				
-				DbHelper db = new DbHelper(ctx);
-				long added = db.addOrUpdateCourse(c);
+				boolean success = false;
 				
-				if (added != -1) {
+				DbHelper db = DbHelper.getInstance(ctx);
+				long courseId = db.addOrUpdateCourse(c);
+				if (courseId != -1) {
 					payload.addResponseData(c);
-					File src = new File(tempdir + "/" + courseDirs[0]);
-					File dest = new File(MobileLearning.COURSES_PATH);
+					File src = new File(tempdir + File.separator + courseDirs[0]);
+					File dest = new File(Storage.getCoursesPath(ctx));
 
-					db.insertActivities(cxr.getActivities(added));
-					db.insertTrackers(ctxr.getTrackers(),added);
+					db.insertActivities(cxr.getActivities(courseId));
+                    dp.setProgress(50);
+                    publishProgress(dp);
+
+                    long userId = db.getUserId(SessionManager.getUsername(ctx));
+                    
+                    db.resetCourse(courseId, userId);
+					db.insertTrackers(ctxr.getTrackers(courseId, userId));
+					db.insertQuizAttempts(ctxr.getQuizAttempts(courseId, userId));
+					
+                    dp.setProgress(70);
+                    publishProgress(dp);
+
 					// Delete old course
-					File oldCourse = new File(MobileLearning.COURSES_PATH + courseDirs[0]);
+					File oldCourse = new File(Storage.getCoursesPath(ctx) + courseDirs[0]);
 					FileUtils.deleteDir(oldCourse);
 
 					// move from temp to courses dir
-					boolean success = src.renameTo(new File(dest, src.getName()));
+					success = src.renameTo(new File(dest, src.getName()));
 
 					if (success) {
+						// add the course to the search index
 						payload.setResult(true);
 						payload.setResultResponse(ctx.getString(R.string.install_course_complete, title));
 					} else {
@@ -147,16 +190,26 @@ public class InstallDownloadedCoursesTask extends AsyncTask<Payload, DownloadPro
 				// add schedule
 				// put this here so even if the course content isn't updated the schedule will be
 				db.insertSchedule(csxr.getSchedule());
-				db.updateScheduleVersion(added, csxr.getScheduleVersion());
+				db.updateScheduleVersion(courseId, csxr.getScheduleVersion());
+
+                dp.setProgress(80);
+                publishProgress(dp);
+
+				if (success){
+					SearchUtils.indexAddCourse(this.ctx, c);
+				}
 				
-				
-				db.close();
 				// delete temp directory
 				FileUtils.deleteDir(tempdir);
 
+                dp.setProgress(95);
+                publishProgress(dp);
+
 				// delete zip file from download dir
-				File zip = new File(MobileLearning.DOWNLOAD_PATH + children[i]);
+				File zip = new File(Storage.getDownloadPath(ctx) + children[i]);
 				zip.delete();
+
+
 			}
 		}
 		return payload;

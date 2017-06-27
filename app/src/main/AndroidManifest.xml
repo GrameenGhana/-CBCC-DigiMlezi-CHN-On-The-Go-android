@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.digitalcampus.mobile.learningGF"
+    package="org.cbccessence"
     android:screenOrientation="portrait"
-    android:versionCode="141"
-    android:versionName="3.0.48">
+     >
 
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -18,6 +17,15 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
+    <!-- GCM permissions -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="org.cbccessence.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="org.cbccessence.C2D_MESSAGE" />
+
+
+
+
     <application
         android:name="org.digitalcampus.oppia.application.MobileLearning"
         android:allowBackup="true"
@@ -25,7 +33,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme2">
         <activity
-            android:name="org.digitalcampus.oppia.activity.StartUpActivity"
+            android:name=".activity.StartUpActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -36,21 +44,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-            <meta-data
-                android:name="android.app.default_searchable"
-                android:value="org.grameenfoundation.cch.activity.SearchableActivity" />
         </activity>
-        <activity
-            android:name="org.cbccessence.cch.activity.StayingWellActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
-        <activity android:name="org.cbccessence.cch.activity.MagicAppRestart" />
+
+
+
+
         <activity
             android:name="org.digitalcampus.oppia.activity.OppiaMobileActivity"
             android:label="@string/app_name"/>
+
+
         <activity
             android:name="org.digitalcampus.oppia.activity.CourseIndexActivity"
             android:label="@string/title_activity_course_index"/>
@@ -72,10 +75,10 @@
             android:name="org.digitalcampus.oppia.activity.PrefsActivity"
             android:label="@string/title_prefs" />
         <activity
-            android:name="org.digitalcampus.oppia.activity.AboutActivity"
+            android:name="org.cbccessence.activity.AboutActivity"
             android:label="@string/title_about" />
         <activity
-            android:name="org.digitalcampus.oppia.activity.LoginActivity"
+            android:name="org.cbccessence.activity.LoginActivity"
             android:label="@string/title_login"
             android:theme="@style/AppTheme"
             />
@@ -87,9 +90,7 @@
             android:name="org.digitalcampus.oppia.activity.MonitorActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout"
             android:label="@string/title_monitor" />
-        <activity
-            android:name="org.digitalcampus.oppia.activity.RegisterActivity"
-            android:label="@string/title_register" />
+
         <activity
             android:name="org.digitalcampus.oppia.activity.CourseMetaPageActivity"
             android:label="@string/title_course_meta" />
@@ -98,13 +99,15 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout"
             android:label="@string/title_download_media"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="org.digitalcampus.oppia.activity.ScoreActivity"
-            android:label="@string/title_points" />
+
         <activity
             android:name="org.digitalcampus.oppia.activity.AppActivity"
             android:label="@string/app_name" />
-        <activity android:name="org.digitalcampus.oppia.activity.MainScreenActivity" />
+
+
+        <activity android:name="org.cbccessence.activity.MainScreenActivity"
+            android:screenOrientation="portrait"
+            />
 
         <service
             android:name="org.digitalcampus.oppia.service.TrackerService"
@@ -117,54 +120,19 @@
             </intent-filter>
         </receiver>
         <receiver android:name="org.digitalcampus.oppia.service.TrackerStartServiceReceiver"/>
-        <receiver
-            android:name="org.cbccessence.cch.receiver.CalendarChangeReceiver"
-            android:priority="1000">
-            <intent-filter>
-                <action android:name="android.intent.action.PROVIDER_CHANGED" />
-
-                <data android:scheme="content" />
-                <data android:host="com.android.calendar" />
-            </intent-filter>
-        </receiver>
 
         <activity android:name="org.cbccessence.poc.PointOfCareActivity" />
         <activity android:name="org.cbccessence.poc.PocSubSectionActivity" />
         <activity android:name="org.cbccessence.poc.PocTopicsActivity" />
-        <activity android:name="org.cbccessence.poc.AntenatalCareActivity" />
-        <activity android:name="org.cbccessence.poc.DiagnosticToolActivity" />
-        <activity android:name="org.cbccessence.cch.activity.AchievementCenterActivity" />
-        <activity android:name="org.cbccessence.poc.EstimateTrimester" />
-        <activity android:name="org.cbccessence.poc.PostnatalCareActivity" />
-        <activity android:name="org.cbccessence.poc.PostnatalCareSectionActivity" />
-        <activity android:name="org.cbccessence.poc.PostnatalCareMotherDiagnosticToolActivity" />
-        <activity android:name="org.cbccessence.poc.CounsellingPerTrimesterActivtiy" />
-        <activity android:name="org.cbccessence.poc.CalculatorsMenuActivity" />
         <activity android:name="org.cbccessence.poc.ReferencesMenuActivity" />
-        <activity android:name="org.cbccessence.poc.PostnatalCareCounsellingTopicsActivity" />
         <activity android:name="org.cbccessence.poc.TreatingDiarrhoeaActivity" />
         <activity android:name="org.cbccessence.poc.QuickReadsMenuActivity" />
-        <activity android:name="org.cbccessence.poc.DosageCalculatorActivity" />
-        <activity android:name="org.cbccessence.poc.EstimateDueDateCalculator" />
         <activity android:name="org.cbccessence.poc.ANCCounsellingTopicsMenuActivity" />
-        <activity android:name="org.cbccessence.cch.activity.AchievementSummaryActivity" />
-        <activity android:name="org.cbccessence.cch.activity.CourseDetailActivity" />
-        <activity android:name="org.cbccessence.cch.activity.CourseAchievementActivity" />
         <activity android:name="org.cbccessence.cch.activity.LearningCenterMenuActivity" />
         <activity android:name="org.cbccessence.cch.activity.ReferencesDownloadActivity" />
         <activity android:name="org.cbccessence.cch.popupquestions.XmlGui" />
-        <activity android:name="org.cbccessence.cch.activity.CourseGroupActivity" />
 
-        <service android:name="org.cbccessence.schedulers.UserDetailsUpdateService" />
-
-        <activity android:name="org.cbccessence.poc.ChildWelfareActivity" />
-        <activity android:name="org.cbccessence.poc.ChildAgeCalculatorActivity" />
-        <activity android:name="org.cbccessence.poc.ChildWelfareCalculatorsMenuActivity" />
-        <activity android:name="org.cbccessence.poc.FamilyPlanningCalculatorActivity" />
         <activity android:name="org.cbccessence.poc.POCDynamicActivity" />
-        <activity android:name="org.cbccessence.poc.CWCDiagnosticToolActivity" />
-        <activity android:name="org.cbccessence.poc.CWCCounsellingActivity" />
-        <activity android:name="org.cbccessence.poc.CWCReferencesActivity" />
         <activity android:name="org.cbccessence.cch.activity.VisualAidsPdfView" />
         <activity
             android:name="org.cbccessence.cch.activity.ClientActivity"
@@ -172,6 +140,91 @@
 
 
         </activity>
+
+
+
+         <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+
+        <activity
+            android:name="org.digitalcampus.oppia.activity.WelcomeActivity"
+            android:theme="@style/Oppia.ToolbarTheme"
+            android:label="@string/title_welcome" />
+
+        <activity
+            android:name="org.digitalcampus.oppia.activity.ScorecardActivity"
+             android:label="@string/title_scorecard" />
+        <activity
+            android:name="org.digitalcampus.oppia.activity.SearchActivity"
+            android:label="@string/search.activity_title" />
+
+        <activity
+            android:name="org.digitalcampus.oppia.utils.mediaplayer.VideoPlayerActivity"
+            android:label="@string/media_player_description"
+            android:screenOrientation="landscape"
+            android:theme="@style/Oppia.Fullscreen" />
+
+        <service
+            android:name="org.digitalcampus.oppia.service.DownloadService"
+            android:icon="@drawable/mlezi_icon_no_shadow"
+            android:exported="false"/>
+
+        <service
+            android:name="org.digitalcampus.oppia.service.CourseIntallerService"
+            android:icon="@drawable/mlezi_icon_no_shadow"
+            android:exported="false"/>
+
+
+
+        <!-- Google Cloud Messaging part -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="org.digitalcampus.mobile.learning" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="org.digitalcampus.oppia.application.AdminGCMListener"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="org.digitalcampus.oppia.service.GCMUpdatedIIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="org.digitalcampus.oppia.service.GCMRegistrationService"
+            android:exported="false">
+        </service>
+
+        <!-- Device Administration API -->
+        <receiver android:name="org.digitalcampus.oppia.application.AdminReceiver"
+                  android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/admin_policies" />
+        </receiver>
+
+
+
     </application>
 
 </manifest>

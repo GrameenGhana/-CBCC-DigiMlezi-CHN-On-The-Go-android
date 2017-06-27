@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="material-stepper-1.2.2">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

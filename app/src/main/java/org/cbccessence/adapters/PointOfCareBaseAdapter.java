@@ -1,6 +1,6 @@
 package org.cbccessence.adapters;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

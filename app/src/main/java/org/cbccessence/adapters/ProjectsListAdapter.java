@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.model.Projects;
+import org.cbccessence.R;
+import org.cbccessence.models.Projects;
 
 import java.util.List;
 

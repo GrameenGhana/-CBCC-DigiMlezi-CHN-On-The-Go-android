@@ -9,8 +9,12 @@
     <string name="menu_search">Search</string>
     <!-- /End CCH additions -->
 
-
     <string name="name">Name</string>
+    <string name="f_name">First Name</string>
+    <string name="l_name">Last Name</string>
+    <string name="location">Location</string>
+    <string name="national_id">National ID Number</string>
+    <string name="facility_id">Facility ID Number</string>
     <string name="client_type">Client type</string>
     <string name="age">Age</string>
     <string name="gender">Gender</string>
@@ -18,6 +22,7 @@
     <string name="female">Female</string>
     <string name="register_mm">Register for DigiAfia</string>
     <string name="phone">Phone Number</string>
+    <string name="relative_phone">Next of Kin Phone Number</string>
     <string name="channel">Channel</string>
     <string name="voice">Voice</string>
     <string name="sms">Sms</string>
@@ -76,7 +81,7 @@
     <string name="prefAdvanced">Advanced settings</string>
     <string name="prefBackgroudDataConnect">Background activity tracker</string>
     <string name="prefBackgroudDataConnect_summary">Send activity logs even when this application isn\'t running</string>
-    <string name="prefLanguage">Preferred Language</string>
+    <string name="prefLanguage">Language</string>
     <string name="prefHighlightCompleted">Highlight completed activities</string>
     <string name="prefNoScheduleReminders">Number of suggested activities</string>
     <string name="prefNoScheduleReminders_summary">How many suggested activities to display</string>
@@ -147,7 +152,7 @@
     <string name="success_media_download">Media file: \'%1$s\' successfully downloaded.</string>
     <string name="media_file_size">%1$.1fMb</string>
     <string name="media_file_size_unknown">unknown file size</string>
-    <string name="error_connection">Error connecting to server. Please check you have an active internet connection and try again.</string>
+     <string name="error_connection">Error connecting to server. Please check you have an active internet connection and try again.</string>
     <string name="user_not_found">User not found. Please register.</string>
     <string name="error_connection_required">You need an active internet connection to access this page. Please turn on wifi or mobile internet connection and try again.</string>
     <string name="error_installing_course">%1$s: failed to install</string>
@@ -201,6 +206,7 @@
     <color name="Curry">#e1aa07</color>
     <color name="TextColorGreen">#68B036</color>
     <string name="action_home">Home</string>
+    <string name="download_all">Download All</string>
     <string name="action_logout">Logout</string>
     <color name="BackgroundGrey">#E1DFD4</color>
     <color name="Brown">#6E5747</color>
@@ -416,21 +422,15 @@
     </string-array>
 
     <string-array name="channel">
-        <item>SHS</item>
-        <item>JHS</item>
-        <item>Tertiary</item>
-        <item>None</item>
+        <item>SMS</item>
+        <item>Voice</item>
+
     </string-array>
 
     <string-array name="program">
-        <item>Latin</item>
-        <item>Ewe</item>
-        <item>Latin</item>
-        <item>Twi</item>
-        <item>Swahili</item>
-        <item>English</item>
-        <item>French</item>
-        <item>Spanish</item>
+        <item>Afia</item>
+        <item>Kijana</item>
+        <item>Tunza</item>
     </string-array>
 
     <string-array name="CoverageImmunizationTypeBCG">
@@ -973,4 +973,193 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+
+
+
+
+
+
+    <string name="about_logged_in">Logged in as: %1$s</string>
+    <string name="about_not_logged_in">Not logged in</string>
+
+
+    <string name="menu_font_increase">Increase text size</string>
+    <string name="menu_font_decrease">Decrease text size</string>
+     <string name="menu_scorecard">Scorecard</string>
+    <string name="menu_sort_by">Sort by</string>
+    <string name="menu_sort_by_course">Sort by course</string>
+    <string name="menu_sort_by_filename">Sort by filename</string>
+    <string name="menu_select_all">Select all</string>
+
+
+    <string name="fragment_welcome_title">Welcome to OppiaMobile</string>
+    <string name="fragment_welcome_desc">OppiaMobile is a mobile learning platform for delivering learning content, video and quizzes.\n\n\'Oppia\' means \'to learn\' in Finnish</string>
+    <string name="fragment_welcome_login_info">To get started with OppiaMobile, you will need to register or login.</string>
+    <string name="fragment_welcome_privacy">We take your privacy seriously, <a href="http://digital-campus.org/privacy/">find out more about Digital Campus\'s privacy policy</a></string>
+
+    <string name="tab_title_about">About</string>
+    <string name="tab_title_badges">Badges</string>
+    <string name="tab_title_help">Help</string>
+    <string name="tab_title_login">Login</string>
+    <string name="tab_title_points">Points</string>
+    <string name="tab_title_privacy">Privacy</string>
+    <string name="tab_title_register">Register</string>
+    <string name="tab_title_reset">Reset Password</string>
+    <string name="tab_title_scorecard">Scorecard</string>
+    <string name="tab_title_activity">Activity</string>
+    <string name="tab_title_welcome">Welcome</string>
+
+
+    <string name="title_btn_reset">Reset password</string>
+
+    <string name="title_stats_submitted">No activities submitted to server</string>
+    <string name="title_stats_unsubmitted">No activities waiting to submit</string>
+     <string name="title_scorecard">Scorecard</string>
+     <string name="title_welcome">OppiaMobile</string>
+
+    <string name="widget_feedback_submit">Submit</string>
+    <string name="widget_feedback_submit_title">Thank you for submitting your feedback.</string>
+
+    <string name="widget_quiz_continue">Continue &gt;&gt;</string>
+    <string name="widget_quiz_media_caption">Press the image to start the video</string>
+     <string name="widget_quiz_unavailable_section">You must complete all the previous activities in this section before this quiz becomes available to you.</string>
+    <string name="widget_quiz_unavailable_course">You must complete all the previous activities in this course before this quiz becomes available to you.</string>
+    <string name="widget_quiz_unavailable_attempts">You have already attempted this quiz the max number of times allowed</string>
+
+   <string name="course_context_update_activity">Update activity</string>
+
+     <string name="more_courses">Download more courses</string>
+
+    <string name="prefServerDefault1">http://188.166.30.140/cb/content/lc/</string>
+     <string name="prefShowCourseDescription">Show course description</string>
+    <string name="prefShowProgressBar">Show progress bar</string>
+     <string name="prefTextSize">Text size</string>
+    <string name="prefUser">Username</string>
+    <string name="prefUserHint">(read only)</string>
+    <string name="prefLogoutEnabled">Enable logout from homepage</string>
+    <string name="prefDeleteCourseEnabled">Enable deleting of courses</string>
+    <string name="prefDownloadViaCellularEnabled">Download media via cellular network</string>
+
+    <!-- Strings relative to Storage -->
+    <string name="prefStorageLocation">Storage Location</string>
+    <string name="prefStorageOptionInternal">Internal</string>
+    <string name="prefStorageOptionExternal">External</string>
+    <string name="moving_storage_location">Moving files to new storage location…</string>
+    <string name="move_storage_completed">Moving storage completed</string>
+    <string name="storageNonRemovable">Non-removable storage</string>
+    <string name="storageRemovable">Removable SD Card</string>
+    <string name="storageAccessNotGranted">SD Card access not granted</string>
+    <string name="storageAccess_help1">Since Android 5 (Lollipop) there is a new official way for apps to write to the external SD card. Apps must ask the user to grant write access to a folder on the SD card. A system folder chooser dialog will open, and you will need to select the SD card from there.</string>
+    <string name="storageAccess_help2">If the dialog appears empty and there are no items in the left drawer, you first need to go to the menu and tell the system to show the SD card.</string>
+    <string name="storageAccess_help3">Then, tap on the SD card from the list on the left side to display its folder structure. In this screenshot you see both \"Internal storage\" and the SD card. The SD card can be displayed under a different name then what you see here, for example \"Kingston\". It\'s the so called disk label of the card.</string>
+    <string name="storageAccess_help4">Then select the card. Don\'t navigate down into any subfolder. You must select the top-level root folder of the SD card. This is important.</string>
+    <string name="storageAccess_help5">After tapping the \"Select SD card\" button you should be back in the app. The app double checks if it now indeed can write to the SD card, and if the folder selected is the root one.</string>
+
+
+
+    <string name="register_form_organisation_title">Organisation</string>
+    <string name="register_form_phoneno_title">Phone number (*)</string>
+
+    <string name="reset_username_title">Username or Email</string>
+
+
+    <string name="storage_default">Default</string>
+
+
+    <string name="publisher">Publisher:</string>
+
+    <string name="info_upgrading">Upgrading to %1$s</string>
+    <string name="course_updating">Updating course activity…</string>
+    <string name="course_updating_success">\'%1$s\': Course activity updated successfully</string>
+    <string name="course_updating_error">\'%1$s\': Error updating course</string>
+    <string name="course_deleting">Deleting course…</string>
+    <string name="course_deleting_success">Course deleted successfully</string>
+    <string name="course_deleting_error">Error deleting course</string>
+    <string name="info.startup.preloaded_accounts">Preloaded %1$d new user(s).</string>
+
+     <string name="loading_points">Loading points &#8230;</string>
+    <string name="loading_badges">Loading badges &#8230;</string>
+
+    <string name="info_no_badges">You don\'t have any badges yet. Complete a full course to earn your first badge.</string>
+
+     <string name="missing_media_download_selected">Download selected</string>
+    <string name="missing_media_stop_selected">Stop selected</string>
+    <string name="missing_media_unselect_all">Unselect all</string>
+    <string name="notification_media_title">OppiaMobile: media management</string>
+    <string name="notification_media_subject">All media files downloaded successfully</string>
+
+     <string name="error_connection_ssl">Error connecting to server due to SSL problems. Please, ensure that the host in your OppiaMobile server setting is correct, and that your device has the right time/date</string>
+    <string name="error_register_no_email">Please enter your email address</string>
+    <string name="error_register_password">Your password must be at least %1$d or more characters</string>
+    <string name="error_register_password_no_match">Your passwords don\'t match</string>
+    <string name="error_register_no_firstname">Please enter your first name</string>
+    <string name="error_register_no_lastname">Please enter your last name</string>
+    <string name="error_register_no_phoneno">Please enter your phone number</string>
+    <string name="error_register_no_username">Please enter a username</string>
+    <string name="error_register_username_spaces">Your username cannot contain spaces</string>
+    <string name="error_preloading_accounts">Error preloading accounts from CSV file</string>
+
+    <string name="error_insufficient_storage_available">Insufficient storage available</string>
+    <string name="warning_delete_disabled">Sorry, deleting a course is currently disabled - please update your settings to allow deleting of courses.</string>
+    <string name="warning_download_via_cellular_enabled">Warning! Allowing media files to be downloaded via your mobile (cellular) network may incur high charges for data download.\n\n It is not recommended to enable this if you are on a slow mobile network.</string>
+
+
+    <string name="register_alert_title">Register</string>
+    <string name="reset_alert_title">Reset</string>
+    <string name="reset_process">Resetting password …</string>
+    <string name="reset_complete">Your password has now been reset.\n\nPlease check your email for your new password.</string>
+
+
+    <string name="search.activity_title">Search</string>
+    <string name="search.result_summary">%1$d results for \"%2$s\"</string>
+    <string name="search.message.searching">Searching…</string>
+    <string name="search.message.no_results">No results found for \"%1$s\"</string>
+    <string name="search.message.fetching">Fetching results…</string>
+    <string name="submit_stats_btn_text">Send now</string>
+
+    <string name="media_player_description">Oppia Media Player</string>
+
+    <string name="upgradev49_1">Copying files to new location - this may take several minutes, so please be patient</string>
+    <string name="loading_course">Loading course…</string>
+    <string name="scorecard_quizzes_title">Quizzes</string>
+    <string name="scorecard_quizzes_highlight_pretest">Pre-test</string>
+    <string name="scorecard_quizzes_highlight_attempted">Attempted</string>
+    <string name="scorecard_quizzes_highlight_passed">Passed</string>
+    <string name="scorecard_activities_completed">activities completed</string>
+    <string name="scorecard_activities_total">total</string>
+
+    <string name="admin_password_required">This feature is protected for admin use only. Please, insert below the admin password to continue:</string>
+    <string name="admin_password_error_incorrect_password">Incorrect admin password. Try again</string>
+    <string name="admin_password_newpassword_dialog_title">Admin password</string>
+    <string name="admin_password_newpassword_dialog_message">Please, introduce your admin password</string>
+    <string name="prefAdminProtection">Protect admin actions with password</string>
+    <string name="prefAdminPassword">Change admin password</string>
+    <string name="prefRemoteAdminEnabled">Enable remote administration of the device</string>
+
+    <string name="notification.remote_admin.title">Oppia Remote Administration</string>
+    <string name="notification.remote_admin.camera_disabled">The device cameras have been disabled remotely</string>
+    <string name="notification.remote_admin.camera_enabled">The device cameras have been enabled remotely</string>
+
+    <string name="sequencing.dialog_title">Activity locked</string>
+    <string name="sequencing.section.message">You must complete the previous activities in this section before this one becomes available to you.</string>
+    <string name="sequencing.course.message">You must complete all the previous activities in the course before this one becomes available to you.</string>
+    <string name="empty_state_courses">There aren\'t any courses currently available to you on this server.</string>
+    <string name="empty_state_media">Great! You now have all the media content for your courses downloaded onto your device.</string>
+    <string name="empty_state_scorecard">You don\'t have any courses installed yet. \nOnce you install a course, you will see your progress here.</string>
+
+    <string name="permissions.title">OppiaMobile needs the following permissions to function properly:</string>
+    <string name="permissions.storage.title">read and modify contents of the SD card</string>
+    <string name="permissions.storage.description">OppiaMobile needs access to the SD card to be able to store the downloaded media contents for the courses</string>
+    <string name="permissions.phone_state.title">read phone state and identity</string>
+    <string name="permissions.phone_state.description">OppiaMobile needs access to the phone identity to get information about your device model and Android version</string>
+    <string name="permissions.allow_btn_text">Allow permissions</string>
+    <string name="permissions.not_askable.message">The app does not have the permissions needed to run. Please, go to Settings \> Apps \> OppiaMobile > Permissions to grant access to these permissions</string>
+    <string name="permissions.not_askable.info">You see this message because permissions were prompted before and you denied them and checked \"Don\'t ask again\"</string>
+    <string name="error_apikey_expired">Your API key expired. Please, log in again.</string>
+
+
 </resources>

@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,162 +17,103 @@
 
 package org.digitalcampus.oppia.adapter;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Locale;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.model.Course;
-import org.digitalcampus.oppia.utils.ImageUtils;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.drawable.BitmapDrawable;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
-import android.widget.Filter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class CourseListAdapter<mOriginalValues> extends ArrayAdapter<Course> {
+import com.squareup.picasso.Picasso;
+
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.model.Course;
+import org.digitalcampus.oppia.utils.ui.ProgressBarAnimator;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Locale;
+
+public class CourseListAdapter extends ArrayAdapter<Course> {
 
 	public static final String TAG = CourseListAdapter.class.getSimpleName();
 
 	private final Context ctx;
-	private ArrayList<Course> courseList;
-	private final ArrayList<String> sortedList;
+	private final ArrayList<Course> courseList;
 	private SharedPreferences prefs;
-
-	protected ArrayList<Course> mOriginalValues;
 	
-	public CourseListAdapter(Activity context, ArrayList<Course> courseList,ArrayList<String> sortedList) {
+	public CourseListAdapter(Activity context, ArrayList<Course> courseList) {
 		super(context, R.layout.course_list_row, courseList);
 		this.ctx = context;
 		this.courseList = courseList;
-		this.sortedList=sortedList;
 		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 	}
+
+    static class CourseViewHolder{
+        TextView courseTitle;
+        TextView courseDescription;
+        ProgressBar courseProgress;
+        ImageView courseImage;
+        ProgressBarAnimator barAnimator;
+    }
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
-			LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		    View rowView = inflater.inflate(R.layout.course_download_row_new, parent, false);
+        CourseViewHolder viewHolder;
+
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView  = inflater.inflate(R.layout.course_list_row, parent, false);
+            viewHolder = new CourseViewHolder();
+            viewHolder.courseTitle = (TextView) convertView.findViewById(R.id.course_title);
+            viewHolder.courseDescription = (TextView) convertView.findViewById(R.id.course_description);
+            viewHolder.courseProgress = (ProgressBar) convertView.findViewById(R.id.course_progress_bar);
+            viewHolder.courseImage = (ImageView) convertView.findViewById(R.id.course_image);
+            viewHolder.barAnimator = new ProgressBarAnimator(viewHolder.courseProgress);
+            convertView.setTag(viewHolder);
+        }
+        else{
+            viewHolder = (CourseViewHolder) convertView.getTag();
+        }
+
 	    Course c = courseList.get(position);
-	    rowView.setTag(c);
-	    ImageButton actionBtn = (ImageButton) rowView.findViewById(R.id.action_btn);
-	    actionBtn.setVisibility(View.GONE);
-	    TextView courseTitle = (TextView) rowView.findViewById(R.id.module_title);
-	    TextView courseProgress=(TextView) rowView.findViewById(R.id.textView_progress);
-	    courseProgress.setVisibility(View.GONE);
-	    LinearLayout moduleRow=(LinearLayout) rowView.findViewById(R.id.module_row);
-	   // courseTitle.setText(c.getTitle(prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage())));
-	    courseTitle.setText(sortedList.get(position));
-	    ProgressBar  pb = (ProgressBar ) rowView.findViewById(R.id.course_progress_bar);
-	    pb.setProgress((int) c.getProgress());
+        viewHolder.courseTitle.setText(c.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())));
+
+	    if (prefs.getBoolean(PrefsActivity.PREF_SHOW_COURSE_DESC, true)){
+            viewHolder.courseDescription.setText(c.getDescription(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())));
+	    } else {
+            viewHolder.courseDescription.setVisibility(View.GONE);
+	    }
+
+	    if (prefs.getBoolean(PrefsActivity.PREF_SHOW_PROGRESS_BAR, MobileLearning.DEFAULT_DISPLAY_PROGRESS_BAR)){
+            int courseProgress = (int) c.getProgressPercent();
+            viewHolder.courseProgress.setProgress(courseProgress);
+            viewHolder.barAnimator.animate(courseProgress);
+            //Set the value to true so it doesn' t get animated again
+            viewHolder.barAnimator.setAnimated(true);
+	    } else {
+            viewHolder.courseProgress.setVisibility(View.GONE);
+	    }
 	    
-	    LayoutParams params = moduleRow.getLayoutParams();
-    	params.width = ctx.getResources().getDimensionPixelSize(R.dimen.textView_width);
-    	moduleRow.setLayoutParams(params);
-    	TextView txt1 = new TextView(ctx);
-    	TextView txt2 = new TextView(ctx);
-    	txt1.setBackgroundResource(R.drawable.fab_shape);
-    	txt1.setText(String.valueOf((int) c.getProgress())+"%");
-    	File file=new File(courseList.get(position).getLocation());
-    	System.out.println(courseList.get(position).getLocation());
-    	if(file.exists()){
-    		long size=0;
-    		double kilobytes = 0;
-    		double megabyte = 0;
-    		for(File files:file.listFiles()){
-    			if(files.isFile()){
-    				size +=file.length();
-    			}
-    			kilobytes=(size/1024);
-    			megabyte=(kilobytes/1024);
-    		}
-    		if(kilobytes>1000){
-    			txt2.setText(String.valueOf(megabyte)+"MB");
-    		}else{
-    			txt2.setText(String.valueOf(kilobytes)+"KB");
-    		}
-    	}else{
-    		 System.out.println("File does not exists!");
-    	}
-    //	moduleRow.addView(txt1);
-    	//moduleRow.addView(txt2);
 		// set image
-    	/*
 		if(c.getImageFile() != null){
-			ImageView iv = (ImageView) rowView.findViewById(R.id.course_image);
-			BitmapDrawable bm = ImageUtils.LoadBMPsdcard(c.getImageFile(), ctx.getResources(), R.drawable.ic_books);
-			iv.setImageDrawable(bm);
-		}*/
-	    return rowView;
+			String image = c.getImageFileFromRoot();
+            Picasso.with(ctx).load(new File(image))
+                    .placeholder(R.drawable.mlezi_icon_no_shadow)
+                    .into(viewHolder.courseImage);
+		}
+        else{
+            viewHolder.courseImage.setImageResource(R.drawable.mlezi_icon_no_shadow);
+        }
+	    return convertView;
 	}
-
-	
-	 @Override
-	    public Filter getFilter() {
-	        Filter filter = new Filter() {
-	            @Override
-	            protected void publishResults(CharSequence constraint, FilterResults results) {
-	            	courseList = (ArrayList<Course>) results.values; // has the filtered values
-	                notifyDataSetChanged();  // notifies the data with new filtered values
-	            }
-	           @Override
-	            protected FilterResults performFiltering(CharSequence constraint) {
-	               FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
-	               ArrayList<Course> FilteredArrList = new ArrayList<Course>();
-
-	               if (mOriginalValues == null) {
-	                   mOriginalValues = new ArrayList<Course>(courseList); // saves the original data in mOriginalValues
-	               }
-
-	               /********
-	                *
-	                *  If constraint(CharSequence that is received) is null returns the mOriginalValues(Original) values
-	                *  else does the Filtering and returns FilteredArrList(Filtered)
-	                *
-	                ********/
-	               if (constraint == null || constraint.length() == 0) {
-
-	                   // set the Original result to return
-	                   results.count = mOriginalValues.size();
-	                   results.values = mOriginalValues;
-	               } else {
-	                   constraint = constraint.toString().toLowerCase();
-	                   for (int i = 0; i < mOriginalValues.size(); i++) {
-	                       String data = mOriginalValues.get(i).getTitle(prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage()));
-	                       if (data.toLowerCase().startsWith(constraint.toString())||data.toLowerCase().contains(constraint.toString())) {
-	                           FilteredArrList.add(new Course(mOriginalValues.get(i).getDownloadUrl(),
-	                                                         mOriginalValues.get(i).getLocation(),
-	                                                         mOriginalValues.get(i).getProgress(),
-	                                                         mOriginalValues.get(i).getModId(),
-	                                                         mOriginalValues.get(i).getMedia(),
-	                                                         mOriginalValues.get(i).getShortname()
-	                                                        ));
-	                       }
-	                   }
-	                   // set the Filtered result to return
-	                   results.count = FilteredArrList.size();
-	                   results.values = FilteredArrList;
-	               }
-	               return results;
-	           }
-
-
-	        };
-	        return filter;
-	            }
-
 
 }

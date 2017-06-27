@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,70 @@
 
 package org.digitalcampus.oppia.application;
 
+import android.content.Context;
+
+import org.digitalcampus.oppia.utils.MetaDataUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
+import java.util.UUID;
 
 public class Tracker {
 
-	public static final String TAG = Tracker.class.getSimpleName(); 
+	public static final String TAG = Tracker.class.getSimpleName();
+	public static final String SEARCH_TYPE = "search";
+	public static final String MISSING_MEDIA_TYPE = "missing_media";
+
 	private final Context ctx;
 	
 	public Tracker(Context context){
 		this.ctx = context;
 	}
-	
-	public void saveTracker(int modId, String digest, JSONObject data, boolean completed){
-		DbHelper db = new DbHelper(this.ctx);
-		db.insertLog(modId, digest, data.toString(), completed);
-		db.close();
+
+	private void saveTracker(int courseId, String digest, JSONObject data, String type, boolean completed){
+		// add tracker UUID
+		UUID guid = java.util.UUID.randomUUID();
+		try {
+			data.put("uuid", guid.toString());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		DbHelper db = DbHelper.getInstance(this.ctx);
+
+		db.insertTracker(courseId, digest, data.toString(), type, completed);
+
+	}
+
+	public void saveTracker(int courseId, String digest, JSONObject data, boolean completed){
+		saveTracker(courseId, digest, data, "", completed);
+	}
+
+    public void saveSearchTracker(String searchTerm, int count){
+
+		try {
+			JSONObject searchData = new JSONObject();
+			searchData = new MetaDataUtils(ctx).getMetaData(searchData);
+			searchData.put("query", searchTerm);
+			searchData.put("results_count", count);
+
+			saveTracker(0, "", searchData, SEARCH_TYPE, true);
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+    }
+
+	public void saveMissingMediaTracker(String filename){
+
+		try {
+			JSONObject missingMedia = new JSONObject();
+			missingMedia = new MetaDataUtils(ctx).getMetaData(missingMedia);
+			missingMedia.put("filename", filename);
+			saveTracker(0, "", missingMedia, MISSING_MEDIA_TYPE, true);
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

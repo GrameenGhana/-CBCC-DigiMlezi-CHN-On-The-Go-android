@@ -1,6 +1,6 @@
 package org.cbccessence.poc;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.utils.UIUtils;
@@ -41,15 +41,15 @@ public class ANCCounsellingTopicsMenuActivity extends BaseActivity {
         getSupportActionBar().setTitle("Point of Care");
         getSupportActionBar().setSubtitle("ANC Counselling");
 	    mContext=ANCCounsellingTopicsMenuActivity.this;
-	    dbh=new DbHelper(mContext);
+	    dbh=  DbHelper.getInstance(mContext);
 		listView_counselling=(ListView) findViewById(R.id.listView_counsellingTopics);
 		list=new ArrayList<POCSections>();
-		list=dbh.getPocSections("ANC Counselling");
+		//list=dbh.getPocSections("ANC Counselling");
 		ListAdapter adapter=new ListAdapter(mContext, list);
 		listView_counselling.setAdapter(adapter);
 	    start_time=System.currentTimeMillis();
 	    json=new JSONObject();
-	    try {
+	   /* try {
 			json.put("page", "ANC Counselling");
 			json.put("section", MobileLearning.CCH_COUNSELLING);
 			json.put("ver", dbh.getVersionNumber(mContext));
@@ -58,7 +58,7 @@ public class ANCCounsellingTopicsMenuActivity extends BaseActivity {
 			json.put("imei", dbh.getDeviceImei(mContext));
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
+		}*/
 	    /*listView_counselling=(ListView) findViewById(R.id.listView_counsellingTopics);
 	    String[] items={"Birth preparedness & complication readiness",//0
 	    				"Drug & substance abuse",                     //1

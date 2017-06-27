@@ -3,28 +3,172 @@
 
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/acra-4.5.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_96b54af19d0f25677145fe68278ea7c5d48ac392.jar" />
+        revision="25.0.2"
+        sha1="44a5eb946e0d83eed4a0128d877ca1fd8168b83a">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/acra-4.5.0_31758639b0f08ac5f0d782f8662a76dd3271a966.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.2/a5f29a7acaddea3f4af307e8cf2d0cc82645fd7d/joda-time-2.2.jar"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mquiz-0.6.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="a5f29a7acaddea3f4af307e8cf2d0cc82645fd7d">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/joda-time-2.2_af28428ecda72f59a88e5e96253d0a1ba290c45f.jar" />
+        revision="25.0.2"
+        sha1="82bf81ccf7c1d46229e5aac87a8619823afeb4da">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/mquiz-0.6_0a5cb32a7870036b997067d2425dc665bb5a5c8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.android/build-cache/d56ae83598008dbd6ff28400abd1fb1f7f4f0252/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ece40b09e9d4d488bc270cf6af5a9af73bc1cfa3">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/classes_02ad50382c9c127c73951d31cdc4bbbc1ea986e2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/acra-4.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44a5eb946e0d83eed4a0128d877ca1fd8168b83a">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/acra-4.5.0_31758639b0f08ac5f0d782f8662a76dd3271a966/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5d1d367ec7aa633973946c2decf7f92c34449c25">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_410b12191cfed93c63e9c3f92c67b360b2ebe7ed/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/okio-1.8.0_ad616b25447aae70bb4cd5d8840ad21dbb68b912.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mquiz-0.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="82bf81ccf7c1d46229e5aac87a8619823afeb4da">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/mquiz-0.6_0a5cb32a7870036b997067d2425dc665bb5a5c8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/bugsense-3.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3928cf9ff54683b522cee09da9034106c53fea91">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/bugsense-3.6_9203c9ee5e89e07f0187ea7f7f90ab1bfdf13f2f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/bugsense-3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3928cf9ff54683b522cee09da9034106c53fea91">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/bugsense-3.6_9203c9ee5e89e07f0187ea7f7f90ab1bfdf13f2f/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.1/19047bdb6a4fc00a44124f64ca98e88fc204e7e3/okhttp-3.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/okhttp-3.3.1_07f08c3a4af863bc88469d626f68a5f99d3c914f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mquiz-0.17.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="184282970f7bd62aa4220398c14a577357d43e8d">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/mquiz-0.17_b1edbac45ca6f251465eefa8ffa181c0e2038d3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/hirondelle-date4j-1.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7b52de513f87ae4d9ff5d17518def0a1e9bc3df0">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/hirondelle-date4j-1.5.1_85b66bcb05fa84f1c3c765471c245b6551b6e0de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/PdfViewer.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a53b4c813e4237286bd10f0c334c46e894970666">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/PdfViewer_5f5716be3546331f173378cd8544818539bc89fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.gradle/caches/modules-2/files-2.1/com.androidplot/androidplot-core/0.6.1/3db0daea52375b26bfa61c59b8df93950bdefbbc/androidplot-core-0.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/androidplot-core-0.6.1_5f7ed358fe441aa001ac0ef657534f91020fce02.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/httpclient-4.2.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3bfeb9062b12d5b340445336790dbc14c59c2d79">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.2.5_5e324b540a66bc3591c379f73c59c63f2e1359ad/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mpandroidchartlibrary-1-7-4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c685e45ac6491e51640ce3571606ac22dfd4a6a3">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/mpandroidchartlibrary-1-7-4_6bb8944da0db29fac50ac65fcc7434dd72d26434/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/PdfViewer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a53b4c813e4237286bd10f0c334c46e894970666">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/PdfViewer_5f5716be3546331f173378cd8544818539bc89fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.3/56498efd17752898cfcc3868c1b6211a07b12b8f/joda-time-2.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="56498efd17752898cfcc3868c1b6211a07b12b8f">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/joda-time-2.3_9e3375b5eb02ae79a15a67f483c3bd6028538dee.jar" />
     </item>
     <item
         is-multidex="false"
         jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mpandroidchartlibrary-1-7-4.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="c685e45ac6491e51640ce3571606ac22dfd4a6a3">
         <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/mpandroidchartlibrary-1-7-4_6bb8944da0db29fac50ac65fcc7434dd72d26434.jar" />
     </item>
@@ -33,252 +177,162 @@
         jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/httpclient-4.2.5.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="3bfeb9062b12d5b340445336790dbc14c59c2d79">
         <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/httpclient-4.2.5_5e324b540a66bc3591c379f73c59c63f2e1359ad.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/crouton-1.8.2.jar"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mquiz-0.17.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="ba14b78124a9945dab574c195b8b60633fd61f99">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/crouton-1.8.2_9e6fc64bd500a888bf9103913b30f933a4317d7c.jar" />
+        revision="25.0.2"
+        sha1="184282970f7bd62aa4220398c14a577357d43e8d">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/mquiz-0.17_b1edbac45ca6f251465eefa8ffa181c0e2038d3b.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/json-lib-2.4-jdk15.jar"
+        jumboMode="true"
         optimize="true"
-        revision="25.0.1"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.1_423461acf59cd4a0ecf1ff59fb23d855d3180217.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_12fd971c80656a51a28bdb4e09ca44041d297199.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.barteksc/pdfium-android/1.5.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="97a90b867543905c0717d04f6a60532c9405aa33">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.github.barteksc-pdfium-android-1.5.0_8743c9b00c2bd1e09f2f968ce8a5f476c8019ac9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.1_5b3d6eb176d3c7b1cc955a0c0b3460d5c009e656.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/mquiz-0.6.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="82bf81ccf7c1d46229e5aac87a8619823afeb4da">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/mquiz-0.6_0a5cb32a7870036b997067d2425dc665bb5a5c8b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.0.1_4efa9fc563c8f0416a684d0ded1fe181063d4b3c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.0.0_45213781a8571a8b50417a55f79cee17011e466b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.1_a6b2981c66c43963062ccd84fba173de3f2bddac.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.1_b759dd30a2d142145d8786279448e837df235ddb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.0.1_fc851ddff5c7339ddc7dfabc4994e37c5f685923.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_4b264221f5898049f443f0417b345bcc0df92d7f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.1_5da5d53b7ad9ec0e2fadbc821040dd7f8c5722aa.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ba4c3d8312d8087765df60980bd221fa4425e6e0">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.github.fcannizzaro-material-stepper-1.2.2_d5d66cb51d02b60a7184a9f19ea312967ee2088a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.1_332b0893432a3978f3e37ebb6ca2fc43984b326d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.1_994447d5e3200c3c931b5cde19a5e469286e437a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.1_b472558412abae76797a6c06d442b631f7bd1b94.jar" />
+        revision="25.0.2"
+        sha1="136743e0d12df4e785e62b48618cee169b2ae546">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/json-lib-2.4-jdk15_23c1e554eb17ec8f4975f9c262e481cbb6c6fd2b/classes.dex" />
     </item>
     <item
         is-multidex="false"
         jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/json-lib-2.4-jdk15.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="136743e0d12df4e785e62b48618cee169b2ae546">
         <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/json-lib-2.4-jdk15_23c1e554eb17ec8f4975f9c262e481cbb6c6fd2b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_5e82b61bde87b61c47a803a1cb16a3765dd1e719.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.1_551b5eba35a347c1d60821ccdedca5589fa6ca62.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.1_0326a06671acb1e013049f43fbb7fdc23d7c78c7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.barteksc/android-pdf-viewer/2.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="39e27f0debb3627fcb0b7dbcaf93aad17d81ffcd">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.github.barteksc-android-pdf-viewer-2.4.0_58fdf4c9ee6bfe05e80ca6d427ea9feff68d5097.jar" />
     </item>
     <item
         is-multidex="false"
         jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/hirondelle-date4j-1.5.1.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
+        revision="25.0.2"
         sha1="7b52de513f87ae4d9ff5d17518def0a1e9bc3df0">
         <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/hirondelle-date4j-1.5.1_85b66bcb05fa84f1c3c765471c245b6551b6e0de.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/okio-1.6.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.1_f9b7a5a0f709f5b7aa0f512cb644d34e8feea72b.jar" />
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/okio-1.6.0_d3362a390f5faa53c8993f9f42edfd141aeb6e90.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/bugsense-3.6.jar"
+        jar="/Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="3928cf9ff54683b522cee09da9034106c53fea91">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/bugsense-3.6_9203c9ee5e89e07f0187ea7f7f90ab1bfdf13f2f.jar" />
+        revision="25.0.2"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/classes_d5f4d0feb2b791d4e66fe887405b951484a50f08.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/okio-1.6.0_d3362a390f5faa53c8993f9f42edfd141aeb6e90/classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.amulyakhare/com.amulyakhare.textdrawable/1.0.1/jars/classes.jar"
+        jar="/Users/aangjnr/.android/build-cache/70de5010dc718baff29d6203e10f06233fb0bd33/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="d237556caead5b93d97e18a071059a2c0045978e">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.amulyakhare-com.amulyakhare.textdrawable-1.0.1_db316550a00bd32bfe72fc8fe8f64d95472dbca4.jar" />
+        revision="25.0.2"
+        sha1="59a16a4a42d25b2c243dd1e8aea87d06895b4a06">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/classes_7331cd337a383cb27f2aea904f89729122ea96b1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ab700f9264071948faa46ccda5ebba03df5c4a09/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/commons-codec-1.6-jarjar.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f9ce0bfa151fedaffb3a474ec334da1c4c3f6c16">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-codec-1.6-jarjar_5f7b04c82a8d5590b9170a3e6cd364665d0f3be9/classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/crouton-1.8.2.jar"
         jumboMode="false"
         optimize="true"
-        revision="25.0.1"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.0.1_478d74c6a5ac0aaf11b771a64832618110a155df.jar" />
+        revision="25.0.2"
+        sha1="ba14b78124a9945dab574c195b8b60633fd61f99">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/crouton-1.8.2_9e6fc64bd500a888bf9103913b30f933a4317d7c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/commons-io-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-io-2.4_5f53a1156973493f301ab5b5a3519e41a1e0003e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/crouton-1.8.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ba14b78124a9945dab574c195b8b60633fd61f99">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/2/crouton-1.8.2_9e6fc64bd500a888bf9103913b30f933a4317d7c/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.android/build-cache/882126c13db77846ad01f2922a112afeb798056f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/classes_075a4d48eddf3eae0fb3c51071cc5e721f8000cb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/commons-io-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/commons-io-2.4_5f53a1156973493f301ab5b5a3519e41a1e0003e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/.android/build-cache/d9d99eaf3ebe601a7fc16b9d5f47789a9ad559e9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/classes_e05f147465197ad89d6326aeb63b67015e730c11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/libs/commons-codec-1.6-jarjar.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f9ce0bfa151fedaffb3a474ec334da1c4c3f6c16">
+        <dex dex="/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/pre-dexed/debug/commons-codec-1.6-jarjar_5f7b04c82a8d5590b9170a3e6cd364665d0f3be9.jar" />
     </item>
 
 </items>

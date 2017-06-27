@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,19 +17,20 @@
 
 package org.digitalcampus.oppia.task;
 
+import android.content.Context;
+import android.os.AsyncTask;
+
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.listener.PostInstallListener;
+import org.digitalcampus.oppia.model.DownloadProgress;
+import org.digitalcampus.oppia.utils.storage.Storage;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.listener.PostInstallListener;
-import org.digitalcampus.oppia.model.DownloadProgress;
-
-import android.content.Context;
-import android.os.AsyncTask;
-
-public class PostInstallTask extends AsyncTask<Payload, DownloadProgress, Payload>{
+public class PostInstallTask extends AsyncTask<Payload, DownloadProgress, Payload> {
 
 	public final static String TAG = PostInstallTask.class.getSimpleName();
 	private Context ctx;
@@ -48,18 +49,18 @@ public class PostInstallTask extends AsyncTask<Payload, DownloadProgress, Payloa
 		// copy over any courses not already installed
 		try {
 			directory = this.ctx.getAssets().list(MobileLearning.PRE_INSTALL_COURSES_DIR);
-			for (int index = 0; index < directory.length; index++)  {   
-		       if (directory[index].toString().endsWith(".zip")){
-		    	   FileOutputStream f = new FileOutputStream(new File(MobileLearning.DOWNLOAD_PATH,directory[index].toString()));
-		    	   InputStream is = this.ctx.getAssets().open(MobileLearning.PRE_INSTALL_COURSES_DIR + "/" + directory[index].toString());
-		    	   byte[] buffer = new byte[1024];
-		            int len = 0;
-		            while ((len = is.read(buffer)) > 0) {
-		                f.write(buffer, 0, len);
-		            }
-		            f.close();
-		       }
-		    }
+            for (String file : directory) {
+                if (file.endsWith(".zip")) {
+                    FileOutputStream f = new FileOutputStream(new File(Storage.getDownloadPath(ctx), file));
+                    InputStream is = this.ctx.getAssets().open(MobileLearning.PRE_INSTALL_COURSES_DIR + File.separator + file);
+                    byte[] buffer = new byte[1024];
+                    int len = 0;
+                    while ((len = is.read(buffer)) > 0) {
+                        f.write(buffer, 0, len);
+                    }
+                    f.close();
+                }
+            }
 		} catch (IOException e) {
 			e.printStackTrace();
 		}   
@@ -67,18 +68,18 @@ public class PostInstallTask extends AsyncTask<Payload, DownloadProgress, Payloa
 	    // copy over any media not already installed
 		try {
 			directory = this.ctx.getAssets().list(MobileLearning.PRE_INSTALL_MEDIA_DIR);
-			for (int index = 0; index < directory.length; index++)  {   
-		       if (!directory[index].toString().endsWith(".txt")){
-		    	   FileOutputStream f = new FileOutputStream(new File(MobileLearning.MEDIA_PATH,directory[index].toString()));
-		    	   InputStream is = this.ctx.getAssets().open(MobileLearning.PRE_INSTALL_MEDIA_DIR + "/" + directory[index].toString());
-		    	   byte[] buffer = new byte[1024];
-		            int len = 0;
-		            while ((len = is.read(buffer)) > 0) {
-		                f.write(buffer, 0, len);
-		            }
-		            f.close();
-		       }
-		    }
+            for (String file : directory) {
+                if (!file.endsWith(".txt")) {
+                    FileOutputStream f = new FileOutputStream(new File(Storage.getMediaPath(ctx), file));
+                    InputStream is = this.ctx.getAssets().open(MobileLearning.PRE_INSTALL_MEDIA_DIR + File.separator + file);
+                    byte[] buffer = new byte[1024];
+                    int len = 0;
+                    while ((len = is.read(buffer)) > 0) {
+                        f.write(buffer, 0, len);
+                    }
+                    f.close();
+                }
+            }
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.amulyakhare.textdrawable.TextDrawable;
-import com.amulyakhare.textdrawable.util.ColorGenerator;
-
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.model.Topic;
+import org.cbccessence.models.Topic;
 
 import java.io.File;
 import java.util.List;

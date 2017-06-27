@@ -80,4 +80,12 @@
         <!-- Default dropdown Spinner style. -->
         <attr name="dropDownSpinnerStyle" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="TwoWayView">
+        <attr name="android:orientation"/>
+        <attr name="android:choiceMode"/>
+        <attr name="android:listSelector"/>
+        <attr name="android:drawSelectorOnTop"/>
+    </declare-styleable>
+
 </resources>

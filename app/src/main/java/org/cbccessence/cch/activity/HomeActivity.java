@@ -1,44 +1,8 @@
 package org.cbccessence.cch.activity;
 
 
-import java.util.Locale;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.AboutActivity;
-import org.digitalcampus.oppia.activity.AppActivity;
-import org.digitalcampus.oppia.activity.HelpActivity;
-import org.digitalcampus.oppia.activity.OppiaMobileActivity;
-import org.digitalcampus.oppia.activity.PrefsActivity;
-import org.digitalcampus.oppia.activity.StartUpActivity;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.service.TrackerService;
-import org.digitalcampus.oppia.utils.UIUtils;
-import org.cbccessence.cch.model.WebAppInterface;
-
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.net.Uri;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
-
-
+public class HomeActivity{}
+/*
 @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
 public class HomeActivity extends AppActivity implements OnSharedPreferenceChangeListener {
 
@@ -67,7 +31,7 @@ public class HomeActivity extends AppActivity implements OnSharedPreferenceChang
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		dbh = new DbHelper(getApplicationContext());
+		dbh =   DbHelper.getInstance(getApplicationContext());
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
 		PreferenceManager.setDefaultValues(this, R.xml.prefs, false);
@@ -142,7 +106,7 @@ public class HomeActivity extends AppActivity implements OnSharedPreferenceChang
 						    	
 							
 						} else if (url.equals("file:///android_asset/www/cch/modules/learning/learner")) {							
-							Intent intent = new Intent(getApplicationContext(), OppiaMobileActivity.class);
+							Intent intent = new Intent(getApplicationContext(), OppiaMobileLearningCenterActivity.class);
 			                startActivity(intent);	
 			            
 						} else if (pdfMatcher.find()) {
@@ -301,9 +265,11 @@ public class HomeActivity extends AppActivity implements OnSharedPreferenceChang
 		builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				
-				/*DbHelper db = new DbHelper(HomeActivity.this);
+				*/
+/*DbHelper db = new DbHelper(HomeActivity.this);
 				db.onLogout();
-				db.close();*/
+				db.close();*//*
+
 				
 				// restart the app
 				HomeActivity.this.startActivity(new Intent(HomeActivity.this, StartUpActivity.class));
@@ -336,3 +302,4 @@ public class HomeActivity extends AppActivity implements OnSharedPreferenceChang
 		}
 	}
 }
+*/

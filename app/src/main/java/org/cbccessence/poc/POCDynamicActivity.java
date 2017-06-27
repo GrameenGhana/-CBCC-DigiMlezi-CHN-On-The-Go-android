@@ -5,7 +5,7 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.cbccessence.cch.popupquestions.XmlGuiButton;
@@ -56,7 +56,7 @@ public class POCDynamicActivity extends BaseActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-        databaseHelper = new DbHelper(this);
+        databaseHelper =   DbHelper.getInstance(this);
 
 	    Bundle extras = getIntent().getExtras();
 	    if (extras != null) {

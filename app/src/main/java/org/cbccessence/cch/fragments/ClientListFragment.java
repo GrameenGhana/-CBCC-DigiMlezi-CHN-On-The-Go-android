@@ -2,21 +2,36 @@ package org.cbccessence.cch.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.adapters.UsersRecyclerAdapter;
+import org.cbccessence.cch.model.User;
+import org.cbccessence.R;
+import org.cbccessence.utilities.TaskCompleteListener;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.listener.SubmitListener;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by aangjnr on 17/02/2017.
  */
 
-public class ClientListFragment extends Fragment {
+public class ClientListFragment extends Fragment implements UsersRecyclerAdapter.OnItemClickListener, UsersRecyclerAdapter.OnItemLongClickListener, TaskCompleteListener {
 
+    public static List<User> users;
+    TextView place_holder_text;
+    UsersRecyclerAdapter mAdapter;
+    String TAG = ClientListFragment.class.getSimpleName();
+    RecyclerView mRecycler;
 
     public View rootView;
     private DbHelper databaseHelper;
@@ -26,7 +41,10 @@ public class ClientListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        databaseHelper = new DbHelper(getActivity());
+
+
+        databaseHelper =   DbHelper.getInstance(getActivity());
+        users = databaseHelper.getAllRegisteredUsers();
 
     }
 
@@ -35,6 +53,11 @@ public class ClientListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         rootView = inflater.inflate(R.layout.client_list_layout, container, false);
+
+
+        mRecycler = (RecyclerView) rootView.findViewById(R.id.users_recycler);
+
+        place_holder_text = (TextView) rootView.findViewById(R.id.place_holder_text);
 
 
 
@@ -61,15 +84,47 @@ public class ClientListFragment extends Fragment {
         /*float offsetPx = getResources().getDimension(R.dimen.recycler_bottom_space);
         BottomOffsetDecoration bottomOffsetDecoration = new BottomOffsetDecoration((int) offsetPx);
         grid_recycler.addItemDecoration(bottomOffsetDecoration);*/
+
+        if(users != null && users.size() > 0){
+            if(place_holder_text.getVisibility() == View.VISIBLE) place_holder_text.setVisibility(View.GONE);
+
+            mAdapter = new UsersRecyclerAdapter(getActivity(), users);
+            LinearLayoutManager lll = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+
+            mRecycler.setLayoutManager(lll);
+            mRecycler.setAdapter(mAdapter);
+            mRecycler.hasFixedSize();
+            mAdapter.setOnItemCickListener(this);
+            mAdapter.setOnItemLongClickListener(this);
+
+
+
+
+
+        }else{
+
+            place_holder_text.setVisibility(View.VISIBLE);
+
+        }
+
+
+
+
+
     }
+
 
     @Override
     public void onResume() {
         super.onResume();
 
+        if(mAdapter != null)
+        mAdapter.notifyDataSetChanged();
+
 
 
     }
+
 
 
     private Long start_time;
@@ -111,5 +166,51 @@ public class ClientListFragment extends Fragment {
 
     }
 
+/*
 
+    UsersRecyclerAdapter.OnItemClickListener onItemClickListener = new UsersRecyclerAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(View view, int position) {
+            Log.i(TAG, "On item click listener");
+
+        }
+    };
+
+    UsersRecyclerAdapter.OnItemLongClickListener onItemLongClickListener = new UsersRecyclerAdapter.OnItemLongClickListener() {
+        @Override
+        public boolean onLongClick(View view, int position) {
+
+
+            return false;
+        }
+    };*/
+
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Log.i(TAG, "On item click listener");
+
+    }
+
+    @Override
+    public boolean onLongClick(View view, int position) {
+        Log.i(TAG, "On item long click listener");
+
+        return false;
+    }
+
+    @Override
+    public void submitTaskComplete(User user) {
+
+
+        if(user != null)
+        {
+
+            users.add(user);
+            mAdapter.notifyDataSetChanged();
+
+
+        }
+
+    }
 }

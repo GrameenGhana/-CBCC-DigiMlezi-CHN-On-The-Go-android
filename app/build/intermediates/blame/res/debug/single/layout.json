@@ -8,20 +8,32 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_events.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_badges.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_badges.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_cchlogin.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_cchlogin.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/user_itemview.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/user_itemview.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_course_group.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_course_group.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_points_list_row.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_points_list_row.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_list_menu_item_layout.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_list_menu_item_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_dialog_title_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_update_targets.xml",
@@ -32,12 +44,16 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_learning_target_detail.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/course_download_row_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/course_download_row_oppia.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/point_of_care_listview_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/point_of_care_listview_single.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_activity_chooser_view.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/pdf_file_password.xml",
@@ -49,7 +65,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_layout_tab_icon.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_layout_tab_icon.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/client_registration.xml",
@@ -60,28 +76,36 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/empty_view.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/select_dialog_multichoice_material.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_list_menu_item_icon.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/select_dialog_multichoice_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/learning_add_dialog.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/learning_add_dialog.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_scorecard.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_scorecard.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_icon_group.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_media_action.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_stats.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_stats.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/tag_row_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/tag_row_oppia.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/course_download_row_new.xml",
@@ -92,12 +116,12 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/course_achievements_paginated.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_view_events.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_view_events.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/course_download_row.xml",
@@ -125,35 +149,39 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_item.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/routines_detail_listview_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/routines_detail_listview_single.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/facility_target_achievement_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/facility_target_achievement_single.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/style_text.xml",
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/style_text.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_register.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_register.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/style_text.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/style_text.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/square_date_cell.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/square_date_cell.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_feedback_results.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_feedback_results.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_bar_title_item.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_family_planning_calculators.xml",
@@ -165,7 +193,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/style_dots.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/style_dots.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/style_dots.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/target_number.xml",
@@ -174,6 +202,10 @@
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_month_options.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_month_options.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_scorecards.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_scorecards.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_update_facility_targets.xml",
@@ -192,6 +224,10 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/custom_dialog.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_course_index_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_course_index_oppia.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_login_new.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_login_new.xml"
     },
@@ -204,12 +240,16 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_points.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_add_event.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_add_event.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_event_details_view.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_event_details_view.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_add_event.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_add_event.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/dialog_lollipop_storage_access.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/dialog_lollipop_storage_access.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_main_screen.xml",
@@ -228,16 +268,20 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_postnatal_care_menu.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/dialog_course_contextmenu.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/dialog_course_contextmenu.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/poc_section_item_view.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/poc_section_item_view.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/style_progress.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/style_progress.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/style_progress.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_screen_toolbar.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_third_trimester_counselling.xml",
@@ -253,39 +297,59 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_menu_layout.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_list_menu_item_radio.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_video.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_video.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/search_results_row.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/search_results_row.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/toolbar.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/toolbar.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_search_view.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_video_player.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_video_player.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_layout_snackbar_include.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_quiz_shortanswer.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz_shortanswer.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_reset.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_reset.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_page.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_page.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_course_index.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_course_index.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/support_simple_spinner_dropdown_item.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_webview.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_webview.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_other.xml",
@@ -296,8 +360,16 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_target_details_.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/scorecard_list_row.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/scorecard_list_row.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_monitor.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_monitor.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/dialog_password.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/dialog_password.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_login.xml",
@@ -305,19 +377,19 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_screen_simple.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/listview_text_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/listview_text_single.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_media_cancel_action.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_welcome.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_welcome.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/update_dialog.xml",
@@ -326,10 +398,6 @@
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/poc_topics_activity.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/poc_topics_activity.xml"
-    },
-    {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/diagnostic_listview_single.xml",
@@ -341,15 +409,19 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/step_tab.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/step_tab.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/step_tab.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/listview_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/listview_single.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/drawer_header.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/drawer_header.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_part_time.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/coverage_targetsetting.xml",
@@ -358,6 +430,10 @@
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_treating_diarrhoea.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_treating_diarrhoea.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/course_list_row_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/course_list_row_oppia.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/learning_listview_single.xml",
@@ -370,6 +446,10 @@
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_event_target_detail.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_event_target_detail.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/view_permissions_explanation.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/view_permissions_explanation.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_course_achievements.xml",
@@ -385,11 +465,11 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_menu_item.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_menu_item.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/custom_alert_listview.xml",
@@ -401,7 +481,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_item_separator.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_item_separator.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/course_achievements_detail.xml",
@@ -409,7 +489,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/dot.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/dot.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/dot.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_disgnostic_tool.xml",
@@ -417,11 +497,11 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_bottom_sheet_dialog.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_media.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_media.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/event_update_dialog.xml",
@@ -429,7 +509,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_list_menu_item_checkbox.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/event_set_dialog.xml",
@@ -457,7 +537,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_mode_close_item_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/poc_sub_section_activity.xml",
@@ -465,11 +545,15 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_select_dialog_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_download_media.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_download_media.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/start_up_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/start_up_oppia.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/poc_topic_item_view.xml",
@@ -484,6 +568,10 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/expandable_group_single.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_register.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_register.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_user_registration.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_user_registration.xml"
     },
@@ -496,12 +584,16 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/achievements_target_listview_single.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/tag_row_child.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/tag_row_child.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/registration_info_summary.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/registration_info_summary.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/main.xml",
@@ -529,11 +621,15 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_layout_tab_text.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_quiz.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/tablayout_fixed_tab.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/tablayout_fixed_tab.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_welcome.xml",
@@ -541,7 +637,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_screen_content_include.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_screen_content_include.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/eg.xml",
@@ -577,7 +673,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/step_tab_alternative.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/step_tab_alternative.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/step_tab_alternative.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/schedule_reminder_list_row.xml",
@@ -633,31 +729,35 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_activity_chooser_view_list_item.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_additional_information.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_additional_information.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_menu.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_achievements_details.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_achievements_details.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_estimate_due_date.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_estimate_due_date.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_about.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_about.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_menu.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_bar_up_container.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_estimate_due_date.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_estimate_due_date.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/routines_detail_pager_layout.xml",
@@ -665,7 +765,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_action_mode_bar.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_postnatal_care_counselling.xml",
@@ -677,7 +777,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_alert_dialog_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/first_trimester_counselling_answer_no.xml",
@@ -704,10 +804,6 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/row.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_big_media_custom.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_quiz_multichoice.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz_multichoice.xml"
     },
@@ -728,40 +824,60 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz_feedback_row.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/events_pager_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/events_pager_layout.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/media_controller.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/media_controller.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/survey_popup_dialog.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/survey_popup_dialog.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/events_pager_layout.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/events_pager_layout.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_expanded_menu_layout.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_expanded_menu_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_layout_snackbar.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_layout_snackbar.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_learning_center_references.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_learning_center_references.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_url.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_url.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_about_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_about_oppia.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_popup_menu_header_item_layout.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_media_custom.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_media_custom.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_point_of_care.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_point_of_care.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_download_media_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_download_media_oppia.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/scorecard_quiz_item.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/scorecard_quiz_item.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/style_horizontal_tabs.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.github.fcannizzaro/material-stepper/1.2.2/res/layout/style_horizontal_tabs.xml"
+        "source": "/Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/res/layout/style_horizontal_tabs.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/date_grid_fragment.xml",
@@ -769,7 +885,7 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_menu_item_action_area.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_menu_item_action_area.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_events_list_view.xml",
@@ -777,19 +893,19 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/select_dialog_item_material.xml"
-    },
-    {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/antenatal_care_listview_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/antenatal_care_listview_single.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_item_header.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_item_header.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_postnatal_care_sections.xml",
@@ -805,7 +921,11 @@
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/select_dialog_singlechoice_material.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_download_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_download_oppia.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/coverage_expandable_child_single.xml",
@@ -832,6 +952,10 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz_results.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_badges_list_row.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_badges_list_row.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/event_add_dialog.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/event_add_dialog.xml"
     },
@@ -840,12 +964,20 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/normal_date_cell.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_course_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_course_oppia.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_action.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_action.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/past_event_listview_single.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/past_event_listview_single.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/widget_quiz_unavailable.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/widget_quiz_unavailable.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_new_mainscreen.xml",
@@ -860,60 +992,68 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/events_detail_listview_single.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_big_media_narrow.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_no_of_children.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_no_of_children.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_bottom_navigation_item.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_bottom_navigation_item.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/content_user_registration.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/content_user_registration.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/fragment_points.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/fragment_points.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/client_list_layout.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/client_list_layout.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_popup_menu_item_layout.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/content_user_registration.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/content_user_registration.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/cch_activity_home.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/cch_activity_home.xml"
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_estimate_trimester.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_estimate_trimester.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/cch_activity_home.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/cch_activity_home.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_search.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_search.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_navigation_item_subheader.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_navigation_item_subheader.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/layout/design_text_input_password_icon.xml"
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/layout/design_text_input_password_icon.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/image_view_dialog.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/image_view_dialog.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/textview_for_spinner.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/textview_for_spinner.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/references_item_view.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/references_item_view.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/textview_for_spinner.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/textview_for_spinner.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_lines_media.xml"
+        "source": "/Users/aangjnr/.android/build-cache/da6f5c8de3819410c71f0ece845eeb31e55d54e7/output/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_main_oppia.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/res/layout/activity_main_oppia.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/layout/activity_new_main.xml",

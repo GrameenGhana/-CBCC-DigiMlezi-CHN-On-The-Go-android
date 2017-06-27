@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_vpn_key_white_24dp.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_vpn_key_white_24dp.xml"
     },
@@ -16,12 +20,12 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_local_hospital_grey_500_48dp.xml"
     },
     {
-        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_arrow_forward_black_24dp.xml",
-        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_arrow_forward_black_24dp.xml"
-    },
-    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_date_range_grey_500_24dp.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_date_range_grey_500_24dp.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_arrow_forward_black_24dp.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_arrow_forward_black_24dp.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_perm_contact_calendar_grey_500_24dp.xml",
@@ -36,12 +40,24 @@
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_perm_contact_calendar_grey_600_24dp.xml"
     },
     {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_search_grey_500_24dp.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_search_grey_500_24dp.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_sync_black_24dp.xml",
+        "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_sync_black_24dp.xml"
+    },
+    {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_create_new_folder_black_36dp.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_create_new_folder_black_36dp.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_perm_contact_calendar_grey_700_24dp.xml",
         "source": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_perm_contact_calendar_grey_700_24dp.xml"
+    },
+    {
+        "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
     },
     {
         "merged": "/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_cloud_download_white_24dp.xml",

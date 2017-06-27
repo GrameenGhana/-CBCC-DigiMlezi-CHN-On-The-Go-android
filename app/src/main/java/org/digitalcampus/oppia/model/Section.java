@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,10 +17,14 @@
 
 package org.digitalcampus.oppia.model;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Section implements Serializable  {
+public class Section implements Serializable {
 
 	/**
 	 * 
@@ -31,7 +35,6 @@ public class Section implements Serializable  {
 	private int order;
 	private ArrayList<Lang> titles = new ArrayList<Lang>();
 	private ArrayList<Activity> activities;
-	private float progress = 0;
 	private String imageFile;
 	
 	public String getImageFile() {
@@ -40,14 +43,6 @@ public class Section implements Serializable  {
 
 	public void setImageFile(String imageFile) {
 		this.imageFile = imageFile;
-	}
-
-	public float getProgress() {
-		return progress;
-	}
-
-	public void setProgress(float progress) {
-		this.progress = progress;
 	}
 
 	public Section(){
@@ -72,6 +67,20 @@ public class Section implements Serializable  {
 			return titles.get(0).getContent();
 		}
 		return null;
+	}
+	
+	public String getTitleJSONString(){
+		JSONArray array = new JSONArray();
+		for(Lang l: titles){
+			JSONObject obj = new JSONObject();
+			try {
+				obj.put(l.getLang(), l.getContent());
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			array.put(obj);
+		}
+		return array.toString();
 	}
 	
 	public void setTitles(ArrayList<Lang> titles) {

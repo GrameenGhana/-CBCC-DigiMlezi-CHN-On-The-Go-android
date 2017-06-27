@@ -6,7 +6,7 @@
  */
 package org.cbccessence.cch.popupquestions;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.MobileLearning;
 
 import android.annotation.SuppressLint;

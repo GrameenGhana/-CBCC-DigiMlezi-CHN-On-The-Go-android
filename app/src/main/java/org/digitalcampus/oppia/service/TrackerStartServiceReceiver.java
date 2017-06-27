@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,14 +17,14 @@
 
 package org.digitalcampus.oppia.service;
 
-import org.digitalcampus.mobile.learningGF.R;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+
+import org.digitalcampus.oppia.activity.PrefsActivity;
 
 public class TrackerStartServiceReceiver extends BroadcastReceiver {
 
@@ -34,13 +34,13 @@ public class TrackerStartServiceReceiver extends BroadcastReceiver {
 	public void onReceive(Context ctx, Intent intent) {
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-		boolean backgroundData = prefs.getBoolean(ctx.getString(R.string.prefs_background_data_connect), true);
+		boolean backgroundData = prefs.getBoolean(PrefsActivity.PREF_BACKGROUND_DATA_CONNECT, true);
 		Intent service = new Intent(ctx, TrackerService.class);
 		
 		Bundle tb = new Bundle();
 		tb.putBoolean("backgroundData", backgroundData);
 		service.putExtras(tb);
 		
-		//ctx.startService(service);
+		ctx.startService(service);
 	}
 }

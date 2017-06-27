@@ -1,6 +1,6 @@
 package org.cbccessence.poc;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.utils.UIUtils;
@@ -41,15 +41,15 @@ public class ReferencesMenuActivity extends BaseActivity {
 	    setContentView(R.layout.activity_postnatal_care_sections);
         getSupportActionBar().setTitle("Point of Care");
         getSupportActionBar().setSubtitle("ANC References");
-	    dbh=new DbHelper(mContext);
+	    dbh=  DbHelper.getInstance(mContext);
 		list=new ArrayList<POCSections>();
-		list=dbh.getPocSections("ANC References");
+		//list=dbh.getPocSections("ANC References");
 		listView_calculators=(ListView) findViewById(R.id.listView_postnatalCareSections);
 		ListAdapter adapter=new ListAdapter(mContext, list);
 		listView_calculators.setAdapter(adapter);
 	    start_time=System.currentTimeMillis();
 	    json=new JSONObject();
-	    try {
+	 /*   try {
 			json.put("page", "ANC References");
 			json.put("section", MobileLearning.CCH_REFERENCES);
 			json.put("ver", dbh.getVersionNumber(mContext));
@@ -58,7 +58,7 @@ public class ReferencesMenuActivity extends BaseActivity {
 			json.put("imei", dbh.getDeviceImei(mContext));
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 	    /*String[] items={"Tetanus Toxoid Immunisation","Malaria Prophylaxis with SP for Pregnant Women","Treatment for Uncomplicated Malaria in Pregnant Women"};
 	    CalculatorsSectionsListAdapter adapter=new CalculatorsSectionsListAdapter(mContext,items);

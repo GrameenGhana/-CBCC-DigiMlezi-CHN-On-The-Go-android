@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@
  */
 package org.digitalcampus.oppia.activity;
 
-import java.util.Locale;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.utils.ConnectionUtils;
-import org.digitalcampus.oppia.utils.FileUtils;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -33,6 +27,16 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
+import org.cbccessence.cch.model.User;
+import org.cbccessence.R;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.exception.UserNotFoundException;
+import org.digitalcampus.oppia.model.CbccUser;
+import org.digitalcampus.oppia.utils.ConnectionUtils;
+import org.digitalcampus.oppia.utils.storage.Storage;
+
+import java.util.Locale;
 
 public class MonitorActivity extends AppActivity {
 	
@@ -41,12 +45,9 @@ public class MonitorActivity extends AppActivity {
 	private SharedPreferences prefs;
 	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_monitor);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		webView = new WebView(this);
 		
@@ -63,7 +64,7 @@ public class MonitorActivity extends AppActivity {
 			this.loadMonitor();
 		}
 	}
-	
+
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -71,14 +72,23 @@ public class MonitorActivity extends AppActivity {
 	} 
 	
 	private void loadMonitor(){ 
-		String url = "";
+		String url;
 		if(ConnectionUtils.isNetworkConnected(this)){
-			url = prefs.getString(getString(R.string.prefs_server), getString(R.string.prefServer)) + "mobile/monitor/?";
-			url += "username=" + prefs.getString(getString(R.string.prefs_username), "");
-			url += "&api_key=" + prefs.getString(getString(R.string.prefs_api_key), "");
+			DbHelper db = DbHelper.getInstance(this);
+			CbccUser u;
+			try {
+				u = db.getUser(SessionManager.getUsername(this));
+				url = prefs.getString(PrefsActivity.PREF_SERVER, getString(R.string.prefServer)) + "mobile/monitor/?";
+				url += "username=" + u.getUsername();
+				url += "&api_key=" + u.getApiKey();
+			} catch (UserNotFoundException e) {
+				String lang = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
+	        	url = Storage.getLocalizedFilePath(MonitorActivity.this, lang, "monitor_not_available.html");
+			}
+			
 		} else {
-			String lang = prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage());
-        	url = "file:///android_asset/" + FileUtils.getLocalizedFilePath(MonitorActivity.this,lang,"monitor_not_available.html");
+			String lang = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
+        	url = Storage.getLocalizedFilePath(MonitorActivity.this,lang,"monitor_not_available.html");
 		}
 		webView.loadUrl(url);
 	}
@@ -112,7 +122,7 @@ public class MonitorActivity extends AppActivity {
 		}
 	}
 	
-	private class MonitorWebViewClient extends WebViewClient{
+	private class MonitorWebViewClient extends WebViewClient {
 		
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -121,8 +131,8 @@ public class MonitorActivity extends AppActivity {
 		
 		@Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-        	String lang = prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage());
-        	String url = "file:///android_asset/" + FileUtils.getLocalizedFilePath(MonitorActivity.this,lang,"monitor_not_available.html");
+        	String lang = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
+        	String url = Storage.getLocalizedFilePath(MonitorActivity.this,lang,"monitor_not_available.html");
         	webView.loadUrl(url);
         }
 	}

@@ -57,11 +57,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="2dip"
+            android:padding="@dimen/spacing_half"
             android:gravity="center"
             android:text="@string/loading_courses"
-            android:textColor="@color/TextColorWine"
-            android:textSize="18sp" />
+             android:textSize="@dimen/text_size_normal" />
     </LinearLayout>
 
     <LinearLayout

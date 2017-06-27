@@ -6,12 +6,27 @@
 
 
     <TextView
+        android:id="@+id/place_holder_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Client list will appear here"
+        android:visibility="gone"
+        android:text="No users available"
         android:padding="@dimen/spacing_normal"
         android:layout_centerInParent="true"
+        android:textSize="@dimen/text_size_normal"
 
 
         />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/users_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_half"
+        android:padding="@dimen/spacing_half"
+        >
+
+
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

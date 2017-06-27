@@ -1,6 +1,6 @@
 package org.cbccessence.poc;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
 import org.json.JSONException;
@@ -48,10 +48,10 @@ public class TreatingDiarrhoeaActivity extends BaseActivity {
             getSupportActionBar().setSubtitle("PNC Counselling: Treating Diarrhoea with some dehydration > ORS Calculator");
         }
 	    mContext=TreatingDiarrhoeaActivity.this;
-	    dbh=new DbHelper(TreatingDiarrhoeaActivity.this);
+	   // dbh=new DbHelper(TreatingDiarrhoeaActivity.this);
 	    start_time=System.currentTimeMillis();
 	    json=new JSONObject();
-	    try {
+	    /*try {
 	    	if(category.equals("cwc")){
 	    		json.put("page", "CWC Calculators: ORS Calculator");
 	    	}else{
@@ -64,7 +64,7 @@ public class TreatingDiarrhoeaActivity extends BaseActivity {
 			json.put("imei", dbh.getDeviceImei(mContext));
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
+		}*/
 	    amount=(TextView) findViewById(R.id.textView_amount);
 	    editText_weight=(EditText) findViewById(R.id.editText_weight);
 	    button_calculate=(Button) findViewById(R.id.button_calculate);

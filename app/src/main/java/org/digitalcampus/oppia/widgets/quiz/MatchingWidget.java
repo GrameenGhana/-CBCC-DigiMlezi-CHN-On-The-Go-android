@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,17 +18,9 @@
 package org.digitalcampus.oppia.widgets.quiz;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.mobile.quiz.Quiz;
-import org.digitalcampus.mobile.quiz.model.Response;
-
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -36,15 +28,30 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.cbccessence.R;
+import org.digitalcampus.mobile.quiz.Quiz;
+import org.digitalcampus.mobile.quiz.model.Response;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map.Entry;
+
 public class MatchingWidget extends QuestionWidget {
 
 	public static final String TAG = MatchingWidget.class.getSimpleName();
 	
 	private LinearLayout responsesLL;
 	private LinearLayout[] responseLayouts;
+	protected SharedPreferences prefs;
 	
 	public MatchingWidget(Activity activity, View v, ViewGroup container) {
 		init(activity,container,R.layout.widget_quiz_matching,v);
+		prefs = PreferenceManager.getDefaultSharedPreferences(activity);
 	}
 
 	@Override
@@ -54,14 +61,18 @@ public class MatchingWidget extends QuestionWidget {
     	
     	// this could be tidied up - to use ArrayAdapters/Lists
     	HashMap<String,String> possibleAnswers = new HashMap<String,String>();
+    	ArrayList<String> possibleAnswersShuffle = new ArrayList<String>();
     	int noresponses = 0;
     	for (Response r : responses){
-    		String[] temp = r.getTitle().split(Quiz.MATCHING_REGEX,-1);
+    		String[] temp = r.getTitle(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())).split(Quiz.MATCHING_REGEX,-1);
     		if(!temp[0].equals("")){
     			noresponses++;
     		}
     		possibleAnswers.put(temp[0].trim(),temp[1].trim());
+    		possibleAnswersShuffle.add(temp[1].trim());
     	}
+    	
+    	
     	
     	Iterator<Entry<String, String>> responseIt = possibleAnswers.entrySet().iterator();
     	int counter = 0;
@@ -72,21 +83,22 @@ public class MatchingWidget extends QuestionWidget {
     		// only add if there is question text
     		if(!responsePairs.getKey().equals("")){
 	    		LinearLayout responseLayout = new LinearLayout(ctx);
-	    		responseLayout.setOrientation(LinearLayout.VERTICAL);  
+	    		responseLayout.setOrientation(LinearLayout.VERTICAL);
 	    		TextView tv = new TextView(ctx);
 	    		
 	    		tv.setText(responsePairs.getKey());
 	    		
 	    		Spinner spinner = new Spinner(ctx);
-	    		ArrayAdapter<CharSequence> responseAdapter = new ArrayAdapter<CharSequence>(ctx, android.R.layout.simple_spinner_item); 
+	    		ArrayAdapter<CharSequence> responseAdapter = new ArrayAdapter<CharSequence>(ctx, android.R.layout.simple_spinner_item);
 	    		responseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    		spinner.setAdapter(responseAdapter); 
-	    		Iterator<Entry<String, String>> it = possibleAnswers.entrySet().iterator();
-	    		responseAdapter.add(""); 
-	    	    while (it.hasNext()) {
-	    	        HashMap.Entry<String,String> pairs = (HashMap.Entry<String,String>) it.next();
-	    	        responseAdapter.add(pairs.getValue()); 
+	    		
+	    		responseAdapter.add("");
+	    		Collections.shuffle(possibleAnswersShuffle);
+	    		for (String s: possibleAnswersShuffle){
+	    	        responseAdapter.add(s); 
 	    	    }
+
 	    		responseLayout.addView(tv);
 	    		responseLayout.addView(spinner);
 	    		

@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,31 +17,34 @@
 
 package org.digitalcampus.oppia.model;
 
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.exception.CourseNotFoundException;
+import org.digitalcampus.oppia.utils.storage.Storage;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
 
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.exception.CourseNotFoundException;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-public class Course implements Serializable{
+public class Course implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4412987572522420704L;
-	
+	public static final String SEQUENCING_MODE_NONE = "none";
+    public static final String SEQUENCING_MODE_SECTION = "section";
+    public static final String SEQUENCING_MODE_COURSE = "course";
+
 	public static final String TAG = Course.class.getSimpleName();
-	private int modId;
-	private String location;
+	private int courseId;
 	private ArrayList<Lang> titles = new ArrayList<Lang>();
+	private ArrayList<Lang> descriptions = new ArrayList<Lang>();
 	private String shortname;
-	private float progress = 0;
 	private Double versionId;
 	private boolean installed;
 	private boolean toUpdate;
@@ -54,16 +57,19 @@ public class Course implements Serializable{
 	private Double scheduleVersionID;
 	private String scheduleURI;
 	private boolean isDraft = false;
+	private int priority = 0;
+	private int noActivities = 0;
+	private int noActivitiesCompleted = 0;
+	private int noActivitiesStarted = 0;
+    private String sequencingMode = SEQUENCING_MODE_NONE;
 
-	private String courseGroup;
+	private String root;
 	
-	public Course() {
-
+	public Course(String root) {
+		this.root = root;
 	}	
-	public Course(String downloadUrl, String location,float progress,int modId,ArrayList<Media> media, String shortName) {
-
-	}
-	public boolean validate() throws CourseNotFoundException{
+	
+	public boolean validate() throws CourseNotFoundException {
 		File courseXML = new File(this.getCourseXMLLocation());
 		if(!courseXML.exists()){
 			throw new CourseNotFoundException();
@@ -71,6 +77,7 @@ public class Course implements Serializable{
 			return true;
 		}
 	}
+	
 	public Double getScheduleVersionID() {
 		return scheduleVersionID;
 	}
@@ -91,6 +98,10 @@ public class Course implements Serializable{
 		return imageFile;
 	}
 
+	public String getImageFileFromRoot() {
+		return this.root + File.separator + Storage.APP_COURSES_DIR_NAME + File.separator + this.getShortname() + File.separator + imageFile;
+	}
+	
 	public void setImageFile(String imageFile) {
 		this.imageFile = imageFile;
 	}
@@ -123,7 +134,7 @@ public class Course implements Serializable{
 			for(int i=0; i<langsArray.length(); i++){
 				JSONObject titleObj = langsArray.getJSONObject(i);
 				@SuppressWarnings("unchecked")
-				Iterator<String> iter = (Iterator<String>) titleObj.keys();
+                Iterator<String> iter = (Iterator<String>) titleObj.keys();
 				while(iter.hasNext()){
 					Lang l = new Lang(iter.next().toString(),"");
 					this.langs.add(l);
@@ -142,6 +153,10 @@ public class Course implements Serializable{
 
 	public void setDownloadUrl(String downloadUrl) {
 		this.downloadUrl = downloadUrl;
+	}
+	
+	public String getTrackerLogUrl(){
+		return String.format(MobileLearning.COURSE_ACTIVITY_PATH, this.getShortname());
 	}
 
 	public Double getVersionId() {
@@ -168,12 +183,13 @@ public class Course implements Serializable{
 		this.toUpdate = toUpdate;
 	}
 
-	public float getProgress() {
-		return progress;
-	}
-
-	public void setProgress(float progress) {
-		this.progress = progress;
+	public float getProgressPercent() {
+		// prevent divide by zero errors
+		if (this.noActivities != 0){
+			return this.noActivitiesCompleted*100/this.noActivities;
+		} else {
+			return 0;
+		}
 	}
 
 	public String getShortname() {
@@ -184,28 +200,24 @@ public class Course implements Serializable{
 		this.shortname = shortname.toLowerCase(Locale.US);
 	}
 
-	public int getModId() {
-		return modId;
+	public int getCourseId() {
+		return courseId;
 	}
 
-	public void setModId(int modId) {
-		this.modId = modId;
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
 	public String getLocation() {
-		if (location.endsWith("/")){
-			return location;
-		} else {
-			return location + "/";
-		}
+		return this.root + File.separator + Storage.APP_COURSES_DIR_NAME + File.separator + this.getShortname() + File.separator;
+		
 	}
 
 	public String getCourseXMLLocation(){
-		return this.getLocation() + MobileLearning.COURSE_XML;
+		//String root = prefs.getString(PrefsActivity.PREF_STORAGE_LOCATION, "");
+		return this.root + File.separator + Storage.APP_COURSES_DIR_NAME + File.separator + this.getShortname() + File.separator + MobileLearning.COURSE_XML;
 	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
+	
 
 	public String getTitle(String lang) {
 		for(Lang l: titles){
@@ -229,7 +241,7 @@ public class Course implements Serializable{
 			for(int i=0; i<titlesArray.length(); i++){
 				JSONObject titleObj = titlesArray.getJSONObject(i);
 				@SuppressWarnings("unchecked")
-				Iterator<String> iter = (Iterator<String>) titleObj.keys();
+                Iterator<String> iter = (Iterator<String>) titleObj.keys();
 				while(iter.hasNext()){
 					String key = iter.next().toString();
 					String title = titleObj.getString(key);
@@ -255,6 +267,56 @@ public class Course implements Serializable{
 		}
 		return array.toString();
 	}
+	
+	public String getDescription(String lang) {
+		for(Lang l: descriptions){
+			if(l.getLang().equals(lang)){
+				return l.getContent();
+			}
+		}
+		if(descriptions.size() > 0){
+			return descriptions.get(0).getContent();
+		}
+		return null;
+	}
+	
+	public void setDescriptions(ArrayList<Lang> descriptions) {
+		this.descriptions = descriptions;
+	}
+	
+	public void setDescriptionsFromJSONString(String jsonStr) {
+		try {
+			JSONArray descriptionsArray = new JSONArray(jsonStr);
+			for(int i=0; i<descriptionsArray.length(); i++){
+				JSONObject descriptionObj = descriptionsArray.getJSONObject(i);
+				@SuppressWarnings("unchecked")
+                Iterator<String> iter = (Iterator<String>) descriptionObj.keys();
+				while(iter.hasNext()){
+					String key = iter.next().toString();
+					String description = descriptionObj.getString(key);
+					Lang l = new Lang(key,description);
+					this.descriptions.add(l);
+				}
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String getDescriptionJSONString(){
+		JSONArray array = new JSONArray();
+		for(Lang l: this.descriptions){
+			JSONObject obj = new JSONObject();
+			try {
+				obj.put(l.getLang(), l.getContent());
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			array.put(obj);
+		}
+		return array.toString();
+	}
+	
 	
 	public boolean hasMedia(){
 		if(media.size() == 0){
@@ -297,14 +359,6 @@ public class Course implements Serializable{
 		this.scheduleURI = scheduleURI;
 	}
 
-
-	public String getCourseGroup() {
-		return courseGroup;
-	}
-
-	public void setCourseGroup(String courseGroup) {
-		this.courseGroup = courseGroup;
-	}
 	public boolean isDraft() {
 		return isDraft;
 	}
@@ -313,6 +367,47 @@ public class Course implements Serializable{
 		this.isDraft = isDraft;
 	}
 
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
+	public int getNoActivities() {
+		return noActivities;
+	}
+
+	public void setNoActivities(int noActivities) {
+		this.noActivities = noActivities;
+	}
+
+	public int getNoActivitiesCompleted() {
+		return noActivitiesCompleted;
+	}
+
+	public void setNoActivitiesCompleted(int noActivitiesCompleted) {
+		this.noActivitiesCompleted = noActivitiesCompleted;
+	}
+
+	public int getNoActivitiesStarted() {
+		return noActivitiesStarted;
+	}
+
+	public void setNoActivitiesStarted(int noActivitiesStarted) {
+		this.noActivitiesStarted = noActivitiesStarted;
+	}
 	
-	
+	public int getNoActivitiesNotStarted(){
+		return this.getNoActivities() - this.getNoActivitiesCompleted() - this.getNoActivitiesStarted();
+	}
+
+    public String getSequencingMode() {
+        return sequencingMode;
+    }
+
+    public void setSequencingMode(String sequencingMode) {
+        this.sequencingMode = sequencingMode;
+    }
 }

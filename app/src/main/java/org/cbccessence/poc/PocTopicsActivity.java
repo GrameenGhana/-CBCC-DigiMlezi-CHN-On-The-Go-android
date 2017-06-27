@@ -2,6 +2,7 @@ package org.cbccessence.poc;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,17 +11,22 @@ import android.os.PowerManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
+import org.cbccessence.activity.MainScreenActivity;
+import org.cbccessence.utilities.HttpHandler;
 import org.digitalcampus.oppia.application.DbHelper;
 import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.model.Topic;
-import org.cbccessence.RecyclerItemViewAnimator;
-import org.cbccessence.SpacesItemDecoration;
+import org.cbccessence.models.Topic;
+import org.cbccessence.utilities.RecyclerItemViewAnimator;
+import org.cbccessence.utilities.SpacesItemDecoration;
 import org.cbccessence.adapters.PocTopicsAdapter;
 import org.cbccessence.cch.utils.Utils;
 import org.json.JSONObject;
@@ -57,6 +63,9 @@ public class PocTopicsActivity extends BaseActivity {
     SpacesItemDecoration itemDecoration;
     String TAG = PocTopicsActivity.class.getSimpleName();
     private PocTopicsAdapter adapter;
+    private int size;
+    private int position;
+    HttpHandler handler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,8 +78,9 @@ public class PocTopicsActivity extends BaseActivity {
 
         setContentView(R.layout.poc_topics_activity);
         topicsList = new ArrayList<>();
+        handler = new HttpHandler(this);
 
-        databaseHelper = new DbHelper(this.getApplicationContext());
+        databaseHelper =   DbHelper.getInstance(this.getApplicationContext());
 
         if (subSectionId != -1)
             topicsList = databaseHelper.getTopics(subSectionId);
@@ -118,6 +128,12 @@ public class PocTopicsActivity extends BaseActivity {
     }
 
 
+
+
+
+
+
+
     PocTopicsAdapter.OnItemClickListener onItemClickListener = new PocTopicsAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(View v, int position) {
@@ -148,13 +164,77 @@ public class PocTopicsActivity extends BaseActivity {
 
             }else {//file not found, download and extract into directory then open it :)
 
+                if(handler.checkInternetConnection())
+
                 new DownloadZipFileTask(topicSectionName.trim(), topicSubSectionName.trim(), shortName).execute();
+
+                else handler.showAlertDialog(PocTopicsActivity.this, "No internet connection", "You need an active internet to download this file");
 
 
             }
 
         }
     };
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.references_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.action_home:
+                intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClass(PocTopicsActivity.this, MainScreenActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
+                return true;
+
+            case R.id.download_all:
+
+                showAlertDialog(true, "Download All", "Do you want to download all reference materials?", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //ToDo Download all ZIP's method
+
+
+                    new MassDownloadZipFileTask().execute();
+
+
+
+                    }
+                }, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                        dialog.dismiss();
+
+                    }
+                });
+
+                return true;
+            case R.id.action_logout:
+                logout();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+    }
+
+
 
 
     public void onBackPressed() {
@@ -221,7 +301,7 @@ public class PocTopicsActivity extends BaseActivity {
     }
 
 
-    public class DownloadZipFileTask extends AsyncTask<String, Integer, String> {
+      class DownloadZipFileTask extends AsyncTask<String, Integer, String> {
 
         private PowerManager.WakeLock mWakeLock;
         String TAG = "Download Zip Task";
@@ -472,6 +552,282 @@ public class PocTopicsActivity extends BaseActivity {
 
 
             }
+
+        }
+
+
+
+    }
+
+
+
+    class MassDownloadZipFileTask extends AsyncTask<String, Integer, String> {
+
+        private PowerManager.WakeLock mWakeLock;
+        String TAG = "Mass Download Zip Task";
+        ProgressDialog mProgressDialog;
+
+        String secName;
+        String subSecName;
+        String fileName;
+        File zipFile;
+        File downloadDirectory;
+        Topic topic;
+        InputStream input = null;
+        OutputStream output = null;
+        HttpURLConnection connection = null;
+
+
+        MassDownloadZipFileTask( ) {
+
+            mProgressDialog = new ProgressDialog(PocTopicsActivity.this);
+            mProgressDialog.setTitle("Downloading Content, Please wait... " );
+            mProgressDialog.setIndeterminate(true);
+            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            mProgressDialog.setCancelable(true);
+
+            downloadDirectory = new File(MobileLearning.POC_ROOT);
+            if(!downloadDirectory.exists()){
+                downloadDirectory.mkdirs();
+            }
+
+        }
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            size = topicsList.size();
+
+            // take CPU lock to prevent CPU from going off if the user
+            // presses the power button during download
+            PowerManager pm = (PowerManager) PocTopicsActivity.this.getSystemService(Context.POWER_SERVICE);
+            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                    getClass().getName());
+            mWakeLock.acquire();
+            if(!mProgressDialog.isShowing())
+                mProgressDialog.show();
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... progress) {
+            super.onProgressUpdate(progress);
+            // if we get here, length is known, now set indeterminate to false
+            mProgressDialog.setIndeterminate(false);
+            mProgressDialog.setMax(100);
+            mProgressDialog.setProgress(progress[0]);
+
+        }
+
+        @SuppressWarnings("resource")
+        @Override
+        protected String doInBackground(final String... reqUrl) {
+
+            if(topicsList != null && size != 0){
+
+                for(int i = 0; i < size; i++){
+                    position = i;
+
+                    topic = topicsList.get(i);
+
+                    fileName = topic.getShortName();
+                    secName = topic.getSectionName();
+                    subSecName = topic.getSubSectionName();
+
+
+            zipFile = new File(downloadDirectory, fileName + File.separator + fileName + ".zip");
+
+            Log.i(TAG, "Storage directory is  " + downloadDirectory);
+
+
+            if (!zipFile.exists()) {
+                Log.i(TAG, "File  " + zipFile + " doesn't exists!  Downloading...");
+
+
+                try {
+                    URL url = new URL("http://188.166.30.140/gfcare/storage/uploads/" + fileName + ".zip");
+
+                    Log.i(TAG, "The url is " + url.toString());
+
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.connect();
+
+                    // expect HTTP 200 OK, so we don't mistakenly save error report
+                    // instead of the file
+                    if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+
+                        Log.i(TAG, "Server returned HTTP " + connection.getResponseCode()
+                                + " " + connection.getResponseMessage());
+
+                        return null;
+                    }
+
+                    // this will be useful to display download percentage
+                    // might be -1: server did not report the length
+                    int fileLength = connection.getContentLength();
+
+                    Log.i(TAG, "The file length is " + fileLength);
+                    // download the file
+
+                    input = connection.getInputStream();
+                    output = new FileOutputStream(zipFile);
+
+
+                    (PocTopicsActivity.this).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mProgressDialog.setMessage("Downloading: " + fileName + ".zip");
+                        }
+                    });
+                    //
+                    byte data[] = new byte[4096];
+                    long total = 0;
+                    int count;
+                    while ((count = input.read(data)) != -1) {
+                        // allow canceling with back button
+                        if (isCancelled()) {
+                            input.close();
+                            return null;
+                        }
+                        total += count;
+                        // publishing the progress....
+                        if (fileLength > 0) // only if total length is known
+                            publishProgress((int) (total * 100 / fileLength));
+                        output.write(data, 0, count);
+                    }
+
+                    if (output != null)
+                        output.close();
+                    if (input != null)
+                        input.close();
+
+
+                    return "OK";
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+
+                } finally {
+                    try {
+                        if (output != null)
+                            output.close();
+                        if (input != null)
+                            input.close();
+
+                    } catch (IOException ignored) {
+                        ignored.printStackTrace();
+                    }
+
+                    if (connection != null)
+                        connection.disconnect();
+                }
+
+            }
+        }
+        return "OK";
+
+
+        }else
+            return null;
+
+
+ }
+
+        @Override
+        protected void onPostExecute(String result) {
+            mWakeLock.release();
+            mProgressDialog.dismiss();
+
+
+            final ProgressDialog thread_Progress = new ProgressDialog(PocTopicsActivity.this);
+            thread_Progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            thread_Progress.setTitle("Please wait...");
+            thread_Progress.setMessage("Unzipping " + fileName + ".zip");
+            thread_Progress.setIndeterminate(true);
+            thread_Progress.setCancelable(false);
+
+            if (result == null) {
+                System.out.println(result);
+                Toast.makeText(PocTopicsActivity.this, "Download error: " + result, Toast.LENGTH_LONG).show();
+            } else {
+
+                if (result.equalsIgnoreCase("OK")) {
+
+                Log.i(TAG, "Unzipping " + fileName + ".zip");
+
+                thread_Progress.show();
+
+                Toast.makeText(PocTopicsActivity.this, "File downloaded", Toast.LENGTH_SHORT).show();
+
+                final String file = MobileLearning.POC_ROOT + fileName + File.separator + fileName + ".zip";
+                final String unzipLocation = MobileLearning.POC_ROOT + fileName + File.separator;
+                //unzip here and open file
+
+                Log.i(TAG, "Zip file is " + file);
+                Log.i(TAG, "Location of unzipped files will be at  " + unzipLocation);
+
+
+                final Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        try
+                        {
+                            FileInputStream fin = new FileInputStream(file);
+                            ZipInputStream zin = new ZipInputStream(fin);
+                            ZipEntry ze = null;
+                            while ((ze = zin.getNextEntry()) != null) {
+                                Log.v("Decompress", "Unzipping " + ze.getName());
+
+
+                                if (ze.isDirectory()) {
+                                    _dirChecker(ze.getName(), unzipLocation);
+                                } else {
+                                    FileOutputStream fout = new FileOutputStream(unzipLocation + ze.getName());
+                                    for (int c = zin.read(); c != -1; c = zin.read()) {
+                                        fout.write(c);
+                                    }
+
+                                    zin.closeEntry();
+                                    fout.close();
+                                }
+
+                            }
+                            thread_Progress.dismiss();
+                            zin.close();
+                            //Open file via intent
+                            Log.v("Unzipping", "COMPLETED SUCCESSFULLY!");
+
+
+                            try {
+                                if (zipFile.exists()) {
+                                    zipFile.delete();
+
+                                    Log.v("Redundant Zip file", "DELETED!");
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+
+                            }
+
+
+                        } catch (Exception e) {
+                            thread_Progress.dismiss();
+                            Log.e("Decompress", "unzip", e);
+                            // Toast.makeText(PocTopicsActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                };
+
+                thread.start();
+
+
+            }
+        }
 
         }
 

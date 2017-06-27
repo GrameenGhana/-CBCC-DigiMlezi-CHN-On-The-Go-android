@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,8 +16,6 @@
  */
 package org.digitalcampus.oppia.listener;
 
-import org.digitalcampus.oppia.task.Payload;
-
 public interface PostInstallListener {
-	void postInstallComplete(Payload response);
+	void postInstallComplete(org.digitalcampus.oppia.task.Payload response);
 }

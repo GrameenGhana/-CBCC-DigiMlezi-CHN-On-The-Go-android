@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@
  */
 package org.digitalcampus.oppia.utils;
 
-import java.util.Iterator;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -30,6 +24,12 @@ import android.content.SharedPreferences.Editor;
 import android.os.BatteryManager;
 import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
+
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
 
 public class MetaDataUtils {
 
@@ -72,38 +72,37 @@ public class MetaDataUtils {
 	    return ((float)level / (float)scale) * 100.0f; 
 	}
 	
-	public void saveMetaData(JSONObject metadata, SharedPreferences prefs) throws JSONException{
+	public void saveMetaData(JSONObject metadata, SharedPreferences prefs) throws JSONException {
 		Editor editor = prefs.edit();
 		Iterator<?> keys = metadata.keys();
 		while( keys.hasNext() ){
             String key = (String) keys.next();
-            //Log.d(TAG,key + ": " + metadata.getBoolean(key));
-            editor.putBoolean(ctx.getString(R.string.prefs_metadata) + "_" + key, metadata.getBoolean(key));
+            editor.putBoolean(PrefsActivity.PREF_METADATA + "_" + key, metadata.getBoolean(key));
         }
 		editor.commit();
 	}
 	
-	public JSONObject getMetaData(JSONObject json) throws JSONException{
+	public JSONObject getMetaData(JSONObject json) throws JSONException {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_NETWORK", false)){
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_NETWORK", false)){
 			json.put("network",this.getNetworkProvider());
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_DEVICE_ID", false)){
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_DEVICE_ID", false)){
 			json.put("deviceid",this.getDeviceId());
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_SIM_SERIAL", false)){
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA+ "_SIM_SERIAL", false)){
 			json.put("simserial",this.getSimSerial());
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_WIFI_ON", false)){
-			json.put("wifion",ConnectionUtils.isOnWifi(ctx));
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_WIFI_ON", false)){
+			json.put("wifion", ConnectionUtils.isOnWifi(ctx));
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_NETWORK_CONNECTED", false)){
-			json.put("netconnected",ConnectionUtils.isNetworkConnected(ctx));
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_NETWORK_CONNECTED", false)){
+			json.put("netconnected", ConnectionUtils.isNetworkConnected(ctx));
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_BATTERY_LEVEL", false)){
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_BATTERY_LEVEL", false)){
 			json.put("battery",this.getBatteryLevel());
 		}
-		if(prefs.getBoolean(ctx.getString(R.string.prefs_metadata) + "_GPS", false)){
+		if(prefs.getBoolean(PrefsActivity.PREF_METADATA + "_GPS", false)){
 			json.put("gps","0,0");
 		}
 		return json;

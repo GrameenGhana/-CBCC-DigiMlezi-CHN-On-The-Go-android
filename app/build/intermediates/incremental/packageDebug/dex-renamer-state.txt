@@ -1,4 +1,7 @@
-#Fri Mar 24 15:52:00 GMT 2017
-base.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Thu Jun 15 12:08:44 GMT 2017
+base.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ab700f9264071948faa46ccda5ebba03df5c4a09
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.1=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_410b12191cfed93c63e9c3f92c67b360b2ebe7ed/classes.dex
+base.1=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_410b12191cfed93c63e9c3f92c67b360b2ebe7ed
+file.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ab700f9264071948faa46ccda5ebba03df5c4a09/classes.dex

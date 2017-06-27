@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,25 +17,23 @@
 
 package org.digitalcampus.oppia.service;
 
-import java.util.Calendar;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
+import java.util.Calendar;
 
 public class TrackerScheduleReceiver extends BroadcastReceiver {
 
 	public static final String TAG = TrackerScheduleReceiver.class.getSimpleName();
 
 	// Restart service every 1 hour
-	private static final long REPEAT_TIME = 60000;
+	private static final long REPEAT_TIME = 1000 * 3600;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.d(TAG, "running onReceive service");
 		AlarmManager service = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		Intent i = new Intent(context, TrackerStartServiceReceiver.class);
 		
@@ -48,5 +46,6 @@ public class TrackerScheduleReceiver extends BroadcastReceiver {
 		// every 1 hour
 		// InexactRepeating allows Android to optimize the energy consumption
 		service.setInexactRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), REPEAT_TIME, pending);
+
 	}
 }

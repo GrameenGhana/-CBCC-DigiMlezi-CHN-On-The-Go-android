@@ -13,9 +13,9 @@ import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.shockwave.pdfium.PdfDocument;
 
-import org.cbccessence.PlaceHolder;
+import org.cbccessence.utilities.PlaceHolder;
 import org.cbccessence.poc.BaseActivity;
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.MobileLearning;
 
 import java.io.File;

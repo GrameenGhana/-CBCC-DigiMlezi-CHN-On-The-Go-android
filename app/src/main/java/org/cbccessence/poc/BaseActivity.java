@@ -1,16 +1,18 @@
 package org.cbccessence.poc;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.AboutActivity;
+import org.cbccessence.R;
+import org.cbccessence.activity.AboutActivity;
 import org.digitalcampus.oppia.activity.HelpActivity;
-import org.digitalcampus.oppia.activity.MainScreenActivity;
-import org.digitalcampus.oppia.activity.StartUpActivity;
+import org.cbccessence.activity.MainScreenActivity;
+import org.cbccessence.activity.StartUpActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -93,6 +95,22 @@ public class BaseActivity  extends AppCompatActivity {
 				return; // do nothing
 			}
 		});
+		builder.show();
+	}
+
+
+	public void showAlertDialog(@NonNull boolean cancelable,
+								@Nullable String title,
+								@Nullable String message,
+								@Nullable DialogInterface.OnClickListener onPositiveButtonClickListener,
+ 								@Nullable DialogInterface.OnClickListener onNegativeButtonClickListener
+								) {
+		android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this, R.style.AppDialog);
+		builder.setTitle(title);
+		builder.setCancelable(cancelable);
+		builder.setMessage(message);
+		builder.setPositiveButton("OK", onPositiveButtonClickListener);
+		builder.setNegativeButton("CANCEL", onNegativeButtonClickListener);
 		builder.show();
 	}
 }

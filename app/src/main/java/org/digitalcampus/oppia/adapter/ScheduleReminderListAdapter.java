@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,13 +17,6 @@
 
 package org.digitalcampus.oppia.adapter;
 
-import java.util.ArrayList;
-import java.util.Locale;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.model.Course;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -33,15 +26,25 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class ScheduleReminderListAdapter extends ArrayAdapter<org.digitalcampus.oppia.model.Activity> {
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.model.Activity;
+import org.digitalcampus.oppia.model.Course;
+
+import java.util.ArrayList;
+import java.util.Locale;
+
+public class ScheduleReminderListAdapter extends ArrayAdapter<Activity> {
 
 	public static final String TAG = ScheduleReminderListAdapter.class.getSimpleName();
 
 	private final Context ctx;
-	private final ArrayList<org.digitalcampus.oppia.model.Activity> activityList;
+	private final ArrayList<Activity> activityList;
 	private SharedPreferences prefs;
 	
-	public ScheduleReminderListAdapter(Context context, ArrayList<org.digitalcampus.oppia.model.Activity> activityList) {
+	public ScheduleReminderListAdapter(Context context, ArrayList<Activity> activityList) {
 		super(context, R.layout.schedule_reminder_list_row, activityList);
 		this.ctx = context;
 		this.activityList = activityList;
@@ -54,17 +57,16 @@ public class ScheduleReminderListAdapter extends ArrayAdapter<org.digitalcampus.
 		LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View rowView = inflater.inflate(R.layout.schedule_reminder_list_row, parent, false);
 	    org.digitalcampus.oppia.model.Activity a = activityList.get(position);
-	    DbHelper db = new DbHelper(ctx);
-		Course m = db.getCourse(a.getModId());
-		db.close();
-	    
-		String lang = prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage());
+	    DbHelper db = DbHelper.getInstance(ctx);
+		long userId = db.getUserId(SessionManager.getUsername(ctx));
+		Course course = db.getCourse(a.getCourseId(), userId);
+		String lang = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
 		
 		TextView scheduleTitle = (TextView) rowView.findViewById(R.id.schedule_title);
-		scheduleTitle.setText(m.getTitle(lang) + ": " + a.getTitle(lang));
-		rowView.setTag(R.id.TAG_COURSE_ID,m);
+		scheduleTitle.setText(course.getTitle(lang) + ": " + a.getTitle(lang));
+		rowView.setTag(R.id.TAG_COURSE,course);
 		rowView.setTag(R.id.TAG_ACTIVITY_DIGEST,a.getDigest());
-
+		
 	    return rowView;
 	}
 

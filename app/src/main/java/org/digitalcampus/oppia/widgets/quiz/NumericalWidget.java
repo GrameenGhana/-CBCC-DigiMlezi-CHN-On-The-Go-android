@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,19 +17,19 @@
 
 package org.digitalcampus.oppia.widgets.quiz;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.mobile.quiz.model.Response;
-
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-public class NumericalWidget extends QuestionWidget {
+import org.cbccessence.R;
+import org.digitalcampus.mobile.quiz.model.Response;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class NumericalWidget extends TextInputQuizWidget {
 
 	public static final String TAG = NumericalWidget.class.getSimpleName();
 	
@@ -41,20 +41,22 @@ public class NumericalWidget extends QuestionWidget {
 	@Override
 	public void setQuestionResponses(List<Response> responses, List<String> currentAnswers) {
 		EditText et = (EditText) view.findViewById(R.id.responsetext);
-		Iterator<String> itr = currentAnswers.iterator(); 
+		Iterator<String> itr = currentAnswers.iterator();
 		while(itr.hasNext()) {
-		    String answer = itr.next(); 
+		    String answer = itr.next();
 		    et.setText(answer);
-		} 
+		}
+        hideOnFocusLoss(et);
+
 	}
 	
 	public List<String> getQuestionResponses(List<Response> responses){
 		EditText et = (EditText) view.findViewById(R.id.responsetext);
-		if(et.getText().toString().equals("")){
+		if(et.getText().toString().trim().equals("")){
 			return null;
 		} else {
 			List<String> response = new ArrayList<String>();
-			response.add(et.getText().toString());
+			response.add(et.getText().toString().trim());
 			return response;
 		}
 	}

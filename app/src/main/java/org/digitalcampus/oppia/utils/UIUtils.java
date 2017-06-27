@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,44 +17,59 @@
 
 package org.digitalcampus.oppia.utils;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.concurrent.Callable;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.model.Lang;
-
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
+import android.text.format.Time;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.PrefsActivity;
+import org.digitalcampus.oppia.activity.ScorecardActivity;
+import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.exception.UserNotFoundException;
+import org.digitalcampus.oppia.model.CbccUser;
+import org.digitalcampus.oppia.model.Course;
+import org.digitalcampus.oppia.model.Lang;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.Callable;
 
 public class UIUtils {
 
 	public final static String TAG = UIUtils.class.getSimpleName();
-	private ArrayList<String> langStringList;
-	private ArrayList<Lang> langList;
-	private SharedPreferences prefs;
-	private Context ctx;
-
 	
-	
-	 /**
-     * Displays the users points and badges scores in the app header
 
-     */
-	public static void showUserData(Menu menu, Context ctx) {
+	public static void showUserData(Menu menu, final Context ctx, @Nullable final Course courseInContext) {
 		MenuItem pointsItem = menu.findItem(R.id.points);
-
+      	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+		
+		DbHelper db = DbHelper.getInstance(ctx);
+		CbccUser u;
+		try {
+			u = db.getUser(SessionManager.getUsername(ctx));
+			Log.d(TAG,"username: " + u.getUsername());
+			Log.d(TAG,"points: " + u.getPoints());
+		} catch (UserNotFoundException e) {
+			return;
+		}
+		
 		if(pointsItem == null){
 			return;
 		}
@@ -66,6 +81,67 @@ public class UIUtils {
 			return;
 		}
 		
+		
+		boolean scoringEnabled = prefs.getBoolean(PrefsActivity.PREF_SCORING_ENABLED, true);
+		if (scoringEnabled) {
+			points.setVisibility(View.VISIBLE);
+			points.setText(String.valueOf(u.getPoints()));
+            points.setClickable(true);
+            points.setOnClickListener(new View.OnClickListener() {
+                //@Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ctx, ScorecardActivity.class);
+                    Bundle tb = new Bundle();
+                    tb.putString(ScorecardActivity.TAB_TARGET, ScorecardActivity.TAB_TARGET_POINTS);
+                    if (courseInContext != null){
+                        tb.putSerializable(Course.TAG, courseInContext);
+                    }
+                    i.putExtras(tb);
+                    ctx.startActivity(i);
+                }
+            });
+		} else {
+			points.setVisibility(View.GONE);
+		}
+		
+		boolean badgingEnabled = prefs.getBoolean(PrefsActivity.PREF_BADGING_ENABLED, true);
+		if (badgingEnabled) {
+			badges.setVisibility(View.VISIBLE);
+			badges.setText(String.valueOf(u.getBadges()));
+            badges.setClickable(true);
+            badges.setOnClickListener(new View.OnClickListener() {
+                //@Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ctx, ScorecardActivity.class);
+                    Bundle tb = new Bundle();
+                    tb.putString(ScorecardActivity.TAB_TARGET, ScorecardActivity.TAB_TARGET_BADGES);
+                    if (courseInContext != null){
+                        tb.putSerializable(Course.TAG, courseInContext);
+                    }
+                    i.putExtras(tb);
+                    ctx.startActivity(i);
+                }
+            });
+		} else {
+			badges.setVisibility(View.GONE);
+		}
+	}
+
+
+	public static void showUserData(Menu menu, Context ctx) {
+		MenuItem pointsItem = menu.findItem(R.id.points);
+
+		if(pointsItem == null){
+			return;
+		}
+
+		TextView points = (TextView) pointsItem.getActionView().findViewById(R.id.userpoints);
+		TextView badges = (TextView) pointsItem.getActionView().findViewById(R.id.userbadges);
+
+		if(points == null || badges == null){
+			return;
+		}
+
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 		boolean scoringEnabled = prefs.getBoolean(ctx.getString(R.string.prefs_scoring_enabled), true);
 		if (scoringEnabled) {
@@ -78,6 +154,9 @@ public class UIUtils {
 			badges.setVisibility(View.GONE);
 		}
 	}
+
+
+
 	/**
 	 * @param ctx
 	 * @param title
@@ -122,7 +201,7 @@ public class UIUtils {
 		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 		builder.setTitle(title);
 		builder.setMessage(msg);
-		builder.setPositiveButton(btnText, new DialogInterface.OnClickListener() {
+		builder.setNeutralButton(btnText, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				dialog.cancel();
 			}
@@ -139,12 +218,12 @@ public class UIUtils {
 	 * @param funct
 	 * @return
 	 */
-	public static AlertDialog showAlert(Context ctx, int title, int msg, Callable<Boolean> funct) {
-		return UIUtils.showAlert(ctx, ctx.getString(title), ctx.getString(msg), funct);
+	public static void showAlert(Context ctx, int title, int msg, Callable<Boolean> funct) {
+        UIUtils.showAlert(ctx, ctx.getString(title), ctx.getString(msg), funct);
 	}
 
-	public static AlertDialog showAlert(Context ctx, int title, int msg, int btnText, Callable<Boolean> funct) {
-		return UIUtils.showAlert(ctx, ctx.getString(title), ctx.getString(msg),ctx.getString(btnText), funct);
+	public static void showAlert(Context ctx, int title, int msg, int btnText, Callable<Boolean> funct) {
+		UIUtils.showAlert(ctx, ctx.getString(title), ctx.getString(msg),ctx.getString(btnText), funct);
 	}
 	/**
 	 * @param ctx
@@ -153,12 +232,12 @@ public class UIUtils {
 	 * @param funct
 	 * @return
 	 */
-	public static AlertDialog showAlert(Context ctx, int R, CharSequence msg, Callable<Boolean> funct) {
-		return UIUtils.showAlert(ctx, ctx.getString(R), msg, funct);
+	public static void showAlert(Context ctx, int R, CharSequence msg, Callable<Boolean> funct) {
+		UIUtils.showAlert(ctx, ctx.getString(R), msg, funct);
 	}
 
-	public static AlertDialog showAlert(Context ctx, String title, CharSequence msg, final Callable<Boolean> funct) {
-		return UIUtils.showAlert(ctx, title, msg, ctx.getString(R.string.close),funct);
+	public static void showAlert(Context ctx, String title, CharSequence msg, final Callable<Boolean> funct) {
+		UIUtils.showAlert(ctx, title, msg, ctx.getString(R.string.close),funct);
 	}
 	/**
 	 * @param ctx
@@ -167,12 +246,17 @@ public class UIUtils {
 	 * @param funct
 	 * @return
 	 */
-	public static AlertDialog showAlert(Context ctx, String title, CharSequence msg, String btnText, final Callable<Boolean> funct) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+	public static void showAlert(Context ctx, String title, CharSequence msg, String btnText, final Callable<Boolean> funct) {
+        if ( ctx instanceof Activity) {
+            Activity activity = (Activity) ctx;
+            if ( activity.isFinishing() ) { return; }
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 		builder.setTitle(title);
 		builder.setMessage(msg);
 		builder.setCancelable(true);
-		builder.setPositiveButton(btnText, new DialogInterface.OnClickListener() {
+		builder.setNeutralButton(btnText, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int id) {
 				dialog.cancel();
 			}
@@ -189,7 +273,6 @@ public class UIUtils {
 		});
 		AlertDialog alert = builder.create();
         alert.show();
-		return alert;
 	}
 	
 	
@@ -200,33 +283,32 @@ public class UIUtils {
 	 * @param prefs
 	 * @param funct
 	 */
-	public void createLanguageDialog(Context ctx, ArrayList<Lang> langs, SharedPreferences prefs, final Callable<Boolean> funct) {
-		this.langStringList = new ArrayList<String>();
-		this.langList = new ArrayList<Lang>();
-		this.prefs = prefs;
-		this.ctx = ctx;
+	public static void createLanguageDialog(Context ctx, ArrayList<Lang> langs, final SharedPreferences prefs, final Callable<Boolean> funct) {
+        ArrayList<String> langStringList = new ArrayList<String>();
+        final ArrayList<Lang> languagesList = new ArrayList<Lang>();
 		
 		// make sure there aren't any duplicates
-		for(Lang l: langs){
+		for(Lang lang: langs){
 			boolean found = false;
-			for(Lang ln: langList){
-				if(ln.getLang().equals(l.getLang())){
+			for(Lang ln: languagesList){
+				if(ln.getLang().equals(lang.getLang())){
 					found = true;
+                    break;
 				}
 			}
-			if(!found){
-				langList.add(l);
-			}
+			if(!found){ languagesList.add(lang); }
 		}
 		
-		int selected = -1;
+		int prefLangPosition = -1;
 		int i = 0;
-		for(Lang l: langList){
-			Locale loc = new Locale(l.getLang());
-			String langDisp = loc.getDisplayLanguage(loc);
+
+        String prefLanguage = prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage());
+		for(Lang lang: languagesList){
+			Locale locale = new Locale(lang.getLang());
+			String langDisp = locale.getDisplayLanguage(locale);
 			langStringList.add(langDisp);
-			if (l.getLang().equals(prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage()))) {
-				selected = i;
+			if (lang.getLang().equals(prefLanguage)) {
+                prefLangPosition = i;
 			}
 			i++;
 		}
@@ -234,14 +316,13 @@ public class UIUtils {
 		// only show if at least one language
 		if (i > 0) {
 			ArrayAdapter<String> arr = new ArrayAdapter<String>(ctx, android.R.layout.select_dialog_singlechoice,langStringList);
-
 			AlertDialog mAlertDialog = new AlertDialog.Builder(ctx)
-					.setSingleChoiceItems(arr, selected, new DialogInterface.OnClickListener() {
+					.setSingleChoiceItems(arr, prefLangPosition, new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int whichButton) {
-							String newLang = langList.get(whichButton).getLang();
-							Editor editor = UIUtils.this.prefs.edit();
-							editor.putString(UIUtils.this.ctx.getString(R.string.prefs_language), newLang);
-							editor.apply();
+							String newLang = languagesList.get(whichButton).getLang();
+							Editor editor = prefs.edit();
+							editor.putString(PrefsActivity.PREF_LANGUAGE, newLang);
+							editor.commit();
 							dialog.dismiss();
 							try {
 								funct.call();
@@ -260,6 +341,45 @@ public class UIUtils {
 			mAlertDialog.show();
 		}
 	}
-	
+
+
+	public String getDateTime() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(
+				"dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
+
+	public String getDate() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(
+				"dd-MM-yyyy", Locale.getDefault());
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
+
+
+	public static String getTime()
+	{
+		Time time = new Time();
+		time.setToNow();
+
+		if (time.hour < 12)
+		{
+			return "morning";
+		}
+		else if (time.hour >= 12 && time.hour <= 17)
+		{
+			return "afternoon";
+		}
+		else if (time.hour > 17 && time.hour < 23)
+		{
+			return "evening";
+		}
+		else
+		{
+			return "";
+		}
+	}
+
 
 }

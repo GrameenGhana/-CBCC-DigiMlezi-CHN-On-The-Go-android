@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,226 +17,213 @@
 
 package org.digitalcampus.oppia.activity;
 
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import org.cbccessence.R;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.application.PermissionsManager;
+import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.listener.InstallCourseListener;
+import org.digitalcampus.oppia.listener.PostInstallListener;
+import org.digitalcampus.oppia.listener.PreloadAccountsListener;
+import org.digitalcampus.oppia.listener.StorageAccessListener;
+import org.digitalcampus.oppia.listener.UpgradeListener;
+import org.digitalcampus.oppia.model.DownloadProgress;
+import org.digitalcampus.oppia.service.GCMRegistrationService;
+import org.digitalcampus.oppia.task.InstallDownloadedCoursesTask;
+import org.digitalcampus.oppia.task.Payload;
+import org.digitalcampus.oppia.task.PostInstallTask;
+import org.digitalcampus.oppia.task.UpgradeManagerTask;
+import org.digitalcampus.oppia.utils.GooglePlayUtils;
+import org.digitalcampus.oppia.utils.storage.Storage;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.application.MobileLearning;
-import org.digitalcampus.oppia.listener.InstallCourseListener;
-import org.digitalcampus.oppia.listener.PostInstallListener;
-import org.digitalcampus.oppia.model.DownloadProgress;
-import org.digitalcampus.oppia.task.InstallDownloadedCoursesTask;
-import org.digitalcampus.oppia.task.Payload;
-import org.digitalcampus.oppia.task.PostInstallTask;
-import org.cbccessence.cch.tasks.CourseDetailsTask;
-
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-public class StartUpActivity extends AppCompatActivity implements PostInstallListener, InstallCourseListener {
+public class StartUpActivity extends Activity implements UpgradeListener, PostInstallListener, InstallCourseListener, PreloadAccountsListener {
 
 	public final static String TAG = StartUpActivity.class.getSimpleName();
 	private TextView tvProgress;
 	private SharedPreferences prefs;
-	private DbHelper dbh;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			Window w = getWindow(); // in Activity's onCreate() for instance
-			w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-			w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		}
-        
+         setContentView(R.layout.start_up_oppia);
 
-		if(getSupportActionBar() != null)
-        getSupportActionBar().hide();
-        setContentView(R.layout.start_up);
-
-
-		Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
-		anim.reset();
-		RelativeLayout splash = (RelativeLayout) findViewById(R.id.splash_layout);
-		splash.clearAnimation();
-		splash.startAnimation(anim);
-
-		anim = AnimationUtils.loadAnimation(this, R.anim.translate_splash_screen);
-		anim.reset();
-		ImageView iv = (ImageView) findViewById(R.id.splash_logo);
-		iv.clearAnimation();
-		iv.startAnimation(anim);
-
-
-		Thread splashTread = new Thread() {
-			@Override
-			public void run() {
-				try {
-					int waited = 0;
-					// Splash screen pause time
-					while (waited < 2500) {
-						sleep(100);
-						waited += 100;
-					}
-
-                    if(isOnline()){
-                        try{
-							String url = getResources().getString(R.string.serverDefaultAddress)+"/"+MobileLearning.CCH_COURSE_DETAILS_PATH;
-                            Log.i("Start Up Act.", url);
-							Log.i("Get course details", url);
-                            if(dbh.getCourseGroups()>=0){
-                                CourseDetailsTask courseDetails = new CourseDetailsTask(StartUpActivity.this);
-                                courseDetails.execute(url);
-                            }
-                        }catch(Exception e){
-                            e.printStackTrace();
+        if (MobileLearning.DEVICEADMIN_ENABLED){
+            boolean isGooglePlayAvailable = GooglePlayUtils.checkPlayServices(this,
+                    new GooglePlayUtils.DialogListener() {
+                        @Override
+                        public void onErrorDialogClosed() {
+                            //If Google play is not available, we need to close the app
+                            StartUpActivity.this.finish();
                         }
+                    });
+            if (!isGooglePlayAvailable) return;
+        }
+
+        tvProgress = (TextView) this.findViewById(R.id.start_up_progress);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String username = SessionManager.getUsername(this);
+ 	}
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        boolean shouldContinue = PermissionsManager.CheckPermissionsAndInform(this);
+        if (!shouldContinue) return;
+
+        if (MobileLearning.DEVICEADMIN_ENABLED) {
+            //We need to check again the Google Play API availability
+            boolean isGooglePlayAvailable = GooglePlayUtils.checkPlayServices(this,
+                    new GooglePlayUtils.DialogListener() {
+                        @Override
+                        public void onErrorDialogClosed() {
+                            //If Google play is not available, we need to close the app
+                            StartUpActivity.this.finish();
+                        }
+                    });
+            if (!isGooglePlayAvailable) {
+                this.finish();
+                return;
+            }
+            // Start IntentService to register the phone with GCM.
+           // Intent intent = new Intent(this, GCMRegistrationService.class);
+          //  startService(intent);
+        }
+
+        UpgradeManagerTask umt = new UpgradeManagerTask(this);
+        umt.setUpgradeListener(this);
+        ArrayList<Object> data = new ArrayList<>();
+        Payload p = new Payload(data);
+        umt.execute(p);
+ 		
+	}
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        PermissionsManager.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+	
+	
+    private void updateProgress(String text){
+    	if(tvProgress != null){
+    		tvProgress.setText(text);
+    	}
+    }
+	
+	private void endStartUpScreen() {
+        // launch new activity and close splash screen
+        startActivity(new Intent(StartUpActivity.this,
+                SessionManager.isLoggedIn(this)
+                        ? OppiaMobileActivity.class
+                        : WelcomeActivity.class));
+        this.finish();
+    }
+
+	private void installCourses(){
+		File dir = new File(Storage.getDownloadPath(this));
+		String[] children = dir.list();
+		if (children != null) {
+			ArrayList<Object> data = new ArrayList<>();
+     		Payload payload = new Payload(data);
+			InstallDownloadedCoursesTask imTask = new InstallDownloadedCoursesTask(this);
+			imTask.setInstallerListener(this);
+			imTask.execute(payload);
+		} else {
+            preloadAccounts();
+
+		}
+	}
+
+    private void preloadAccounts(){
+        SessionManager.preloadUserAccounts(this, this);
+    }
+	
+	public void upgradeComplete(final Payload p) {
+
+        if (Storage.getStorageStrategy().needsUserPermissions(this)){
+            Log.d(TAG, "Asking user for storage permissions");
+            Storage.getStorageStrategy().askUserPermissions(this, new StorageAccessListener() {
+                @Override
+                public void onAccessGranted(boolean isGranted) {
+                    Log.d(TAG, "Access granted for storage: " + isGranted);
+                    if (!isGranted) {
+                        Toast.makeText(StartUpActivity.this, getString(R.string.storageAccessNotGranted), Toast.LENGTH_LONG).show();
                     }
+                    afterUpgrade(p);
+                }
+            });
+        }
+        else{
+            afterUpgrade(p);
+        }
+	}
 
-				}
-				catch (InterruptedException e) {
-					// do nothing
-				} finally {
-
-                    endStartUpScreen();
-
-				}
-			}
-		};
-		splashTread.start();
-
-
-
-
-
-
-        if(!MobileLearning.createDirs()){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    private void afterUpgrade(Payload p){
+        // set up local dirs
+        if(!Storage.createFolderStructure(this)){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppAlertDialog);
             builder.setCancelable(false);
             builder.setTitle(R.string.error);
             builder.setMessage(R.string.error_sdcard);
             builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                    dialog.dismiss();
                     StartUpActivity.this.finish();
                 }
             });
             builder.show();
             return;
         }
- 		
 
-	}
-	
-	
-
-	
-	private void endStartUpScreen() {
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(StartUpActivity.this);
-		boolean isSignedIn = prefs.getBoolean("isSignedIn", false);
-        // launch new activity and close splash screen
-		if (!isSignedIn) {
-			startActivity(new Intent(StartUpActivity.this, LoginActivity.class));
-			finish();
-			 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-		} else {
-			startActivity(new Intent(StartUpActivity.this, MainScreenActivity.class));
-			finish();
-			 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right);
-		}
+        if(p.isResult()){
+            Payload payload = new Payload();
+            PostInstallTask piTask = new PostInstallTask(this);
+            piTask.setPostInstallListener(this);
+            piTask.execute(payload);
+        } else {
+            // now install any new courses
+            this.installCourses();
+        }
     }
 
-	private void installCourses(){
-		File dir = new File(MobileLearning.DOWNLOAD_PATH);
-		String[] children = dir.list();
-		if (children != null) {
-			ArrayList<Object> data = new ArrayList<Object>();
-     		Payload payload = new Payload(data);
-			InstallDownloadedCoursesTask imTask = new InstallDownloadedCoursesTask(this);
-			imTask.setInstallerListener(this);
-			imTask.execute(payload);
-		} else {
-			endStartUpScreen();
-		}
-	}
-	
-	public void upgradeComplete(Payload p) {
-		if(p.isResult()){
-			Payload payload = new Payload();
-			PostInstallTask piTask = new PostInstallTask(this);
-			piTask.setPostInstallListener(this);
-			piTask.execute(payload);
-		} else {
-			// now install any new courses
-			this.installCourses();
-		}
-		
-	}
-
-
+	public void upgradeProgressUpdate(String s) { this.updateProgress(s); }
 	public void postInstallComplete(Payload response) {
 		this.installCourses();
 	}
 
-	public void downloadComplete(Payload p) {
-		// do nothing
-		
-	}
-
-	public void downloadProgressUpdate(DownloadProgress dp) {
-		// do nothing
-		
-	}
+	public void downloadComplete(Payload p) { }
+	public void downloadProgressUpdate(DownloadProgress dp) { }
 
 	public void installComplete(Payload p) {
 		if(p.getResponseData().size()>0){
-			Editor e = prefs.edit();
-			e.putLong(getString(R.string.prefs_last_media_scan), 0);
-			e.apply();
+            prefs.edit().putLong(PrefsActivity.PREF_LAST_MEDIA_SCAN, 0).apply();
 		}
-		endStartUpScreen();	
+		preloadAccounts();
+	}
+
+	public void installProgressUpdate(DownloadProgress dp) {
+		this.updateProgress(dp.getMessage());
 	}
 
     @Override
-    public void installProgressUpdate(DownloadProgress dp) {
-
+    public void onPreloadAccountsComplete(Payload payload) {
+        if ((payload!=null) && payload.isResult()){
+            Toast.makeText(this, payload.getResultResponse(), Toast.LENGTH_LONG).show();
+        }
+        endStartUpScreen();
     }
-
-
-    public boolean isOnline() {
-		 boolean haveConnectedWifi = false;
-		    boolean haveConnectedMobile = false;
-
-		    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
-		    for (NetworkInfo ni : netInfo) {
-		        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
-		            if (ni.isConnected())
-		                haveConnectedWifi = true;
-		        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
-		            if (ni.isConnected())
-		                haveConnectedMobile = true;
-		    }
-		    return haveConnectedWifi || haveConnectedMobile;
-	}
 }

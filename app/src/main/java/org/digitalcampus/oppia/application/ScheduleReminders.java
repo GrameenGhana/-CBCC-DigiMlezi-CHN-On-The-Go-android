@@ -1,11 +1,21 @@
+/*
+ * This file is part of OppiaMobile - https://digital-campus.org/
+ *
+ * OppiaMobile is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * OppiaMobile is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with OppiaMobile. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package org.digitalcampus.oppia.application;
-
-import java.util.ArrayList;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.CourseIndexActivity;
-import org.digitalcampus.oppia.adapter.ScheduleReminderListAdapter;
-import org.digitalcampus.oppia.model.Course;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +27,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import org.cbccessence.R;
+import org.digitalcampus.oppia.activity.CourseIndexActivity;
+import org.digitalcampus.oppia.adapter.ScheduleReminderListAdapter;
+import org.digitalcampus.oppia.model.Activity;
+import org.digitalcampus.oppia.model.Course;
+
+import java.util.ArrayList;
 
 public class ScheduleReminders extends LinearLayout {
 
@@ -33,7 +51,7 @@ public class ScheduleReminders extends LinearLayout {
 		this.ctx = context;
 	}
 
-	public void initSheduleReminders(ArrayList<org.digitalcampus.oppia.model.Activity> activities) {
+	public void initSheduleReminders(ArrayList<Activity> activities) {
 		setOrientation(VERTICAL);
 		LinearLayout ll = (LinearLayout) findViewById(R.id.schedule_reminders);
 		ll.removeAllViews();
@@ -51,11 +69,11 @@ public class ScheduleReminders extends LinearLayout {
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Course m = (Course) view.getTag(R.id.TAG_COURSE_ID);
+				Course course = (Course) view.getTag(R.id.TAG_COURSE);
 				String digest = (String) view.getTag(R.id.TAG_ACTIVITY_DIGEST);
 				Intent i = new Intent(getContext(), CourseIndexActivity.class);
 				Bundle tb = new Bundle();
-				tb.putSerializable(Course.TAG, m);
+				tb.putSerializable(Course.TAG, course);
 				tb.putSerializable("JumpTo", digest);
 				i.putExtras(tb);
 				getContext().startActivity(i);

@@ -1,30 +1,9 @@
 package org.cbccessence.cch.model;
 
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.application.DbHelper;
-import org.cbccessence.adapters.RoutinesDetailPagerAdapter;
-import org.cbccessence.cch.activity.StayingWellActivity;
-
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class RoutineActivityDetails extends Fragment {
-	 
+	/*
 	private Context mContext;
 	private DbHelper dbh;
 
@@ -91,5 +70,5 @@ public class RoutineActivityDetails extends Fragment {
 		    }
 		   	}
 		    return rootView;
-	 }
+	 }*/
 }

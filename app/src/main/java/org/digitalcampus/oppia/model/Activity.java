@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,21 +17,22 @@
 
 package org.digitalcampus.oppia.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Iterator;
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.utils.ImageUtils;
 import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.res.Resources;
-import android.graphics.drawable.BitmapDrawable;
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Activity implements Serializable{
+public class Activity implements Serializable {
 	
 	/**
 	 * 
@@ -40,9 +41,10 @@ public class Activity implements Serializable{
 
 	public static final String TAG = Activity.class.getSimpleName();
 	
-	private long modId;
+	private long courseId;
 	private int sectionId;
 	private int actId;
+	private int dbId;
 	private String actType;
 	private ArrayList<Lang> titles = new ArrayList<Lang>();
 	private ArrayList<Lang> locations = new ArrayList<Lang>();
@@ -64,18 +66,25 @@ public class Activity implements Serializable{
 	public boolean hasCustomImage(){
 		return this.customImage;
 	}
-	
+
+    public String getImageFilePath(String prefix){
+        if(!prefix.endsWith(File.separator)){
+            prefix += File.separator;
+        }
+        return prefix + this.imageFile;
+    }
+
+    public int getDefaultResourceImage(){
+        if(actType.equals("quiz")){
+            return R.drawable.default_icon_quiz;
+        } else if (actType.equals("page") && this.hasMedia()){
+            return R.drawable.default_icon_video;
+        }
+        return R.drawable.default_icon_activity;
+    }
+
 	public BitmapDrawable getImageFile(String prefix, Resources res) {
-		int defaultImage = R.drawable.default_icon_activity;
-		if(actType.equals("quiz")){
-			defaultImage = R.drawable.default_icon_quiz;
-		} else if (actType.equals("page") && this.hasMedia()){
-			defaultImage = R.drawable.default_icon_video;
-		}
-		if(!prefix.endsWith("/")){
-			prefix += "/";
-		}
-		return ImageUtils.LoadBMPsdcard(prefix + this.imageFile, res, defaultImage);
+		return ImageUtils.LoadBMPsdcard(getImageFilePath(prefix), res, getDefaultResourceImage());
 	}
 
 	public void setImageFile(String imageFile) {
@@ -99,12 +108,12 @@ public class Activity implements Serializable{
 		this.digest = digest;
 	}
 	
-	public long getModId() {
-		return modId;
+	public long getCourseId() {
+		return courseId;
 	}
 
-	public void setModId(long modId) {
-		this.modId = modId;
+	public void setCourseId(long courseId) {
+		this.courseId = courseId;
 	}
 
 	public int getSectionId() {
@@ -163,7 +172,7 @@ public class Activity implements Serializable{
 			for(int i=0; i<titlesArray.length(); i++){
 				JSONObject titleObj = titlesArray.getJSONObject(i);
 				@SuppressWarnings("unchecked")
-				Iterator<String> iter = (Iterator<String>) titleObj.keys();
+                Iterator<String> iter = (Iterator<String>) titleObj.keys();
 				while(iter.hasNext()){
 					String key = iter.next().toString();
 					String title = titleObj.getString(key);
@@ -189,7 +198,7 @@ public class Activity implements Serializable{
 		if(locations.size() > 0){
 			return locations.get(0).getContent();
 		}
-		return "No location set";
+		return null;
 	}
 	
 	public void setLocations(ArrayList<Lang> locations) {
@@ -205,13 +214,31 @@ public class Activity implements Serializable{
 		if(contents.size() > 0){
 			return contents.get(0).getContent();
 		}
-		return "No content set";
+		return "No content";
 	}
 	
 	public void setContents(ArrayList<Lang> contents) {
 		this.contents = contents;
 	}
 	
+	public void setContentFromJSONString(String json){
+		try {
+			JSONArray contentsArray = new JSONArray(json);
+			for(int i=0; i<contentsArray.length(); i++){
+				JSONObject contentObj = contentsArray.getJSONObject(i);
+				@SuppressWarnings("unchecked")
+                Iterator<String> iter = (Iterator<String>) contentObj.keys();
+				while(iter.hasNext()){
+					String key = iter.next().toString();
+					String content = contentObj.getString(key);
+					Lang l = new Lang(key,content);
+					this.contents.add(l);
+				}
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 	public boolean hasMedia(){
 		if(media.size() == 0){
 			return false;
@@ -274,5 +301,13 @@ public class Activity implements Serializable{
 
 	public void setAttempted(boolean attempted) {
 		this.attempted = attempted;
+	}
+
+	public int getDbId() {
+		return dbId;
+	}
+
+	public void setDbId(int dbId) {
+		this.dbId = dbId;
 	}
 }

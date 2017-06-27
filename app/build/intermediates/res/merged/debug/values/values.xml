@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
     <string-array name="CoverageImmunizationMeaslesRubella">
         <item>Measles Rubella @9mnths</item>
         <item>Measles 2</item>
@@ -242,10 +242,9 @@
         <item>To update annualy</item>
     </string-array>
     <string-array name="channel">
-        <item>SHS</item>
-        <item>JHS</item>
-        <item>Tertiary</item>
-        <item>None</item>
+        <item>SMS</item>
+        <item>Voice</item>
+
     </string-array>
     <string-array name="client_type">
         <item>Pregnant woman</item>
@@ -285,14 +284,9 @@
         <item>Pregnant and have a baby</item>
     </string-array>
     <string-array name="program">
-        <item>Latin</item>
-        <item>Ewe</item>
-        <item>Latin</item>
-        <item>Twi</item>
-        <item>Swahili</item>
-        <item>English</item>
-        <item>French</item>
-        <item>Spanish</item>
+        <item>Afia</item>
+        <item>Kijana</item>
+        <item>Tunza</item>
     </string-array>
     <string-array name="weeks">
         <item>Week 1</item>
@@ -339,6 +333,7 @@
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="achievementAmber">#F0A30A</color>
+    <color name="activity_icon_background">#ffffff</color>
     <color name="background_card">#fff</color>
     <color name="background_dark">#333333</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
@@ -373,6 +368,22 @@
     <color name="colorAccent">#50ade4</color>
     <color name="colorPrimary">@color/gradient_color_2</color>
     <color name="colorPrimaryDark">@color/gradient_color_1</color>
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+    <color name="common_plus_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_plus_signin_btn_text_dark_disabled">#FFAAAAAA</color>
+    <color name="common_plus_signin_btn_text_dark_focused">@android:color/white</color>
+    <color name="common_plus_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_plus_signin_btn_text_light_default">#FF737373</color>
+    <color name="common_plus_signin_btn_text_light_disabled">#FFAAAAAA</color>
+    <color name="common_plus_signin_btn_text_light_focused">#FF737373</color>
+    <color name="common_plus_signin_btn_text_light_pressed">#DE000000</color>
     <color name="default_icon_foreground">#666666</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
@@ -402,9 +413,13 @@
     <color name="gradient_color_3">#313694</color>
     <color name="green_200">#A5D6A7</color>
     <color name="green_500">#4CAF50</color>
-    <color name="highlight_dark">#495525</color>
-    <color name="highlight_light">#74B042</color>
-    <color name="highlight_mid">#9aca3c</color>
+    <color name="highlight_dark">#b533b5e5</color>
+    <color name="highlight_label">#434648</color>
+    <color name="highlight_light">#ff33b5e5</color>
+    <color name="highlight_mid">#ff33b5e5</color>
+    <color name="highlight_secondary">#ff33b5e5</color>
+    <color name="highlight_separator">#b9b9b9</color>
+    <color name="highlight_shadow">#b633b5e5</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="learningMagenta">#D80073</color>
@@ -713,7 +728,7 @@
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="pocRed">#E51400</color>
-    <color name="pressed_om">#CC9ACA3C</color>
+    <color name="pressed_om">#ff0099cc</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -724,6 +739,8 @@
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="psts_background_tab_pressed">#1AFFFFFF</color>
     <color name="psts_background_tab_pressed_ripple">#AAFFFFFF</color>
+    <color name="quiz_navigation_bar">#D2D2D2</color>
+    <color name="quiz_navigation_button">#FF5A595B</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -743,6 +760,8 @@
     <color name="text_color">#ffffff</color>
     <color name="text_color_grey">#555b55</color>
     <color name="text_dark">#222222</color>
+    <color name="text_error">#DD2C00</color>
+    <color name="text_grey">#666666</color>
     <color name="text_light">#ffffff</color>
     <color name="text_white_75">#87ececec</color>
     <color name="text_white_87">#deFFFFFF</color>
@@ -773,7 +792,7 @@
     <declare-styleable name="ActionMenuView"/>
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
-    <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/></declare-styleable>
+    <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/><attr format="boolean" name="showTitle"/></declare-styleable>
     <declare-styleable name="AppBarLayout"><attr name="elevation"/><attr name="android:background"/><attr format="boolean" name="expanded"/></declare-styleable>
     <declare-styleable name="AppBarLayoutStates"><attr format="boolean" name="state_collapsed"/><attr format="boolean" name="state_collapsible"/></declare-styleable>
     <declare-styleable name="AppBarLayout_Layout"><attr name="layout_scrollFlags">
@@ -970,6 +989,7 @@
         </attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr format="enum" name="imageAspectRatioAdjust"><enum name="none" value="0"/><enum name="adjust_width" value="1"/><enum name="adjust_height" value="2"/></attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
     <declare-styleable name="MaterialSpinner"><attr format="integer" name="ms_baseColor"/><attr format="integer" name="ms_highlightColor"/><attr format="integer" name="ms_errorColor"/><attr format="string" name="ms_error"/><attr format="string" name="ms_hint"/><attr format="string" name="ms_floatingLabelText"/><attr format="boolean" name="ms_multiline"/><attr format="integer" name="ms_nbErrorLines"/><attr format="string" name="ms_typeface"/><attr format="boolean" name="ms_alignLabels"/><attr format="integer" name="ms_thickness"/></declare-styleable>
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction">
@@ -989,11 +1009,13 @@
     <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
+    <declare-styleable name="RecycleListView"><attr format="dimension" name="paddingBottomNoButtons"/><attr format="dimension" name="paddingTopNoTitle"/></declare-styleable>
     <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr name="android:descendantFocusability"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="ScrimInsetsFrameLayout"><attr format="color|reference" name="insetForeground"/></declare-styleable>
     <declare-styleable name="ScrollBar"><attr format="color|reference" name="sb_handlerColor"/><attr format="color|reference" name="sb_indicatorColor"/><attr format="color|reference" name="sb_indicatorTextColor"/><attr format="boolean|reference" name="sb_horizontal"/></declare-styleable>
     <declare-styleable name="ScrollingViewBehavior_Layout"><attr format="dimension" name="behavior_overlapTop"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference|enum" name="buttonSize"><enum name="standard" value="0"/><enum name="wide" value="1"/><enum name="icon_only" value="2"/></attr><attr format="reference|enum" name="colorScheme"><enum name="dark" value="0"/><enum name="light" value="1"/><enum name="auto" value="2"/></attr><attr format="reference|string" name="scopeUris"/></declare-styleable>
     <declare-styleable name="SnackbarLayout"><attr name="android:maxWidth"/><attr name="elevation"/><attr format="dimension" name="maxActionInlineWidth"/></declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/><attr name="android:entries"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="color" name="thumbTint"/><attr name="thumbTintMode">
@@ -1051,6 +1073,7 @@
             
             <flag name="bottom" value="0x50"/>
         </attr><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="logo"/><attr format="string" name="logoDescription"/><attr format="color" name="titleTextColor"/><attr format="color" name="subtitleTextColor"/><attr name="android:minHeight"/></declare-styleable>
+    <declare-styleable name="TwoWayView"><attr name="android:orientation"/><attr name="android:choiceMode"/><attr name="android:listSelector"/><attr name="android:drawSelectorOnTop"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode">
             
@@ -1096,11 +1119,13 @@
     <item name="abc_dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="abc_dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="abc_dialog_fixed_width_minor" type="dimen">320dp</item>
-    <dimen name="abc_dialog_list_padding_vertical_material">8dp</dimen>
+    <dimen name="abc_dialog_list_padding_bottom_no_buttons">8dp</dimen>
+    <dimen name="abc_dialog_list_padding_top_no_title">8dp</dimen>
     <item name="abc_dialog_min_width_major" type="dimen">65%</item>
     <item name="abc_dialog_min_width_minor" type="dimen">95%</item>
     <dimen name="abc_dialog_padding_material">24dp</dimen>
     <dimen name="abc_dialog_padding_top_material">18dp</dimen>
+    <dimen name="abc_dialog_title_divider_material">8dp</dimen>
     <item format="float" name="abc_disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="abc_disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="abc_dropdownitem_icon_width">32dip</dimen>
@@ -1143,6 +1168,7 @@
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
+    <dimen name="course_icon_size">48dp</dimen>
     <dimen name="dateTitlePaddingBottom">5dp</dimen>
     <dimen name="dateTitleTextSize">22sp</dimen>
     <dimen name="dayOfMonthImageMarginTop">32dp</dimen>
@@ -1192,6 +1218,8 @@
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="domain_label_font_size">13dp</dimen>
+    <dimen name="domain_tick_label_font_size">15dp</dimen>
     <dimen name="drawer_header_height">190dp</dimen>
     <dimen name="drawer_header_text_spacing">@dimen/spacing_normal</dimen>
     <dimen name="drawer_header_textsize">20sp</dimen>
@@ -1216,8 +1244,10 @@
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
     <dimen name="label_text_size">12sp</dimen>
+    <dimen name="legend_text_font_size">20dp</dimen>
     <dimen name="login_logo_background_size">100dp</dimen>
     <dimen name="login_logo_size">90dp</dimen>
+    <dimen name="main_screen_card_image_height">35dp</dimen>
     <dimen name="material_stepper_bottombar_font">16sp</dimen>
     <dimen name="material_stepper_connector">1dp</dimen>
     <dimen name="material_stepper_optional_circle_font">12sp</dimen>
@@ -1240,8 +1270,13 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="padding_large">25dp</dimen>
     <dimen name="padding_medium">8dp</dimen>
+    <dimen name="pie_segment_label_font_size">16dp</dimen>
     <dimen name="profile_pic_setup_logo_size">120dp</dimen>
+    <dimen name="quiz_response_margin">12dp</dimen>
+    <dimen name="range_label_font_size">13dp</dimen>
+    <dimen name="range_tick_label_font_size">15dp</dimen>
     <dimen name="right_left_spinner_padding">8dp</dimen>
     <dimen name="sections_image_size">60dp</dimen>
     <dimen name="spacing_2">32dp</dimen>
@@ -1256,6 +1291,9 @@
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="text_size_title">24sp</dimen>
+    <dimen name="title_font_size">20dp</dimen>
+    <dimen name="tool_bar_top_padding">0dp</dimen>
+    <dimen name="toolbar_tab_width">130dp</dimen>
     <dimen name="topics_image_size">30dp</dimen>
     <dimen name="underline_bottom_spacing">4dp</dimen>
     <dimen name="underline_top_spacing">8dp</dimen>
@@ -1264,6 +1302,7 @@
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="TAG_ACTIVITY_DIGEST" type="id"/>
+    <item name="TAG_COURSE" type="id"/>
     <item name="TAG_COURSE_ID" type="id"/>
     <item name="TAG_PLACEHOLDER_ID" type="id"/>
     <item name="TAG_SECTION_ID" type="id"/>
@@ -1273,9 +1312,12 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
+    <item name="multichoiceRadioGroup" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
+    <item name="textinput_counter" type="id"/>
+    <item name="textinput_error" type="id"/>
     <item name="transition_current_scene" type="id"/>
     <item name="transition_scene_layoutid_cache" type="id"/>
     <item name="up" type="id"/>
@@ -1286,6 +1328,9 @@
     <integer name="bottom_sheet_slide_duration">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="design_snackbar_text_max_lines">2</integer>
+    <integer name="google_play_services_version">9452000</integer>
+    <integer name="hide_password_duration">320</integer>
+    <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="Select">Select</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -1319,11 +1364,17 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about_logged_in">Logged in as: %1$s</string>
+    <string name="about_not_logged_in">Not logged in</string>
     <string name="action_home">Home</string>
     <string name="action_logout">Logout</string>
     <string name="action_settings">Settings</string>
     <string name="activity_course_button_next">></string>
     <string name="activity_course_button_prev">&lt;</string>
+    <string name="admin_password_error_incorrect_password">Incorrect admin password. Try again</string>
+    <string name="admin_password_newpassword_dialog_message">Please, introduce your admin password</string>
+    <string name="admin_password_newpassword_dialog_title">Admin password</string>
+    <string name="admin_password_required">This feature is protected for admin use only. Please, insert below the admin password to continue:</string>
     <string name="age">Age</string>
     <string name="alert_pretest">Pre-test</string>
     <string name="alert_pretest_summary">This course contains a pre-test which you need to complete before you can view the full course.</string>
@@ -1341,11 +1392,38 @@
     <string name="child_content">Child Content</string>
     <string name="client_type">Client type</string>
     <string name="close">Close</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Get Google Play services</string>
+    <string msgid="2122112764540849864" name="common_google_play_services_install_text_phone"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your phone.</string>
+    <string msgid="7351599665250191022" name="common_google_play_services_install_text_tablet"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your tablet.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. If the problem persists, please contact the developer for assistance.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> relies on Google Play services, which is not supported by your device. Contact the manufacturer for assistance.</string>
+    <string name="common_google_play_services_unsupported_title">Google Play services</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_updating_title">Google Play services are updating</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="course_context_delete">Delete</string>
     <string name="course_context_delete_confirm">Are you sure you want to delete this course? It will completely remove the course from your phone.</string>
     <string name="course_context_reset">Reset</string>
     <string name="course_context_reset_confirm">Are you sure you want to reset this course? It will remove all the progress logs for this course.</string>
+    <string name="course_context_update_activity">Update activity</string>
+    <string name="course_deleting">Deleting course…</string>
+    <string name="course_deleting_error">Error deleting course</string>
+    <string name="course_deleting_success">Course deleted successfully</string>
     <string name="course_draft">(Draft version)</string>
+    <string name="course_updating">Updating course activity…</string>
+    <string name="course_updating_error">\'%1$s\': Error updating course</string>
+    <string name="course_updating_success">\'%1$s\': Course activity updated successfully</string>
     <string name="crash_dialog_comment_prompt">You might add your comments about the problem below:</string>
     <string name="crash_dialog_ok_toast">Thank you !</string>
     <string name="crash_dialog_text">An unexpected error occurred forcing the
@@ -1358,6 +1436,7 @@
     <string name="dayOfMonthFont">roboto_light</string>
     <string name="dayOfWeekFont">roboto_regular</string>
     <string name="download">Download</string>
+    <string name="download_all">Download All</string>
     <string name="download_complete">Download complete</string>
     <string name="download_starting">Download starting</string>
     <string name="download_via_pc_final">Once you have downloaded the files copy them to the \'%1$s\' directory on your phone SD card.</string>
@@ -1366,12 +1445,18 @@
     <string name="download_via_pc_title">Download Media Files</string>
     <string name="downloaded">Downloaded</string>
     <string name="downloading">Downloading …</string>
+    <string name="empty_state_courses">There aren\'t any courses currently available to you on this server.</string>
+    <string name="empty_state_media">Great! You now have all the media content for your courses downloaded onto your device.</string>
+    <string name="empty_state_scorecard">You don\'t have any courses installed yet. \nOnce you install a course, you will see your progress here.</string>
     <string name="error">Error</string>
+    <string name="error_apikey_expired">Your API key expired. Please, log in again.</string>
     <string name="error_connection">Error connecting to server. Please check you have an active internet connection and try again.</string>
     <string name="error_connection_required">You need an active internet connection to access this page. Please turn on wifi or mobile internet connection and try again.</string>
+    <string name="error_connection_ssl">Error connecting to server due to SSL problems. Please, ensure that the host in your OppiaMobile server setting is correct, and that your device has the right time/date</string>
     <string name="error_download_failure">Download failed</string>
     <string name="error_install_failure">Install failed</string>
     <string name="error_installing_course">%1$s: failed to install</string>
+    <string name="error_insufficient_storage_available">Insufficient storage available</string>
     <string name="error_latest_already_installed">%1$s: latest version already installed</string>
     <string name="error_login">Invalid username/password\nPlease try again</string>
     <string name="error_media_app_not_found">You don\'t appear to have a media player installed which supports playing this video.</string>
@@ -1381,33 +1466,56 @@
     <string name="error_no_password">Please enter your password</string>
     <string name="error_no_username">Please enter your username</string>
     <string name="error_no_username_or_password">Please enter username and password</string>
+    <string name="error_preloading_accounts">Error preloading accounts from CSV file</string>
     <string name="error_processing_response">Error processing response</string>
     <string name="error_quiz_no_questions">There aren\'t any questions in this quiz.</string>
     <string name="error_reading_xml">An error occurred trying to load the course. Please reinstall the course.</string>
+    <string name="error_register_no_email">Please enter your email address</string>
+    <string name="error_register_no_firstname">Please enter your first name</string>
+    <string name="error_register_no_lastname">Please enter your last name</string>
+    <string name="error_register_no_phoneno">Please enter your phone number</string>
+    <string name="error_register_no_username">Please enter a username</string>
+    <string name="error_register_password">Your password must be at least %1$d or more characters</string>
+    <string name="error_register_password_no_match">Your passwords don\'t match</string>
+    <string name="error_register_username_spaces">Your username cannot contain spaces</string>
     <string name="error_resource_app_not_found">You don\'t seem to have an app installed to open \'%1$s\'. Please install an app capable of opening this type of file.</string>
     <string name="error_resource_not_found">File: \'%1$s\' not found.</string>
     <string name="error_sdcard">Your SD card is not available - please restart this app when the SD card is available.\nThe app will now close.</string>
     <string name="error_tts_start">Text To Speech failed. Please check your phone to ensure have Text to Speech installed and enabled</string>
     <string name="error_update_failure">Update failed</string>
+    <string name="f_name">First Name</string>
+    <string name="facility_id">Facility ID Number</string>
     <string name="feedback">Feedback</string>
     <string name="female">Female</string>
+    <string name="fragment_welcome_desc">OppiaMobile is a mobile learning platform for delivering learning content, video and quizzes.\n\n\'Oppia\' means \'to learn\' in Finnish</string>
+    <string name="fragment_welcome_login_info">To get started with OppiaMobile, you will need to register or login.</string>
+    <string name="fragment_welcome_privacy">We take your privacy seriously, <a href="http://digital-campus.org/privacy/">find out more about Digital Campus\'s privacy policy</a></string>
+    <string name="fragment_welcome_title">Welcome to OppiaMobile</string>
     <string name="gender">Gender</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="home_menu">Menu</string>
     <string name="home_tip_ofday">Tips of the day</string>
     <string name="info">Info</string>
+    <string name="info.startup.preloaded_accounts">Preloaded %1$d new user(s).</string>
+    <string name="info_no_badges">You don\'t have any badges yet. Complete a full course to earn your first badge.</string>
     <string name="info_scan_media_checking">Checking for: %1$s</string>
     <string name="info_scan_media_missing">Some media files are missing for your courses.</string>
     <string name="info_scan_media_start">Scanning for media</string>
+    <string name="info_upgrading">Upgrading to %1$s</string>
     <string name="install">Install</string>
     <string name="install_complete">Installation complete</string>
     <string name="install_course_complete">%1$s: installed</string>
     <string name="installed">Installed</string>
     <string name="installing_course">Installing: %1$s</string>
+    <string name="l_name">Last Name</string>
     <string name="latitude">Latitude</string>
     <string name="loading">Loading</string>
+    <string name="loading_badges">Loading badges …</string>
+    <string name="loading_course">Loading course…</string>
     <string name="loading_courses">Loading courses</string>
+    <string name="loading_points">Loading points …</string>
+    <string name="location">Location</string>
     <string name="login">Login</string>
     <string name="login_complete">Logged in</string>
     <string name="login_password_title">Password</string>
@@ -1419,22 +1527,36 @@
     <string name="male">Male</string>
     <string name="media_file_size">%1$.1fMb</string>
     <string name="media_file_size_unknown">unknown file size</string>
+    <string name="media_player_description">Oppia Media Player</string>
     <string name="menu_about">About</string>
     <string name="menu_download">Download Courses</string>
     <string name="menu_download_all">Download All</string>
+    <string name="menu_font_decrease">Decrease text size</string>
+    <string name="menu_font_increase">Increase text size</string>
     <string name="menu_help">Help</string>
     <string name="menu_language">Change language</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_monitor">Monitor</string>
     <string name="menu_read_aloud">Read aloud</string>
     <string name="menu_return_to_courses">Return to courses</string>
+    <string name="menu_scorecard">Scorecard</string>
     <string name="menu_search">Search</string>
+    <string name="menu_select_all">Select all</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_sort_by">Sort by</string>
+    <string name="menu_sort_by_course">Sort by course</string>
+    <string name="menu_sort_by_filename">Sort by filename</string>
     <string name="menu_stop_read_aloud">Stop reading</string>
     <string name="message1">Zinc Supplements <b>(only for children aged 2 months – 5 years)</b> </string>
     <string name="mid_year">Mid-year</string>
+    <string name="missing_media_download_selected">Download selected</string>
+    <string name="missing_media_stop_selected">Stop selected</string>
+    <string name="missing_media_unselect_all">Unselect all</string>
     <string name="monthTitleFont">roboto_light</string>
     <string name="monthly">Monthly</string>
+    <string name="more_courses">Download more courses</string>
+    <string name="move_storage_completed">Moving storage completed</string>
+    <string name="moving_storage_location">Moving files to new storage location…</string>
     <string name="ms_continue">CONTINUE</string>
     <string name="ms_end">COMPLETE</string>
     <string name="ms_next">NEXT</string>
@@ -1442,34 +1564,68 @@
     <string name="ms_prev">PREV</string>
     <string name="ms_text_step">Step $current of $total</string>
     <string name="name">Name</string>
+    <string name="national_id">National ID Number</string>
     <string name="next">Next</string>
     <string name="no">No</string>
     <string name="no_access">You do not have access to this module.</string>
     <string name="no_courses">There are no courses currently installed</string>
+    <string name="notification.remote_admin.camera_disabled">The device cameras have been disabled remotely</string>
+    <string name="notification.remote_admin.camera_enabled">The device cameras have been enabled remotely</string>
+    <string name="notification.remote_admin.title">Oppia Remote Administration</string>
     <string name="notification_course_update_text">Updates are available for your courses.</string>
     <string name="notification_course_update_title">New course updates</string>
+    <string name="notification_media_subject">All media files downloaded successfully</string>
+    <string name="notification_media_title">OppiaMobile: media management</string>
     <string name="ok">OK</string>
     <string name="open">Open</string>
     <string name="password">Password</string>
+    <string name="password_toggle_content_description">Toggle password visibility</string>
+    <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="permissions.allow_btn_text">Allow permissions</string>
+    <string name="permissions.not_askable.info">You see this message because permissions were prompted before and you denied them and checked \"Don\'t ask again\"</string>
+    <string name="permissions.not_askable.message">The app does not have the permissions needed to run. Please, go to Settings \> Apps \> OppiaMobile > Permissions to grant access to these permissions</string>
+    <string name="permissions.phone_state.description">OppiaMobile needs access to the phone identity to get information about your device model and Android version</string>
+    <string name="permissions.phone_state.title">read phone state and identity</string>
+    <string name="permissions.storage.description">OppiaMobile needs access to the SD card to be able to store the downloaded media contents for the courses</string>
+    <string name="permissions.storage.title">read and modify contents of the SD card</string>
+    <string name="permissions.title">OppiaMobile needs the following permissions to function properly:</string>
     <string name="phone">Phone Number</string>
     <string name="please_wait">Please wait…</string>
     <string name="post_log_in">Logged in. Getting user info</string>
+    <string name="prefAdminPassword">Change admin password</string>
+    <string name="prefAdminProtection">Protect admin actions with password</string>
     <string name="prefAdvanced">Advanced settings</string>
     <string name="prefBackgroudDataConnect">Background activity tracker</string>
     <string name="prefBackgroudDataConnect_summary">Send activity logs even when this application isn\'t running</string>
+    <string name="prefDeleteCourseEnabled">Enable deleting of courses</string>
+    <string name="prefDownloadViaCellularEnabled">Download media via cellular network</string>
     <string name="prefHighlightCompleted">Highlight completed activities</string>
-    <string name="prefLanguage">Preferred Language</string>
+    <string name="prefLanguage">Language</string>
+    <string name="prefLogoutEnabled">Enable logout from homepage</string>
     <string name="prefNoScheduleReminders">Number of suggested activities</string>
     <string name="prefNoScheduleReminders_summary">How many suggested activities to display</string>
+    <string name="prefRemoteAdminEnabled">Enable remote administration of the device</string>
     <string name="prefServer">Server</string>
     <string name="prefServerDefault">http://188.166.30.140/cb/content/lc/</string>
+    <string name="prefServerDefault1">http://188.166.30.140/cb/content/lc/</string>
     <string name="prefServerTimeoutConnection">Connection timeout</string>
     <string name="prefServerTimeoutConnectionDefault">10000</string>
     <string name="prefServerTimeoutResponse">Response timeout</string>
     <string name="prefServerTimeoutResponseDefault">20000</string>
+    <string name="prefShowCourseDescription">Show course description</string>
+    <string name="prefShowProgressBar">Show progress bar</string>
     <string name="prefShowScheduleReminders">Display suggested activities</string>
     <string name="prefShowScheduleReminders_summary">Show which activities you are due to complete next</string>
     <string name="prefShowSectionNumbers">Show section numbers</string>
+    <string name="prefStorageLocation">Storage Location</string>
+    <string name="prefStorageOptionExternal">External</string>
+    <string name="prefStorageOptionInternal">Internal</string>
+    <string name="prefTextSize">Text size</string>
+    <string name="prefUser">Username</string>
+    <string name="prefUserHint">(read only)</string>
     <string name="prefs_api_key">prefApiKey</string>
     <string name="prefs_background_data_connect">prefBackgroundDataConnect</string>
     <string name="prefs_badges">prefBadges</string>
@@ -1489,29 +1645,61 @@
     <string name="prefs_username">prefUsername</string>
     <string name="pregnancy_content">Pregnancy Content</string>
     <string name="program">Program</string>
+    <string name="publisher">Publisher:</string>
     <string name="quarterly">Quarterly</string>
+    <string name="register_alert_title">Register</string>
     <string name="register_btn_text">Register</string>
     <string name="register_complete">Successfully registered</string>
     <string name="register_form_email_title">Email address</string>
     <string name="register_form_firstname_title">First name</string>
     <string name="register_form_lastname_title">Last name</string>
+    <string name="register_form_organisation_title">Organisation</string>
     <string name="register_form_password_again_title">Password (again)</string>
     <string name="register_form_password_title">Password</string>
+    <string name="register_form_phoneno_title">Phone number (*)</string>
     <string name="register_form_username_title">Username</string>
     <string name="register_mm">Register for DigiAfia</string>
     <string name="register_process">Registering</string>
+    <string name="relative_phone">Next of Kin Phone Number</string>
+    <string name="reset_alert_title">Reset</string>
+    <string name="reset_complete">Your password has now been reset.\n\nPlease check your email for your new password.</string>
+    <string name="reset_process">Resetting password …</string>
+    <string name="reset_username_title">Username or Email</string>
     <string name="sans_serif">sans-serif-light</string>
     <string name="scan_media_download_button">Download</string>
     <string name="scan_media_download_via_pc_button">Download via PC</string>
     <string name="schedule_reminders">Suggested next activities:</string>
+    <string name="scorecard_activities_completed">activities completed</string>
+    <string name="scorecard_activities_total">total</string>
+    <string name="scorecard_quizzes_highlight_attempted">Attempted</string>
+    <string name="scorecard_quizzes_highlight_passed">Passed</string>
+    <string name="scorecard_quizzes_highlight_pretest">Pre-test</string>
+    <string name="scorecard_quizzes_title">Quizzes</string>
+    <string name="search.activity_title">Search</string>
+    <string name="search.message.fetching">Fetching results…</string>
+    <string name="search.message.no_results">No results found for \"%1$s\"</string>
+    <string name="search.message.searching">Searching…</string>
+    <string name="search.result_summary">%1$d results for \"%2$s\"</string>
     <string name="search_hint">Search CCH</string>
     <string name="search_menu_title">Search</string>
+    <string name="sequencing.course.message">You must complete all the previous activities in the course before this one becomes available to you.</string>
+    <string name="sequencing.dialog_title">Activity locked</string>
+    <string name="sequencing.section.message">You must complete the previous activities in this section before this one becomes available to you.</string>
     <string name="serverAddress">http://188.166.30.140/learning/</string>
     <string name="serverDefaultAddress">http://188.166.30.140</string>
     <string name="service_tracker">OppiaMobile Tracker Service</string>
     <string name="sms">Sms</string>
     <string name="start_week">Start week</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="storageAccessNotGranted">SD Card access not granted</string>
+    <string name="storageAccess_help1">Since Android 5 (Lollipop) there is a new official way for apps to write to the external SD card. Apps must ask the user to grant write access to a folder on the SD card. A system folder chooser dialog will open, and you will need to select the SD card from there.</string>
+    <string name="storageAccess_help2">If the dialog appears empty and there are no items in the left drawer, you first need to go to the menu and tell the system to show the SD card.</string>
+    <string name="storageAccess_help3">Then, tap on the SD card from the list on the left side to display its folder structure. In this screenshot you see both \"Internal storage\" and the SD card. The SD card can be displayed under a different name then what you see here, for example \"Kingston\". It\'s the so called disk label of the card.</string>
+    <string name="storageAccess_help4">Then select the card. Don\'t navigate down into any subfolder. You must select the top-level root folder of the SD card. This is important.</string>
+    <string name="storageAccess_help5">After tapping the \"Select SD card\" button you should be back in the app. The app double checks if it now indeed can write to the SD card, and if the folder selected is the root one.</string>
+    <string name="storageNonRemovable">Non-removable storage</string>
+    <string name="storageRemovable">Removable SD Card</string>
+    <string name="storage_default">Default</string>
     <string name="str_1000mg_para">1000 mg Paracetamol may be given every 4–6 hr until fever returns to normal </string>
     <string name="str_1_star">1 Star</string>
     <string name="str_1st_trimester">1st trimester</string>
@@ -1916,9 +2104,21 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <string name="str_women_refuse_iptp_sp">Women who refuse IPTp using SP for any reason should NOT be discriminated against, and should be counseled to use ITN</string>
     <string name="str_women_with_first_second_preg">Women with first or second pregnancies</string>
     <string name="str_women_with_unexplained_recurrent_jaundice">Women with unexplained recurrent jaundice</string>
+    <string name="submit_stats_btn_text">Send now</string>
     <string name="success_media_download">Media file: \'%1$s\' successfully downloaded.</string>
     <string name="sw_prefs">sw_prefs</string>
     <string name="sw_reset">SW_reset</string>
+    <string name="tab_title_about">About</string>
+    <string name="tab_title_activity">Activity</string>
+    <string name="tab_title_badges">Badges</string>
+    <string name="tab_title_help">Help</string>
+    <string name="tab_title_login">Login</string>
+    <string name="tab_title_points">Points</string>
+    <string name="tab_title_privacy">Privacy</string>
+    <string name="tab_title_register">Register</string>
+    <string name="tab_title_reset">Reset Password</string>
+    <string name="tab_title_scorecard">Scorecard</string>
+    <string name="tab_title_welcome">Welcome</string>
     <string name="tag_label">%1$s (%2$d)</string>
     <string name="title_about">About</string>
     <string name="title_activity_cchlogin">CCHLogin</string>
@@ -1926,6 +2126,7 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <string name="title_activity_course_index">Course Index</string>
     <string name="title_activity_user_registration">User Registration</string>
     <string name="title_baseline">Baseline</string>
+    <string name="title_btn_reset">Reset password</string>
     <string name="title_course_meta">About</string>
     <string name="title_download_activity">Manage courses</string>
     <string name="title_download_media">Download Media</string>
@@ -1935,12 +2136,17 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <string name="title_points">Your Points</string>
     <string name="title_prefs">Settings</string>
     <string name="title_register">Register</string>
+    <string name="title_scorecard">Scorecard</string>
+    <string name="title_stats_submitted">No activities submitted to server</string>
+    <string name="title_stats_unsubmitted">No activities waiting to submit</string>
     <string name="title_tag_select_activity">Select Category</string>
+    <string name="title_welcome">OppiaMobile</string>
     <string name="update">Update</string>
     <string name="update_complete">Schedule update complete</string>
     <string name="update_schedule">Update Schedule</string>
     <string name="update_starting">Getting schedule updates</string>
     <string name="updating">Updating …</string>
+    <string name="upgradev49_1">Copying files to new location - this may take several minutes, so please be patient</string>
     <string name="user_not_found">User not found. Please register.</string>
     <string name="username">Username</string>
     <string name="validation_endDate">Please enter an end date</string>
@@ -1949,23 +2155,39 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <string name="version">Version: %1$s</string>
     <string name="voice">Voice</string>
     <string name="warning">Warning</string>
+    <string name="warning_delete_disabled">Sorry, deleting a course is currently disabled - please update your settings to allow deleting of courses.</string>
+    <string name="warning_download_via_cellular_enabled">Warning! Allowing media files to be downloaded via your mobile (cellular) network may incur high charges for data download.\n\n It is not recommended to enable this if you are on a slow mobile network.</string>
     <string name="warning_wifi_required">You must be connected to a wifi network to download the media files.\nPlease connect to a wifi network to download the media files on your phone, or download the files via your PC.</string>
     <string name="week">Start week</string>
     <string name="weekly">Weekly</string>
+    <string name="widget_feedback_submit">Submit</string>
+    <string name="widget_feedback_submit_title">Thank you for submitting your feedback.</string>
     <string name="widget_quiz_baseline_completed">Thank you for completing the pre-test. You can now continue to the course.</string>
     <string name="widget_quiz_baseline_goto_course">Continue to course >></string>
+    <string name="widget_quiz_continue">Continue >></string>
     <string name="widget_quiz_feedback_feedback_title">Feedback: </string>
     <string name="widget_quiz_feedback_response_title">You answered: </string>
     <string name="widget_quiz_getresults">Get Results</string>
     <string name="widget_quiz_image_caption">Press the image to view larger version</string>
+    <string name="widget_quiz_media_caption">Press the image to start the video</string>
     <string name="widget_quiz_next">Next >></string>
     <string name="widget_quiz_noanswergiven">Please give an answer before moving to the next question</string>
     <string name="widget_quiz_prev">&lt;&lt; Prev</string>
     <string name="widget_quiz_progress">Question %1$d of %2$d</string>
     <string name="widget_quiz_results_restart">Retake this quiz</string>
     <string name="widget_quiz_results_score">You scored: %1$.0f%%</string>
+    <string name="widget_quiz_unavailable_attempts">You have already attempted this quiz the max number of times allowed</string>
+    <string name="widget_quiz_unavailable_course">You must complete all the previous activities in this course before this quiz becomes available to you.</string>
+    <string name="widget_quiz_unavailable_section">You must complete all the previous activities in this section before this quiz becomes available to you.</string>
     <string name="widget_resource_open_file">Open \'%1$s\'</string>
     <string name="yes">Yes</string>
+    <style name="ActionBar.Solid.Om" parent="AppTheme">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:backgroundStacked">@color/colorPrimary</item>
+        <item name="android:backgroundSplit">@color/colorPrimary</item>
+         <item name="background">@color/colorPrimary</item>
+           <item name="elevation">4dp</item>
+    </style>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -1999,7 +2221,9 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
 
     </style>
     <style name="AppTheme.ActionBar" parent="AppTheme">
+<!--
         <item name="android:textColorSecondary">@color/white</item>
+-->
 
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
@@ -2193,6 +2417,12 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <style name="Base.TextAppearance.AppCompat.Widget.ActionMode.Subtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
     <style name="Base.TextAppearance.AppCompat.Widget.ActionMode.Title" parent="TextAppearance.AppCompat.Widget.ActionBar.Title"/>
     <style name="Base.TextAppearance.AppCompat.Widget.Button" parent="TextAppearance.AppCompat.Button"/>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored" parent="Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textColor">@color/abc_btn_colored_borderless_text_material</item>
+    </style>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Colored">
+        <item name="android:textColor">@color/abc_btn_colored_text_material</item>
+    </style>
     <style name="Base.TextAppearance.AppCompat.Widget.Button.Inverse" parent="TextAppearance.AppCompat.Button">
         <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
@@ -2489,10 +2719,10 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
 
         <!-- Define these here; ContextThemeWrappers around themes that define them should
              always clear these values. -->
-        <item name="windowFixedWidthMajor">0dp</item>
-        <item name="windowFixedWidthMinor">0dp</item>
-        <item name="windowFixedHeightMajor">0dp</item>
-        <item name="windowFixedHeightMinor">0dp</item>
+        <item name="windowFixedWidthMajor">@null</item>
+        <item name="windowFixedWidthMinor">@null</item>
+        <item name="windowFixedHeightMajor">@null</item>
+        <item name="windowFixedHeightMinor">@null</item>
     </style>
     <style name="Base.V7.Theme.AppCompat.Dialog" parent="Base.Theme.AppCompat">
         <item name="android:colorBackground">?attr/colorBackgroundFloating</item>
@@ -2670,10 +2900,10 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
 
         <!-- Define these here; ContextThemeWrappers around themes that define them should
              always clear these values. -->
-        <item name="windowFixedWidthMajor">0dp</item>
-        <item name="windowFixedWidthMinor">0dp</item>
-        <item name="windowFixedHeightMajor">0dp</item>
-        <item name="windowFixedHeightMinor">0dp</item>
+        <item name="windowFixedWidthMajor">@null</item>
+        <item name="windowFixedWidthMinor">@null</item>
+        <item name="windowFixedHeightMajor">@null</item>
+        <item name="windowFixedHeightMinor">@null</item>
     </style>
     <style name="Base.V7.Theme.AppCompat.Light.Dialog" parent="Base.Theme.AppCompat.Light">
         <item name="android:colorBackground">?attr/colorBackgroundFloating</item>
@@ -2718,6 +2948,11 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="listPreferredItemPaddingRight">24dip</item>
 
         <item name="android:listDivider">@null</item>
+
+        <item name="windowFixedWidthMajor">@null</item>
+        <item name="windowFixedWidthMinor">@null</item>
+        <item name="windowFixedHeightMajor">@null</item>
+        <item name="windowFixedHeightMinor">@null</item>
     </style>
     <style name="Base.V7.Widget.AppCompat.AutoCompleteTextView" parent="android:Widget.AutoCompleteTextView">
         <item name="android:dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
@@ -2831,16 +3066,15 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:background">@drawable/abc_btn_borderless_material</item>
     </style>
     <style name="Base.Widget.AppCompat.Button.Borderless.Colored">
-        <item name="android:textColor">@color/abc_btn_colored_borderless_text_material</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored</item>
     </style>
     <style name="Base.Widget.AppCompat.Button.ButtonBar.AlertDialog" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:minWidth">64dp</item>
-        <item name="android:maxLines">2</item>
         <item name="android:minHeight">@dimen/abc_alert_dialog_button_bar_height</item>
     </style>
     <style name="Base.Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/abc_btn_colored_material</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Inverse</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Colored</item>
     </style>
     <style name="Base.Widget.AppCompat.Button.Small">
         <item name="android:minHeight">48dip</item>
@@ -3070,6 +3304,14 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
+    <style name="ContextMenuText" parent="android:TextAppearance.Medium">
+        <item name="android:textSize">17sp</item>
+<!--
+        <item name="android:textColor">@color/text_light</item>
+-->
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+    </style>
     <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
@@ -3103,6 +3345,44 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/text_dark</item>
     </style>
+    <style name="Highlight.Label" parent="android:TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/highlight_label</item>
+    </style>
+    <style name="Highlight.Separator" parent="android:Widget">
+        <item name="android:layout_width">0.7dp</item>
+        <item name="android:background">@color/highlight_separator</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginBottom">@dimen/padding_medium</item>
+        <item name="android:layout_marginTop">@dimen/padding_medium</item>
+    </style>
+    <style name="Highlight.Text" parent="android:TextAppearance">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_alignParentLeft">false</item>
+        <item name="android:layout_alignParentRight">false</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="Highlight.Title" parent="android:TextAppearance.Medium">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/padding_medium</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/padding_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+    </style>
     <style name="ItalicsTextDark">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">italic</item>
@@ -3112,6 +3392,16 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">@color/text_dark</item>
+    </style>
+    <style name="MediumTextDarkItalic">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+    <style name="MediumTextItalic">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/text_light</item>
     </style>
     <style name="MyEditText" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/divider</item>
@@ -3127,13 +3417,66 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/Blue</item>
     </style>
+    <style name="NormalTextBoldDark">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
     <style name="NormalTextDark">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_dark</item>
     </style>
-    <style name="Oppia.Theme" parent="Theme.AppCompat.Light">
-
+    <style name="Oppia.Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+    <style name="Oppia.Theme" parent="Theme.AppCompat.Light.DarkActionBar">
+             <item name="android:windowBackground">@color/background_light</item>
+              <item name="actionBarStyle">@style/ActionBar.Solid.Om</item>
+             <item name="android:windowActionBar">true</item>
+            <item name="windowActionBar">true</item>
+             <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+            <item name="alertDialogTheme">@style/AppAlertDialog</item>
+        </style>
+    <style name="Oppia.Theme.InputError" parent="android:TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">-15dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_error</item>
+    </style>
+    <style name="Oppia.ToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/highlight_light</item>
+        <item name="colorPrimaryDark">@color/highlight_shadow</item>
+        <item name="colorAccent">@color/highlight_secondary</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+    <style name="Oppia.ToolbarTheme.AppTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabMinWidth">@dimen/toolbar_tab_width</item>
+        <item name="tabIndicatorColor">@color/highlight_mid</item>
+        <item name="tabIndicatorHeight">5dp</item>
+        <item name="tabPaddingStart">6dp</item>
+        <item name="tabPaddingEnd">6dp</item>
+        <item name="tabTextAppearance">@style/Oppia.ToolbarTheme.AppTabTextAppearance</item>
+    </style>
+    <style name="Oppia.ToolbarTheme.AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+    <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textColor">@color/text_light</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">2</item>
+    </style>
+    <style name="Oppia.ToolbarTheme.Dark" parent="@style/Oppia.ToolbarTheme">
+        <item name="android:windowBackground">@color/background_dark</item>
+    </style>
+    <style name="Oppia.ToolbarTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
     </style>
     <style name="PageHeadingText">
         <item name="android:textSize">18sp</item>
@@ -3251,6 +3594,9 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_light</item>
     </style>
+    <style name="ProgressBar.Om" parent="android:Widget.DeviceDefault.Light.ProgressBar.Horizontal">
+         <item name="android:layout_height">4dp</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -3297,6 +3643,24 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
+    <style name="ScorecardPie.Label" parent="android:TextAppearance">
+        <item name="android:textSize">11sp</item>
+        <item name="android:layout_marginTop">-7dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/highlight_label</item>
+    </style>
+    <style name="ScorecardPie.Label.Separator" parent="android:Widget">
+        <item name="android:layout_height">0.7dp</item>
+        <item name="android:background">@color/highlight_separator</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
     <style name="SmallTextDark">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
@@ -3306,6 +3670,11 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">@color/text_dark</item>
+    </style>
+    <style name="SmallTextGrey">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_grey</item>
     </style>
     <style name="SmallTextLight">
         <item name="android:textSize">12sp</item>
@@ -3384,6 +3753,8 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     </style>
     <style name="TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse" parent="TextAppearance.AppCompat.Widget.ActionMode.Title"/>
     <style name="TextAppearance.AppCompat.Widget.Button" parent="Base.TextAppearance.AppCompat.Widget.Button"/>
+    <style name="TextAppearance.AppCompat.Widget.Button.Borderless.Colored" parent="Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"/>
+    <style name="TextAppearance.AppCompat.Widget.Button.Colored" parent="Base.TextAppearance.AppCompat.Widget.Button.Colored"/>
     <style name="TextAppearance.AppCompat.Widget.Button.Inverse" parent="Base.TextAppearance.AppCompat.Widget.Button.Inverse"/>
     <style name="TextAppearance.AppCompat.Widget.DropDownItem" parent="Base.TextAppearance.AppCompat.Widget.DropDownItem">
     </style>
@@ -3485,6 +3856,9 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     <style name="ThemeOverlay.AppCompat.Dialog" parent="Base.ThemeOverlay.AppCompat.Dialog"/>
     <style name="ThemeOverlay.AppCompat.Dialog.Alert" parent="Base.ThemeOverlay.AppCompat.Dialog.Alert"/>
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
+    <style name="TwoWayView">
+        <item name="android:orientation">horizontal</item>
+    </style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">
@@ -3589,7 +3963,7 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
     </style>
     <style name="Widget.Design.BottomSheet.Modal" parent="android:Widget">
         <item name="android:background">?android:attr/colorBackground</item>
-        <item name="android:elevation">@dimen/design_bottom_sheet_modal_elevation</item>
+        <item name="android:elevation" ns2:ignore="NewApi">@dimen/design_bottom_sheet_modal_elevation</item>
         <item name="behavior_peekHeight">auto</item>
         <item name="behavior_hideable">true</item>
         <item name="behavior_skipCollapsed">false</item>
@@ -3637,8 +4011,9 @@ Treat client with Artesunate-Amodiaquine (see section 10.2).  If they cannot tol
         <item name="errorTextAppearance">@style/TextAppearance.Design.Error</item>
         <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
         <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
-        <item name="passwordToggleDrawable">@drawable/design_ic_visibility</item>
+        <item name="passwordToggleDrawable">@drawable/design_password_eye</item>
         <item name="passwordToggleTint">@color/design_tint_password_toggle</item>
+        <item name="passwordToggleContentDescription">@string/password_toggle_content_description</item>
     </style>
     <style name="dialog_animation">
        <item name="android:windowEnterAnimation">@anim/slide_in_left</item>

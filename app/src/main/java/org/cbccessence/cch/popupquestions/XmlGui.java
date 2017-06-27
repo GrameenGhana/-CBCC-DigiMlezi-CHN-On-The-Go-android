@@ -7,7 +7,7 @@
 package org.cbccessence.cch.popupquestions;
 
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 import android.app.Activity;
 import android.os.Bundle;

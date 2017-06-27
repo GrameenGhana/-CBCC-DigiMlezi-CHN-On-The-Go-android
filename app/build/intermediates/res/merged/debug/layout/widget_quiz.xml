@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/quiz_widget">
 
     <TextView
         android:id="@+id/quiz_progress"
@@ -53,7 +54,6 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/widget_quiz_image_caption"
                     style="@style/SmallTextDark" />
             </LinearLayout>
 
@@ -69,25 +69,31 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:background="@color/quiz_navigation_bar"
+        style="?android:buttonBarStyle">
 
         <Button
             android:id="@+id/mquiz_prev_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight=".5"
             android:text="@string/widget_quiz_prev"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:drawableLeft="@drawable/ic_arrow_back_grey_500_24dp"
+            android:drawableTint="@color/quiz_navigation_button"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/mquiz_next_btn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight=".5"
             android:text="@string/widget_quiz_next"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:drawableRight="@drawable/ic_arrow_forward_grey_500_24dp"
+            android:drawableTint="@color/quiz_navigation_button"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

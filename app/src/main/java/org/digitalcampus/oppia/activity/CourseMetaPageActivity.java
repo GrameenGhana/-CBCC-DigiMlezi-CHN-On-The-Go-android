@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,48 +17,44 @@
 
 package org.digitalcampus.oppia.activity;
 
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Locale;
-
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.model.Course;
-import org.digitalcampus.oppia.model.CourseMetaPage;
-import org.digitalcampus.oppia.utils.FileUtils;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import org.cbccessence.R;
+import org.digitalcampus.oppia.model.Course;
+import org.digitalcampus.oppia.model.CourseMetaPage;
+import org.digitalcampus.oppia.utils.storage.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Locale;
+
 public class CourseMetaPageActivity extends AppActivity {
 
 	public static final String TAG = CourseMetaPageActivity.class.getSimpleName();
 	private Course course;
 	private SharedPreferences prefs;
-	private int pageid;
-	private CourseMetaPage cmp;
+    private CourseMetaPage cmp;
 	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_course_metapage);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        
-		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_course_metapage);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null) {
+            course = (Course) bundle.getSerializable(Course.TAG);
+            int pageID = bundle.getInt(CourseMetaPage.TAG);
+            cmp = course.getMetaPage(pageID);
+        }
 		
-		Bundle bundle = this.getIntent().getExtras();
-		if (bundle != null) {
-			course = (Course) bundle.getSerializable(Course.TAG);
-			setTitle(course.getTitle(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())));
-			pageid = (Integer) bundle.getSerializable(CourseMetaPage.TAG);
-			cmp = course.getMetaPage(pageid);
-		}
-		
-		TextView titleTV = (TextView) findViewById(R.id.module_title);
-		String title = cmp.getLang(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())).getContent();
+		TextView titleTV = (TextView) findViewById(R.id.course_title);
+		String title = cmp.getLang(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())).getContent();
 		titleTV.setText(title);
 		
 		TextView versionTV = (TextView) findViewById(R.id.course_versionid);
@@ -69,7 +65,7 @@ public class CourseMetaPageActivity extends AppActivity {
 		shortnameTV.setText(course.getShortname());
 		
 		WebView wv = (WebView) this.findViewById(R.id.metapage_webview);
-		String url = course.getLocation() + "/" +cmp.getLang(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())).getLocation();
+		String url = course.getLocation() + File.separator +cmp.getLang(prefs.getString(PrefsActivity.PREF_LANGUAGE, Locale.getDefault().getLanguage())).getLocation();
 		
 		try {
 			String content =  "<html><head>";
@@ -78,7 +74,7 @@ public class CourseMetaPageActivity extends AppActivity {
 			content += "</head>";
 			content += FileUtils.readFile(url);
 			content += "</html>";
-			wv.loadDataWithBaseURL("file://" + course.getLocation() + "/", content, "text/html", "utf-8", null);
+			wv.loadDataWithBaseURL("file://" + course.getLocation() + File.separator, content, "text/html", "utf-8", null);
 		} catch (IOException e) {
 			e.printStackTrace();
 			wv.loadUrl("file://" + url);

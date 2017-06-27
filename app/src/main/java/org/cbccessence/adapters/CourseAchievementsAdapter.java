@@ -2,7 +2,7 @@ package org.cbccessence.adapters;
 
 import java.util.ArrayList;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.cbccessence.cch.model.CourseAchievments;
 
 import android.content.Context;

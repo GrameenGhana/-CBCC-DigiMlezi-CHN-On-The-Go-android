@@ -3,8 +3,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="0dp"
-    android:paddingRight="4dp" >
+    android:background="@drawable/points_background"
+
+    >
 
     <TextView
         android:id="@+id/userpoints"
@@ -12,8 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_margin="4dp"
-        android:background="@drawable/points_background" />
+        android:text="0"
+        android:padding="4dp"
+         android:layout_margin="4dp"
+        android:textSize="@dimen/text_size_normal"  />
 
     <TextView
         android:id="@+id/userbadges"
@@ -22,9 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="4dp"
+        android:gravity="center_vertical"
+        android:padding="4dp"
+        android:drawablePadding="5dp"
         android:layout_toRightOf="@+id/userpoints"
-        android:background="@drawable/points_background"
         android:drawableLeft="@drawable/trophy"
-        android:drawablePadding="5dp" />
+          />
 
 </RelativeLayout>

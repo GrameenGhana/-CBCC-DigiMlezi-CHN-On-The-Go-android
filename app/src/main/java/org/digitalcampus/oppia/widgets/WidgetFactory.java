@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,27 +17,35 @@
 
 package org.digitalcampus.oppia.widgets;
 
-import java.util.HashMap;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
+import org.cbccessence.R;
 import org.digitalcampus.oppia.model.Activity;
 import org.digitalcampus.oppia.model.Course;
-import org.digitalcampus.oppia.model.Section;
+import org.digitalcampus.oppia.utils.mediaplayer.VideoPlayerActivity;
+import org.digitalcampus.oppia.utils.storage.FileUtils;
+import org.digitalcampus.oppia.utils.storage.Storage;
 
-import android.content.SharedPreferences;
-import android.support.v4.app.Fragment;
+import java.util.HashMap;
 
 public abstract class WidgetFactory extends Fragment {
 	
 	public final static String TAG = WidgetFactory.class.getSimpleName();
 	protected Activity activity = null;
 	protected Course course = null;
-	protected Section section = null;
 	protected SharedPreferences prefs;
 	protected boolean isBaseline = false;
-	protected long startTime = System.currentTimeMillis()/1000;
-	protected boolean readAloud = false;
+    protected boolean readAloud = false;
+
+	protected long startTime = 0;
+    protected long spentTime = 0;
+	protected boolean currentTimeAccounted = false;
 	
-	protected abstract boolean getActivityCompleted();
+	public abstract boolean getActivityCompleted();
 	public abstract void saveTracker();
 	
 	public abstract String getContentToRead();
@@ -45,22 +53,81 @@ public abstract class WidgetFactory extends Fragment {
 	public abstract void setWidgetConfig(HashMap<String,Object> config);
 	
 	public void setReadAloud(boolean readAloud){
-		this.readAloud = true;
+		this.readAloud = readAloud;
 	}
 	
 	protected String getDigest() {
 		return activity.getDigest();
 	}
-	
+
 	public void setIsBaseline(boolean isBaseline) {
 		this.isBaseline = isBaseline;
 	}
 	
-	public void setStartTime(long startTime){
-		this.startTime = System.currentTimeMillis()/1000;
+	protected void setStartTime(long startTime){
+		this.startTime = (startTime != 0) ? startTime : (System.currentTimeMillis()/1000);
+        currentTimeAccounted = false;
 	}
 	
 	public long getStartTime(){
-		return this.startTime;
+		return (startTime != 0) ? startTime : (System.currentTimeMillis()/1000);
 	}
+
+    private void addSpentTime(){
+        long start = getStartTime();
+        long now = System.currentTimeMillis()/1000;
+
+        long spent = now - start;
+        spentTime += spent;
+        currentTimeAccounted = true;
+    }
+
+    public void resetTimeTracking(){
+        spentTime = 0;
+        startTime = System.currentTimeMillis() / 1000;
+        currentTimeAccounted = false;
+    }
+
+    public void resumeTimeTracking(){
+        startTime = System.currentTimeMillis() / 1000;
+        currentTimeAccounted = false;
+    }
+
+    public void pauseTimeTracking(){
+        addSpentTime();
+    }
+
+    public long getSpentTime(){
+        if (!currentTimeAccounted){
+            addSpentTime();
+        }
+        return this.spentTime;
+    }
+
+    protected void startMediaPlayerWithFile(String mediaFileName){
+        // check media file exists
+        boolean exists = Storage.mediaFileExists(getActivity(), mediaFileName);
+        if (!exists) {
+            Toast.makeText(getActivity(),
+                    getActivity().getString(R.string.error_media_not_found, mediaFileName),
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String mimeType = FileUtils.getMimeType(Storage.getMediaPath(getActivity()) + mediaFileName);
+        if (!FileUtils.isSupportedMediafileType(mimeType)) {
+            Toast.makeText(getActivity(),
+                    getActivity().getString(R.string.error_media_unsupported, mediaFileName),
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+        Bundle tb = new Bundle();
+        tb.putSerializable(VideoPlayerActivity.MEDIA_TAG, mediaFileName);
+        tb.putSerializable(Activity.TAG, activity);
+        tb.putSerializable(Course.TAG, course);
+        intent.putExtras(tb);
+        getActivity().startActivity(intent);
+    }
 }

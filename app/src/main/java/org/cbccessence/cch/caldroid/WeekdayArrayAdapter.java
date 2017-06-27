@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 
 /**
  * Customize the weekday gridview

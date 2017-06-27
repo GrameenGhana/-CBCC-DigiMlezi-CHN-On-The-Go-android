@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/user_cardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:orientation="vertical"
+     app:cardBackgroundColor="@color/white"
+    android:layout_marginBottom="@dimen/spacing_half"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:padding="@dimen/spacing_normal"
+           >
+
+
+
+
+
+       <TextView
+           android:id="@+id/name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            android:text="@string/name"
+           android:textColor="@color/text_black_87"
+            android:layout_marginBottom="@dimen/spacing_half"
+           android:textSize="@dimen/text_size_normal"
+           android:layout_centerVertical="true"
+
+           />
+
+       <TextView
+           android:id="@+id/id"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/national_id"
+           android:layout_marginTop="@dimen/spacing_quarter"
+            android:textSize="@dimen/text_size_normal"
+           android:layout_centerVertical="true"
+
+           />
+
+       </LinearLayout>
+
+
+
+       <LinearLayout
+           android:id="@+id/layout_2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:gravity="center_vertical"
+           android:layout_marginRight="@dimen/spacing_normal"
+           android:layout_marginTop="@dimen/spacing_half">
+
+
+
+
+
+       <TextView
+           android:id="@+id/afya"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Afya"
+           android:visibility="gone"
+            android:textColor="@color/colorAccent"
+            />
+
+
+
+
+       <ImageView
+           android:id="@+id/sync"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_sync_black_24dp"
+           android:tint="@color/colorAccent"
+           android:visibility="gone"
+
+           />
+
+
+       </LinearLayout>
+
+
+
+       <TextView
+           android:id="@+id/gender"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="M"
+           android:layout_marginTop="@dimen/spacing_half"
+           android:layout_marginBottom="@dimen/spacing_half"
+           android:textSize="@dimen/text_size_small"
+           android:layout_alignParentRight="true"
+           android:textColor="@color/caldroid_black"
+           android:layout_marginRight="@dimen/spacing_normal"
+           android:layout_toRightOf="@id/national_id"
+           android:layout_below="@id/layout_2"
+           />
+
+
+
+
+
+
+
+   </RelativeLayout>
+</android.support.v7.widget.CardView>

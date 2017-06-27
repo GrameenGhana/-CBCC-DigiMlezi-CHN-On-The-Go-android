@@ -1,5 +1,5 @@
 /* 
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,6 @@
 
 package org.digitalcampus.oppia.task;
 
-import org.digitalcampus.oppia.model.User;
-
 import java.util.ArrayList;
 
 public class Payload {
@@ -28,7 +26,6 @@ public class Payload {
 	private String resultResponse;
 	private ArrayList<Object> responseData = new ArrayList<Object>();
 	private String url;
-	User user;
 
 	public Payload(){
 		
@@ -41,11 +38,6 @@ public class Payload {
 	public Payload(ArrayList<? extends Object> data) {
 		this.data = data;
 	}
-
-	public Payload(User user) {
-		this.user = user;
-	}
-
 
 	public ArrayList<? extends Object> getData() {
 		return data;

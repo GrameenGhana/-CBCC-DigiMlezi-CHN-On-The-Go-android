@@ -1,5 +1,5 @@
-package org.digitalcampus.oppia.task;/*
- * This file is part of OppiaMobile - http://oppia-mobile.org/
+/* 
+ * This file is part of OppiaMobile - https://digital-campus.org/
  * 
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,318 +15,161 @@ package org.digitalcampus.oppia.task;/*
  * along with OppiaMobile. If not, see <http://www.gnu.org/licenses/>.
  */
 
+package org.digitalcampus.oppia.task;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.LoginActivity;
+import android.content.Context;
+import android.util.Log;
+
+
+import org.cbccessence.cch.model.User;
+import org.cbccessence.R;
+import org.digitalcampus.oppia.api.ApiEndpoint;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.MobileLearning;
+import org.digitalcampus.oppia.application.SessionManager;
 import org.digitalcampus.oppia.listener.SubmitListener;
-import org.digitalcampus.oppia.model.Projects;
-import org.digitalcampus.oppia.model.User;
-import org.cbccessence.HttpHandler;
-import org.cbccessence.adapters.ProjectsListAdapter;
-import org.json.JSONArray;
+import org.digitalcampus.oppia.model.CbccUser;
+import org.digitalcampus.oppia.utils.HTTPClientUtils;
+import org.digitalcampus.oppia.utils.MetaDataUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
-public class LoginTask extends AsyncTask<Payload, Object, Payload> {
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+public class LoginTask extends APIRequestTask<Payload, Object, Payload> {
 
 	public static final String TAG = LoginTask.class.getSimpleName();
 
-	private Context ctx;
-	private SharedPreferences prefs;
 	private SubmitListener mStateListener;
-	private String module_name = "gfcare-module-3";
-	List<Projects> projects;
-	private DbHelper dbh;
-    ProgressDialog progress;
-    AlertDialog dialog;
-    Payload _response = null;
-    HttpHandler post;
-    Integer uid;
 
 
-	private String name;
-	
-	public LoginTask(AppCompatActivity c) {
-		this.ctx = c;
-		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-		dbh = new DbHelper(ctx);
-
-
-	}
+    public LoginTask(Context ctx) { super(ctx); }
+    public LoginTask(Context ctx, ApiEndpoint api) { super(ctx, api); }
 
     @Override
-    protected void onPreExecute(){
-
-
-        post = new HttpHandler((AppCompatActivity) ctx);
-
-
-
-    }
-
-
-
-	@Override
 	protected Payload doInBackground(Payload... params) {
-		Payload payload = params[0];
-		User u = (User) payload.getData().get(0);
-
-
-		//String url = prefs.getString("prefServer", ctx.getString(R.string.prefServerDefault)) + MobileLearning.LOGIN_PATH;
-		projects = new ArrayList<Projects>();
-		String url = "http://188.166.30.140/gfcare/api/users/login";
-
-
-		Log.i("LoginTask url is ", url.toString());
-		Log.i("************** ", url.toString());
-		JSONObject json = new JSONObject();
-
-
+        Payload payload = params[0];
+		CbccUser u = (CbccUser) payload.getData().get(0);
+		
+		// firstly try to login locally
+		DbHelper db0 = DbHelper.getInstance(ctx);
 		try {
-			Log.d(TAG, "logging in user *** " + u.getUsername());
+			CbccUser localCbccUser = db0.getUser(u.getUsername());
 
+			Log.d(TAG,"logged pw: " + localCbccUser.getPasswordEncrypted());
+			Log.d(TAG,"entered pw: " + u.getPasswordEncrypted());
+			
+			if (SessionManager.isUserApiKeyValid(ctx, u.getUsername()) &&
+                    localCbccUser.getPasswordEncrypted().equals(u.getPasswordEncrypted())){
+				payload.setResult(true);
 
-			json.put("email", u.getUsername());
-			json.put("password", u.getPassword());
-			json.put("module", module_name);
-
-
-
-			String responseJsonString = post.makePostRequest(url, json.toString());
-
-
-
-
-
-
-			Log.i("Login Task", responseJsonString);
-
-
-
-			switch (responseJsonString) {
-				case "no access": // unauthorised
-					payload.setResult(false);
-					payload.setResultResponse(ctx.getString(R.string.no_access));
-					break;
-				case "invalid": // user not found
-					payload.setResult(false);
-					payload.setResultResponse(ctx.getString(R.string.error_login));
-					break;
-				case "null":
-
-					Log.d(TAG, responseJsonString);
-					payload.setResult(false);
-					payload.setResultResponse(ctx.getString(R.string.error_connection));
-					break;
-				default: // logged in
-
-
-					JSONObject jsonResp = new JSONObject(responseJsonString);
-					String token = jsonResp.getString("token");
-					JSONObject jsonUserDetails = jsonResp.getJSONObject("user");
-					JSONArray projectsArray = jsonUserDetails.getJSONArray("projects");
-
-
-                    uid = jsonUserDetails.getInt("id");
-
-
-
-
-
-
-
-
-					Log.d(TAG, token);
-					Log.d(TAG, jsonUserDetails.toString());
-
-					for (int i = 0; i < projectsArray.length(); i++){
-						JSONObject project = projectsArray.getJSONObject(i);
-                        JSONObject pivotObject = project.getJSONObject("pivot");
-
-
-
-
-						Integer id = project.getInt("id");
-						Integer owner_id = project.getInt("owner_id");
-						String name = project.getString("name");
-						String date_created = project.getString("created_at");
-						String date_updated = project.getString("updated_at");
-
-                        int tid = pivotObject.getInt("team_id");
-
-
-
-
-						Projects _project = new Projects();
-						_project.setProjectId(id);
-						_project.setProjectOwnerId(owner_id);
-						_project.setProjectName(name);
-						_project.setDateUpdated(date_updated);
-						_project.setgetDateCreated(date_created);
-                        _project.setTeamId(tid);
-
-						projects.add(_project);
-
-						Log.d(TAG, i + "\t" + _project.getProjectName());
-
-
-					}
-
-                    //User's parameters
-					String name[] = jsonUserDetails.getString("name").split("\\s+");
-
-					//Get current users Projects, Display in a custom dialog with a list of users projects, User makes a selection then app starts
-					//with the current projects data! after making a post with the project id
-
-
-					String firstName = name[0].trim();
-					String lastName = name[1].trim();
-
-
-					//User has access to This module, Save name in shared prefs/database and Sign him in
-					SharedPreferences.Editor prefsEditor = prefs.edit();
-					prefsEditor.putString("token", token);
-                    prefsEditor.putInt("uid", uid);
-					prefsEditor.putString("email", u.getUsername());
-					prefsEditor.putString("first_name", firstName);
-					prefsEditor.putString("last_name", lastName);
-
-					prefsEditor.apply();
-
-					Log.d(TAG, token);
-					Log.d(TAG, firstName);
-					Log.d(TAG, lastName);
-
-
-					payload.setResult(true);
+				payload.setResultResponse(ctx.getString(R.string.login_complete));
+				return payload;
 			}
+		} catch (org.digitalcampus.oppia.exception.UserNotFoundException unfe) {
+			// Just ignore - means that user isn't already registered on the device
+
+		}
+
+        try {
+			// update progress dialog
+			publishProgress(ctx.getString(R.string.login_process));
+
+            JSONObject json = new JSONObject();
+            json.put("username", u.getUsername());
+            json.put("password", u.getPassword());
+
+            OkHttpClient client = HTTPClientUtils.getClient(ctx);
+            Request request = new Request.Builder()
+                    .url(apiEndpoint.getFullURL(ctx, MobileLearning.LOGIN_PATH))
+                    .post(RequestBody.create(HTTPClientUtils.MEDIA_TYPE_JSON, json.toString()))
+                    .build();
 
 
+            Log.i("Login Task Request url", request.toString());
+
+            Log.i("MediaType", String.valueOf(MediaType.parse("application/json; charset=utf-8")));
+
+            Log.i("Login Task post body", String.valueOf( json.toString()));
+
+            Response response = client.newCall(request).execute();
+            Log.i("*** LoginTask Resp url", response.toString());
+
+            if (response.isSuccessful()){
+                JSONObject jsonResp = new JSONObject(response.body().string());
+                Log.i("responsed json", jsonResp.toString());
+
+                u.setApiKey(jsonResp.getString("api_key"));
+                u.setFirstname(jsonResp.getString("first_name"));
+                u.setLastname(jsonResp.getString("last_name"));
+                try {
+                    u.setPoints(jsonResp.getInt("points"));
+                    u.setBadges(jsonResp.getInt("badges"));
+                } catch (JSONException e){
+                    u.setPoints(0);
+                    u.setBadges(0);
+                }
+                try {
+                    u.setScoringEnabled(jsonResp.getBoolean("scoring"));
+                    u.setBadgingEnabled(jsonResp.getBoolean("badging"));
+                } catch (JSONException e){
+                    u.setScoringEnabled(true);
+                    u.setBadgingEnabled(true);
+                }
+                try {
+                    JSONObject metadata = jsonResp.getJSONObject("metadata");
+                    MetaDataUtils mu = new MetaDataUtils(ctx);
+                    mu.saveMetaData(metadata, prefs);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                DbHelper db = DbHelper.getInstance(ctx);
+                db.addOrUpdateUser(u);
+                payload.setResult(true);
+                payload.setResultResponse(ctx.getString(R.string.login_complete));
+            }
+            else{
+                if (response.code() == 400 || response.code() == 401){
+                    payload.setResult(false);
+                    payload.setResultResponse(ctx.getString(R.string.error_login));
+                }
+                else{
+                    payload.setResult(false);
+                    payload.setResultResponse(ctx.getString(R.string.error_connection));
+                }
+            }
+
+		} catch(javax.net.ssl.SSLHandshakeException e) {
+            e.printStackTrace();
+            payload.setResult(false);
+            payload.setResultResponse(ctx.getString(R.string.error_connection_ssl));
+        }catch (UnsupportedEncodingException e) {
+			payload.setResult(false);
+			payload.setResultResponse(ctx.getString(R.string.error_connection));
+		} catch (IOException e) {
+			payload.setResult(false);
+			payload.setResultResponse(ctx.getString(R.string.error_connection_required));
 		} catch (JSONException e) {
-
-			e.printStackTrace();
-
+ 			e.printStackTrace();
 			payload.setResult(false);
 			payload.setResultResponse(ctx.getString(R.string.error_processing_response));
-		}
+		} 
+		
 		return payload;
-
-
-
-
 	}
 
 	@Override
-	protected void onPostExecute(final Payload response) {
+	protected void onPostExecute(Payload response) {
 		synchronized (this) {
             if (mStateListener != null) {
-
-                if(response.isResult()) {
-                    //test
-
-                    Projects _project = new Projects();
-                    _project.setProjectId(5);
-                    _project.setTeamId(60);
-                    _project.setProjectOwnerId(7);
-                    _project.setProjectName("Camara's Test Project");
-                    _project.setDateUpdated("01/02/02");
-                    _project.setgetDateCreated("01/02/02");
-                    projects.add(_project);
-
-
-                    if (projects != null) {
-                        Log.i(TAG, "There are " + projects.size() + " project(s) ");
-
-                        Log.i(TAG, "0 " + projects.get(0));
-
-                        Log.i(TAG, "1 " + projects.get(1));
-
-
-                        if (projects.size() == 0) {
-                            response.setResult(false);
-                            response.setResultResponse("No Projects!. You have no current projects");
-
-                            mStateListener.submitComplete(response);
-
-                            //If no projects, display a dialog. Close app since there are no projects
-
-
-
-                        } else if (projects.size() == 1) { //Else log the user in.
-                            response.setResult(true);
-
-                            sendPostLoginRequest(uid, projects.get(0).getProjectId(), projects.get(0).getTeamId());
-
-                        } else if (projects.size() > 1) {
-                            _response = response;
-
-
-
-                            LayoutInflater inflater = LayoutInflater.from(ctx);
-                            View view = inflater.inflate(R.layout.select_project_dialog, null, false);
-                            RecyclerView recycler = (RecyclerView) view.findViewById(R.id.recycler);
-                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ctx);
-                            recycler.setLayoutManager(layoutManager);
-                            recycler.hasFixedSize();
-
-
-                            ProjectsListAdapter adapter = new ProjectsListAdapter(ctx, projects);
-                            recycler.setAdapter(adapter);
-                            adapter.setOnItemClickListener(onItemClickListener);
-
-
-
-                            //Show a dialog with a list of current projects if the projects obtained are more than one.
-
-                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(ctx, R.style.AppDialog);
-                            alertDialog.setCancelable(false);
-                            alertDialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-
-                                    response.setResult(false);
-                                    response.setResultResponse("You did not make any selection");
-                                    mStateListener.submitComplete(response);
-                                }
-                            }).setView(view);
-                            dialog = alertDialog.create();
-                            dialog.show();
-                        }
-
-                    } else {
-                        response.setResult(false);
-                        response.setResultResponse("Couldn't load app projects! Something went wrong :(");
-                        mStateListener.submitComplete(response);
-                    }
-
-
-                }else mStateListener.submitComplete(response);
-
-
-
-
-
-
-
-
+               mStateListener.submitComplete(response);
             }
         }
 	}
@@ -335,86 +178,6 @@ public class LoginTask extends AsyncTask<Payload, Object, Payload> {
         synchronized (this) {
             mStateListener = srl;
         }
-    }
-
-
-    ProjectsListAdapter.OnItemClickListener onItemClickListener = new ProjectsListAdapter.OnItemClickListener() {
-        @Override
-        public void onItemClick(View view, int position) {
-
-
-
-            Projects _project = projects.get(position);
-
-            int mid = _project.getProjectId();
-            int tid = _project.getTeamId();
-
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("project_name", _project.getProjectName());
-            editor.putInt("project_id", mid);
-            editor.putInt("project_owner_id", _project.getProjectOwnerId());
-            editor.putString("project_date_created", _project.getDateCreated());
-            editor.putString("project_date_updated", _project.getDateUpdated());
-            editor.apply();
-
-            Log.i(TAG, _project.getProjectName() + " was clicked!");
-
-            if(dialog != null) dialog.dismiss();
-
-            if(progress != null) progress.dismiss();
-
-
-            //Just had to to do this. It happens just once anyways
-            sendPostLoginRequest(uid, tid, mid);
-
-
-        }
-    };
-
-
-
-    public void sendPostLoginRequest(int uid, int tid, int mid){
-
-        LoginActivity.pDialog.setTitle("Please wait");
-        LoginActivity.pDialog.setMessage("Doing more stuff...");
-
-        String postProjectSelectedUrl = "http://188.166.30.140/gfcare/api/users/context/" + uid + "/" + tid + "/"+ mid;
-        String responsePostJsonString = post.sendPostProjectSelection(postProjectSelectedUrl);
-
-
-        Log.i(TAG, "Post url is " + postProjectSelectedUrl);
-        Log.i(TAG, "Post url response is " + responsePostJsonString);
-
-        //test
-        responsePostJsonString = "OK";
-
-        switch (responsePostJsonString){
-
-            case "OK" :
-                //log the user in
-                _response.setResult(true);
-                break;
-
-            default:
-                //Something happened, check if the user has signed in before
-
-                if(prefs.getBoolean("isFirstSignIn", true))
-                {//first time ever user signed in, let user try again later
-                    _response.setResult(false);
-                    _response.setResultResponse("Couldn't get modules. Please try again later");
-
-                }else{ //user has signed in before, just sign in anyway :)
-
-                    _response.setResult(true);
-                }
-                break;
-
-
-
-
-        }
-
-        if (mStateListener != null) mStateListener.submitComplete(_response);
     }
 
 }

@@ -14,11 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import org.digitalcampus.mobile.learningGF.R;
+import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
-import org.digitalcampus.oppia.model.SubSection;
-import org.cbccessence.RecyclerItemViewAnimator;
-import org.cbccessence.SpacesItemDecoration;
+import org.cbccessence.models.SubSection;
+import org.cbccessence.utilities.RecyclerItemViewAnimator;
+import org.cbccessence.utilities.SpacesItemDecoration;
 import org.cbccessence.adapters.PocSubSectionsAdapter;
 import org.cbccessence.cch.utils.Utils;
 import org.json.JSONObject;
@@ -56,7 +56,8 @@ public class PocSubSectionActivity extends BaseActivity {
         setContentView(R.layout.poc_sub_section_activity);
         subSectionsList = new ArrayList<>();
 
-        databaseHelper = new DbHelper(this.getApplicationContext());
+        databaseHelper =   DbHelper.getInstance(this);
+
 
         if(sectionId != -1)
             subSectionsList = databaseHelper.getSubSections(sectionId);

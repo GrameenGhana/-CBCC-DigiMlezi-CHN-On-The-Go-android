@@ -9,16 +9,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import org.digitalcampus.mobile.learningGF.R;
-import org.digitalcampus.oppia.activity.AboutActivity;
+import org.cbccessence.R;
+import org.cbccessence.activity.AboutActivity;
+import org.cbccessence.cch.model.User;
 import org.digitalcampus.oppia.activity.HelpActivity;
 import org.digitalcampus.oppia.activity.PrefsActivity;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.cbccessence.utilities.TaskCompleteListener;
 import org.digitalcampus.oppia.service.TrackerService;
 import org.cbccessence.cch.fragments.ClientListFragment;
 import org.cbccessence.cch.fragments.ClientRegistrationFragment;
@@ -27,7 +30,7 @@ import org.cbccessence.poc.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientActivity extends BaseActivity{
+public class ClientActivity extends BaseActivity  implements TaskCompleteListener{
 
     LinearLayout extraLayout;
     int translation;
@@ -35,6 +38,8 @@ public class ClientActivity extends BaseActivity{
     DbHelper databaseHelper;
     ViewPager viewPager;
     TabLayout tabLayout;
+
+
 
 
 
@@ -59,6 +64,10 @@ public class ClientActivity extends BaseActivity{
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
        // setupPagerIcons();
+
+
+
+        ClientRegistrationFragment.setTaskCompleteListener(this);
 
     }
 
@@ -125,6 +134,26 @@ public class ClientActivity extends BaseActivity{
         adapter.addFrag(new ClientRegistrationFragment(), "Registration");
         viewPager.setAdapter(adapter);
     }
+
+
+
+
+
+    @Override
+    public void submitTaskComplete(User user) {
+
+        Log.i(TAG, "Submit listener from User addition is fired");
+        viewPager.setCurrentItem(0, true);
+
+
+
+    }
+
+
+
+
+
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

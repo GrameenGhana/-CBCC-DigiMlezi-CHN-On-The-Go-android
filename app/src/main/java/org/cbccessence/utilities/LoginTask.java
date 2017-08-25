@@ -16,6 +16,8 @@ package org.cbccessence.utilities;/*
  */
 
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,7 @@ import org.cbccessence.models.Projects;
 import org.cbccessence.models.User;
 import org.cbccessence.R;
 import org.digitalcampus.oppia.application.DbHelper;
+import org.digitalcampus.oppia.application.MobileLearning;
 import org.digitalcampus.oppia.listener.SubmitListener;
 import org.cbccessence.adapters.ProjectsListAdapter;
 import org.digitalcampus.oppia.task.Payload;
@@ -311,6 +314,11 @@ public class LoginTask extends AsyncTask<Payload, Object, Payload> {
                     }
 
 
+
+
+                    createNoMediaFile();
+
+
                 }else mStateListener.submitComplete(response);
 
 
@@ -318,8 +326,35 @@ public class LoginTask extends AsyncTask<Payload, Object, Payload> {
             }
         }
 	}
-	
-	public void setLoginListener(SubmitListener srl) {
+
+    private void createNoMediaFile() {
+
+        try{
+            FileOutputStream out;
+
+            File file = new File(MobileLearning.FOLDER_NAME + File.separator, ".nomedia");
+            if (!file.exists()) {
+                out = new FileOutputStream(file);
+                out.write(0);
+                out.close();
+
+
+                Log.i(TAG, "No media file created!  " + file);
+            } else {
+                Log.i(TAG, "No media already exists!!!!!!  " + file);
+
+            }
+
+
+        }catch(Exception e){e.printStackTrace();}
+
+
+
+
+
+    }
+
+    public void setLoginListener(SubmitListener srl) {
         synchronized (this) {
             mStateListener = srl;
         }

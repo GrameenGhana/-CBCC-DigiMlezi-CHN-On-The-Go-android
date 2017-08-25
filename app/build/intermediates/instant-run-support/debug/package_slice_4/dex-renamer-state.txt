@@ -1,4 +1,4 @@
-#Thu Jun 15 13:08:40 GMT 2017
+#Thu Aug 10 13:11:05 GMT 2017
 base.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4
 renamed.0=classes.dex
 file.0=/Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex

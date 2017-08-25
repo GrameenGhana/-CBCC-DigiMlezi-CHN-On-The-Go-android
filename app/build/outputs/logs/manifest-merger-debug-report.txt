@@ -21,8 +21,8 @@ ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.INTERNET
 ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:9:5-67
-MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/d56ae83598008dbd6ff28400abd1fb1f7f4f0252/output/AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/70de5010dc718baff29d6203e10f06233fb0bd33/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/9254adba98c2fee138cb2d732742d7cb5eecaac7/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/81138111b08f1a0fee81315b600fea9982fd6aec/output/AndroidManifest.xml:22:5-67
 	android:name
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:9:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -63,8 +63,8 @@ ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:18:22-77
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:22:5-82
-MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/d56ae83598008dbd6ff28400abd1fb1f7f4f0252/output/AndroidManifest.xml:21:5-82
-MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/70de5010dc718baff29d6203e10f06233fb0bd33/output/AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/9254adba98c2fee138cb2d732742d7cb5eecaac7/output/AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/81138111b08f1a0fee81315b600fea9982fd6aec/output/AndroidManifest.xml:21:5-82
 	android:name
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:22:22-79
 permission#org.cbccessence.C2D_MESSAGE
@@ -79,11 +79,11 @@ ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:24:22-64
 application
 ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:29:5-228:19
-MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/d56ae83598008dbd6ff28400abd1fb1f7f4f0252/output/AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/70de5010dc718baff29d6203e10f06233fb0bd33/output/AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/aangjnr/.android/build-cache/882126c13db77846ad01f2922a112afeb798056f/output/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/d9d99eaf3ebe601a7fc16b9d5f47789a9ad559e9/output/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/9254adba98c2fee138cb2d732742d7cb5eecaac7/output/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/81138111b08f1a0fee81315b600fea9982fd6aec/output/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/aangjnr/.android/build-cache/7962bb1addcc1a4f908f712962166aad41f54114/output/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/ca0ecee3cb5d824fac6c96b0fce14cf5ea406f9c/output/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:design:25.3.0] /Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.0] /Users/aangjnr/.android/build-cache/917e6d5169e67bcde2730b89ff268e40b3b55691/output/AndroidManifest.xml:26:5-20
 MERGED from [com.github.fcannizzaro:material-stepper:1.2.2] /Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/AndroidManifest.xml:11:5-14:19
@@ -308,7 +308,7 @@ ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:138:13-71
 meta-data#com.google.android.gms.version
 ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:146:10-148:69
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/d9d99eaf3ebe601a7fc16b9d5f47789a9ad559e9/output/AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/ca0ecee3cb5d824fac6c96b0fce14cf5ea406f9c/output/AndroidManifest.xml:21:9-23:69
 	android:value
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:148:13-66
 	android:name
@@ -427,11 +427,11 @@ ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app
 		ADDED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml:222:17-56
 uses-sdk
 INJECTED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/d56ae83598008dbd6ff28400abd1fb1f7f4f0252/output/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/70de5010dc718baff29d6203e10f06233fb0bd33/output/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/aangjnr/.android/build-cache/882126c13db77846ad01f2922a112afeb798056f/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/d9d99eaf3ebe601a7fc16b9d5f47789a9ad559e9/output/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] /Users/aangjnr/.android/build-cache/9254adba98c2fee138cb2d732742d7cb5eecaac7/output/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] /Users/aangjnr/.android/build-cache/81138111b08f1a0fee81315b600fea9982fd6aec/output/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] /Users/aangjnr/.android/build-cache/7962bb1addcc1a4f908f712962166aad41f54114/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] /Users/aangjnr/.android/build-cache/ca0ecee3cb5d824fac6c96b0fce14cf5ea406f9c/output/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:design:25.3.0] /Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.3.0] /Users/aangjnr/.android/build-cache/917e6d5169e67bcde2730b89ff268e40b3b55691/output/AndroidManifest.xml:20:5-44
 MERGED from [com.github.fcannizzaro:material-stepper:1.2.2] /Users/aangjnr/.android/build-cache/ad6e6a86f3bd04a9ee27ab9b9171103271c6e245/output/AndroidManifest.xml:7:5-9:41
@@ -458,13 +458,13 @@ MERGED from [com.amulyakhare:com.amulyakhare.textdrawable:1.0.1] /Users/aangjnr/
 		INJECTED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/aangjnr/Desktop/AppsDev/grameen/cbcc-mobile-android-master/app/src/main/AndroidManifest.xml
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:20:9-22:45
+ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:20:9-22:45
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:22:19-43
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:22:19-43
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:21:19-78
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:21:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/214501c9a062a9245517c54cf5f2403304e50bf0/output/AndroidManifest.xml:20:19-85
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] /Users/aangjnr/.android/build-cache/bdcf605699f2354fac1e096f3f6b7c0c0ca02d41/output/AndroidManifest.xml:20:19-85
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.0] /Users/aangjnr/.android/build-cache/a2ac5efc9e467d3cebe3e28feccf9b9edb14763c/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:transition:25.3.0] /Users/aangjnr/.android/build-cache/917e6d5169e67bcde2730b89ff268e40b3b55691/output/AndroidManifest.xml:22:5-24:34

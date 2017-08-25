@@ -51,7 +51,7 @@ public class MobileLearning extends Application {
 
 	// Mlezi strings
 
-	public static final String FOLDER_NAME = "/Mlezi";
+	public static final String FOLDER_NAME = "/.Mlezi";
 
 	// local storage vars
 	public static final String OPPIAMOBILE_ROOT = Environment

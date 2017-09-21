@@ -348,15 +348,9 @@ public class HttpHandler {
 
         ConnectivityManager conMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         // ARE WE CONNECTED TO THE NET
-        if (conMgr.getActiveNetworkInfo() != null
+        return conMgr.getActiveNetworkInfo() != null
                 && conMgr.getActiveNetworkInfo().isAvailable()
-                && conMgr.getActiveNetworkInfo().isConnected()) {
-
-            return true;
-
-        } else {
-            return false;
-        }
+                && conMgr.getActiveNetworkInfo().isConnected();
 
     }
 

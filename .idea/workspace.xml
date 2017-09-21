@@ -24,171 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25366734-6f6b-4e65-926d-3f929714f773" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_02ad50382c9c127c73951d31cdc4bbbc1ea986e2/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_075a4d48eddf3eae0fb3c51071cc5e721f8000cb/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7331cd337a383cb27f2aea904f89729122ea96b1/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d5f4d0feb2b791d4e66fe887405b951484a50f08/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e05f147465197ad89d6326aeb63b67015e730c11/classes.dex" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/cch/model/User.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/cch/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/cbccessence/utilities/LoginTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/activity/ScorecardActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/activity/ScorecardActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/application/MobileLearning.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/application/MobileLearning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/widgets/QuizWidget.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/org/digitalcampus/oppia/widgets/QuizWidget.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/cch/model/User.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/cch/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/cbccessence/utilities/LoginTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/activity/ScorecardActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/activity/ScorecardActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/application/MobileLearning.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/application/MobileLearning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/widgets/QuizWidget.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/org/digitalcampus/oppia/widgets/QuizWidget.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/y8Tz8qkhbx5gqK_xnj_StdZtjZM=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/y8Tz8qkhbx5gqK_xnj_StdZtjZM=" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/dep/dependencies.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/dep/dependencies.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/cch/model/User.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/cch/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/cbccessence/utilities/LoginTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/activity/ScorecardActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/activity/ScorecardActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/application/MobileLearning.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/application/MobileLearning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/widgets/QuizWidget.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/digitalcampus/oppia/widgets/QuizWidget.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/org/cbccessence/utilities/LoginTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_6/org/cbccessence/cch/model/User.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_6/org/cbccessence/cch/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_6/org/digitalcampus/oppia/application/MobileLearning.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_6/org/digitalcampus/oppia/application/MobileLearning.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/org/digitalcampus/oppia/activity/ScorecardActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/org/digitalcampus/oppia/activity/ScorecardActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/org/digitalcampus/oppia/widgets/QuizWidget.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/org/digitalcampus/oppia/widgets/QuizWidget.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-af.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-am.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-am.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ar.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ar.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-az.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-az.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-be.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-be.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bg.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bg.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bn.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bn.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bs.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-bs.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ca.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ca.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-cs.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-cs.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-da.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-da.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-de.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-de.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-el.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-el.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-en-rGB.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-en-rGB.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es-rUS.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es-rUS.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-es.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-et.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-et.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-eu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-eu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fa.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr-rCA.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr-rCA.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-fr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-gl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-gl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-gu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-gu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hy.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-hy.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-in.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-in.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-is.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-is.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-it.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-it.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-iw.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-iw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ja.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ja.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ka.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ka.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-kk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-kk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-km.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-km.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-kn.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-kn.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ko.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ko.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ky.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ky.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lo.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lo.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lt.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lt.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lv.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-lv.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ml.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ml.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mn.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mn.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-mr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ms.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ms.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-my.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-my.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nb.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nb.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ne.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ne.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-nl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pa.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pa.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rBR.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rBR.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rPT.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-pt-rPT.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ro.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ro.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ru.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ru.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-si.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-si.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sq.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sq.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sv.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sv.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sw.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-sw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ta.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ta.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-te.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-te.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-th.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-th.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tl.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tr.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-tr.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uk.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ur.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-ur.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uz.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-uz.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-vi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-vi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rCN.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rCN.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rHK.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rHK.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rTW.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zh-rTW.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values-zu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/color.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/color.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-ldpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-ldpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-tvdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-tvdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_dependencies/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_dependencies/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_0/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_0/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_1/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_1/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_2/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_3/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_3/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_4/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_4/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_5/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_5/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_6/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_6/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_7/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_7/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_8/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_8/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_9/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package_slice_9/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_4/buildId.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_7/buildId.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/LoginTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/LoginTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/application/MobileLearning.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/application/MobileLearning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/HttpHandler.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/HttpHandler.java" />
     </list>
     <ignored path="cbcc-mobile-android-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -233,12 +71,179 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/LoginTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4290">
+            <state relative-caret-position="758">
               <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/HttpHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="354" column="5" selection-start-line="345" selection-start-column="4" selection-end-line="354" selection-end-column="5" />
+              <folding>
+                <element signature="e#753#786#0" expanded="true" />
+                <element signature="method#makeServiceCall#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#991#1014#1" expanded="true" />
+                <element signature="e#1093#1299#0" expanded="true" />
+                <element signature="e#1298#1299#0" expanded="true" />
+                <element signature="e#1354#1380#1" expanded="true" />
+                <element signature="e#1397#1463#1" expanded="true" />
+                <element signature="e#1422#1462#0" expanded="true" />
+                <element signature="e#1598#1615#0" expanded="true" />
+                <element signature="e#1598#1615#0" expanded="true" />
+                <element signature="e#1634#1662#0" expanded="true" />
+                <element signature="e#1634#1662#0" expanded="true" />
+                <element signature="e#1751#1773#1" expanded="true" />
+                <element signature="e#1918#1960#0" expanded="true" />
+                <element signature="e#1946#1960#0" expanded="true" />
+                <element signature="e#1918#1960#0" expanded="true" />
+                <element signature="e#2034#2072#0" expanded="true" />
+                <element signature="e#2058#2072#0" expanded="true" />
+                <element signature="e#2034#2072#0" expanded="true" />
+                <element signature="e#2140#2172#0" expanded="true" />
+                <element signature="e#2158#2172#0" expanded="true" />
+                <element signature="e#2140#2172#0" expanded="true" />
+                <element signature="e#2238#2268#0" expanded="true" />
+                <element signature="e#2254#2268#0" expanded="true" />
+                <element signature="e#2238#2268#0" expanded="true" />
+                <element signature="method#makePostRequest#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#2391#2414#1" expanded="true" />
+                <element signature="e#2622#2648#1" expanded="true" />
+                <element signature="e#2694#2765#1" expanded="true" />
+                <element signature="e#2722#2764#0" expanded="true" />
+                <element signature="e#2722#2764#0" expanded="true" />
+                <element signature="e#2782#2807#0" expanded="true" />
+                <element signature="e#2782#2807#0" expanded="true" />
+                <element signature="e#2979#3011#0" expanded="true" />
+                <element signature="e#2979#3011#0" expanded="true" />
+                <element signature="e#3029#3061#0" expanded="true" />
+                <element signature="e#3029#3061#0" expanded="true" />
+                <element signature="e#3139#3183#1" expanded="true" />
+                <element signature="e#3157#3182#0" expanded="true" />
+                <element signature="e#3200#3280#1" expanded="true" />
+                <element signature="e#3406#3428#1" expanded="true" />
+                <element signature="e#3573#3615#0" expanded="true" />
+                <element signature="e#3601#3615#0" expanded="true" />
+                <element signature="e#3573#3615#0" expanded="true" />
+                <element signature="e#3689#3727#0" expanded="true" />
+                <element signature="e#3713#3727#0" expanded="true" />
+                <element signature="e#3689#3727#0" expanded="true" />
+                <element signature="e#3795#3827#0" expanded="true" />
+                <element signature="e#3813#3827#0" expanded="true" />
+                <element signature="e#3795#3827#0" expanded="true" />
+                <element signature="e#3893#3923#0" expanded="true" />
+                <element signature="e#3909#3923#0" expanded="true" />
+                <element signature="e#3893#3923#0" expanded="true" />
+                <element signature="method#sendRegistrationDetailsToServer#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#4097#4120#1" expanded="true" />
+                <element signature="e#4129#4162#1" expanded="true" />
+                <element signature="e#4370#4405#1" expanded="true" />
+                <element signature="e#4459#4501#0" expanded="true" />
+                <element signature="e#4459#4501#0" expanded="true" />
+                <element signature="e#4519#4544#0" expanded="true" />
+                <element signature="e#4519#4544#0" expanded="true" />
+                <element signature="e#4562#4586#0" expanded="true" />
+                <element signature="e#4562#4586#0" expanded="true" />
+                <element signature="e#4701#4733#0" expanded="true" />
+                <element signature="e#4701#4733#0" expanded="true" />
+                <element signature="e#4751#4783#0" expanded="true" />
+                <element signature="e#4751#4783#0" expanded="true" />
+                <element signature="e#4803#4851#1" expanded="true" />
+                <element signature="e#4869#4910#1" expanded="true" />
+                <element signature="e#4884#4909#0" expanded="true" />
+                <element signature="e#4928#4988#0" expanded="true" />
+                <element signature="e#4964#4980#0" expanded="true" />
+                <element signature="e#4928#4988#0" expanded="true" />
+                <element signature="e#5068#5112#1" expanded="true" />
+                <element signature="e#5086#5111#0" expanded="true" />
+                <element signature="e#5129#5209#1" expanded="true" />
+                <element signature="e#5325#5347#1" expanded="true" />
+                <element signature="e#5492#5534#0" expanded="true" />
+                <element signature="e#5520#5534#0" expanded="true" />
+                <element signature="e#5492#5534#0" expanded="true" />
+                <element signature="e#5608#5646#0" expanded="true" />
+                <element signature="e#5632#5646#0" expanded="true" />
+                <element signature="e#5608#5646#0" expanded="true" />
+                <element signature="e#5714#5746#0" expanded="true" />
+                <element signature="e#5732#5746#0" expanded="true" />
+                <element signature="e#5714#5746#0" expanded="true" />
+                <element signature="e#5812#5842#0" expanded="true" />
+                <element signature="e#5828#5842#0" expanded="true" />
+                <element signature="e#5812#5842#0" expanded="true" />
+                <element signature="method#buildURI#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#6006#6055#1" expanded="true" />
+                <element signature="e#6069#6100#0" expanded="true" />
+                <element signature="e#6165#6179#0" expanded="true" />
+                <element signature="e#6181#6197#0" expanded="true" />
+                <element signature="method#sendPostProjectSelection#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#6319#6342#1" expanded="true" />
+                <element signature="e#6550#6576#1" expanded="true" />
+                <element signature="e#6619#6690#1" expanded="true" />
+                <element signature="e#6647#6689#0" expanded="true" />
+                <element signature="e#6647#6689#0" expanded="true" />
+                <element signature="e#6874#6896#1" expanded="true" />
+                <element signature="e#7038#7080#0" expanded="true" />
+                <element signature="e#7066#7080#0" expanded="true" />
+                <element signature="e#7038#7080#0" expanded="true" />
+                <element signature="e#7154#7192#0" expanded="true" />
+                <element signature="e#7178#7192#0" expanded="true" />
+                <element signature="e#7154#7192#0" expanded="true" />
+                <element signature="e#7260#7292#0" expanded="true" />
+                <element signature="e#7278#7292#0" expanded="true" />
+                <element signature="e#7260#7292#0" expanded="true" />
+                <element signature="e#7358#7388#0" expanded="true" />
+                <element signature="e#7374#7388#0" expanded="true" />
+                <element signature="e#7358#7388#0" expanded="true" />
+                <element signature="method#convertStreamToString#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#7505#7575#1" expanded="true" />
+                <element signature="e#7584#7623#1" expanded="true" />
+                <element signature="e#7733#7761#0" expanded="true" />
+                <element signature="e#7733#7761#0" expanded="true" />
+                <element signature="e#7733#7761#0" expanded="true" />
+                <element signature="method#convertStreamToString_2#0;class#HttpHandler#0" expanded="false" />
+                <element signature="e#8143#8166#1" expanded="true" />
+                <element signature="e#8220#8244#0" expanded="true" />
+                <element signature="e#8366#8423#1" expanded="true" />
+                <element signature="e#8395#8422#0" expanded="true" />
+                <element signature="e#8444#8488#1" expanded="true" />
+                <element signature="e#8461#8487#0" expanded="true" />
+                <element signature="e#8563#8588#0" expanded="true" />
+                <element signature="e#8622#8646#0" expanded="true" />
+                <element signature="e#8693#8768#1" expanded="true" />
+                <element signature="e#8783#8802#1" expanded="true" />
+                <element signature="e#8815#8854#1" expanded="true" />
+                <element signature="e#8925#8940#0" expanded="true" />
+                <element signature="e#8925#8940#0" expanded="true" />
+                <element signature="e#8969#9014#1" expanded="true" />
+                <element signature="e#8988#9013#0" expanded="true" />
+                <element signature="e#9027#9097#1" expanded="true" />
+                <element signature="e#9067#9095#0" expanded="true" />
+                <element signature="e#9122#9175#0" expanded="true" />
+                <element signature="e#9122#9150#0" expanded="true" />
+                <element signature="e#9122#9150#0" expanded="true" />
+                <element signature="e#9122#9175#0" expanded="true" />
+                <element signature="e#9122#9175#0" expanded="true" />
+                <element signature="e#9122#9175#0" expanded="true" />
+                <element signature="e#9956#9998#0" expanded="true" />
+                <element signature="e#9984#9998#0" expanded="true" />
+                <element signature="e#9956#9998#0" expanded="true" />
+                <element signature="e#10064#10102#0" expanded="true" />
+                <element signature="e#10088#10102#0" expanded="true" />
+                <element signature="e#10064#10102#0" expanded="true" />
+                <element signature="e#10162#10194#0" expanded="true" />
+                <element signature="e#10180#10194#0" expanded="true" />
+                <element signature="e#10162#10194#0" expanded="true" />
+                <element signature="e#10252#10282#0" expanded="true" />
+                <element signature="e#10268#10282#0" expanded="true" />
+                <element signature="e#10252#10282#0" expanded="true" />
+                <element signature="e#10386#10492#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -279,14 +284,14 @@
       </file>
       <file leaf-file-name="client_registration.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_registration.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2745">
               <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -295,7 +300,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="e#0#12175#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2185,7 +2193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_search.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/start_up.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main.xml" />
@@ -2236,6 +2243,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/activity/ScorecardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/application/MobileLearning.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/LoginTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/HttpHandler.java" />
       </list>
     </option>
   </component>
@@ -2270,12 +2278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -2294,10 +2297,85 @@
               <option name="myItemId" value="cbcc-mobile-android-master" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cbcc-mobile-android-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cbcc-mobile-android-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cbccessence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utilities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cbcc-mobile-android-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cbccessence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2721,7 +2799,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1600" y="17" width="1600" height="806" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871014" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5076283" sideWeight="0.49773756" order="8" side_tool="false" content_ui="tabs" />
@@ -2737,7 +2815,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41331485" sideWeight="0.5022625" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2406932" sideWeight="0.49514562" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2406932" sideWeight="0.49514562" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Color Manager" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2970,16 +3048,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/widgets/QuizWidget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="191" column="35" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/digitalcampus/mobile/quiz/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5049">
@@ -3141,13 +3209,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/start_up.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="17" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-nodpi/mlezi_logo.png">
@@ -3174,13 +3242,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/custom_action_bar.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -3198,13 +3266,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_treating_diarrhoea.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml">
@@ -3244,13 +3312,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scorecard.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/digitalcampus/oppia/activity/ScorecardActivity.java">
@@ -3261,14 +3329,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="31" column="41" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -3279,13 +3347,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-879">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/activity/MainScreenActivity.java">
@@ -3319,14 +3387,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/client_registration.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2745">
           <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/poc/BaseActivity.java">
@@ -3351,7 +3419,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#0#12175#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3364,9 +3435,174 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/LoginTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4290">
+        <state relative-caret-position="758">
           <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/cbccessence/utilities/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="354" column="5" selection-start-line="345" selection-start-column="4" selection-end-line="354" selection-end-column="5" />
+          <folding>
+            <element signature="e#753#786#0" expanded="true" />
+            <element signature="method#makeServiceCall#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#991#1014#1" expanded="true" />
+            <element signature="e#1093#1299#0" expanded="true" />
+            <element signature="e#1298#1299#0" expanded="true" />
+            <element signature="e#1354#1380#1" expanded="true" />
+            <element signature="e#1397#1463#1" expanded="true" />
+            <element signature="e#1422#1462#0" expanded="true" />
+            <element signature="e#1598#1615#0" expanded="true" />
+            <element signature="e#1598#1615#0" expanded="true" />
+            <element signature="e#1634#1662#0" expanded="true" />
+            <element signature="e#1634#1662#0" expanded="true" />
+            <element signature="e#1751#1773#1" expanded="true" />
+            <element signature="e#1918#1960#0" expanded="true" />
+            <element signature="e#1946#1960#0" expanded="true" />
+            <element signature="e#1918#1960#0" expanded="true" />
+            <element signature="e#2034#2072#0" expanded="true" />
+            <element signature="e#2058#2072#0" expanded="true" />
+            <element signature="e#2034#2072#0" expanded="true" />
+            <element signature="e#2140#2172#0" expanded="true" />
+            <element signature="e#2158#2172#0" expanded="true" />
+            <element signature="e#2140#2172#0" expanded="true" />
+            <element signature="e#2238#2268#0" expanded="true" />
+            <element signature="e#2254#2268#0" expanded="true" />
+            <element signature="e#2238#2268#0" expanded="true" />
+            <element signature="method#makePostRequest#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#2391#2414#1" expanded="true" />
+            <element signature="e#2622#2648#1" expanded="true" />
+            <element signature="e#2694#2765#1" expanded="true" />
+            <element signature="e#2722#2764#0" expanded="true" />
+            <element signature="e#2722#2764#0" expanded="true" />
+            <element signature="e#2782#2807#0" expanded="true" />
+            <element signature="e#2782#2807#0" expanded="true" />
+            <element signature="e#2979#3011#0" expanded="true" />
+            <element signature="e#2979#3011#0" expanded="true" />
+            <element signature="e#3029#3061#0" expanded="true" />
+            <element signature="e#3029#3061#0" expanded="true" />
+            <element signature="e#3139#3183#1" expanded="true" />
+            <element signature="e#3157#3182#0" expanded="true" />
+            <element signature="e#3200#3280#1" expanded="true" />
+            <element signature="e#3406#3428#1" expanded="true" />
+            <element signature="e#3573#3615#0" expanded="true" />
+            <element signature="e#3601#3615#0" expanded="true" />
+            <element signature="e#3573#3615#0" expanded="true" />
+            <element signature="e#3689#3727#0" expanded="true" />
+            <element signature="e#3713#3727#0" expanded="true" />
+            <element signature="e#3689#3727#0" expanded="true" />
+            <element signature="e#3795#3827#0" expanded="true" />
+            <element signature="e#3813#3827#0" expanded="true" />
+            <element signature="e#3795#3827#0" expanded="true" />
+            <element signature="e#3893#3923#0" expanded="true" />
+            <element signature="e#3909#3923#0" expanded="true" />
+            <element signature="e#3893#3923#0" expanded="true" />
+            <element signature="method#sendRegistrationDetailsToServer#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#4097#4120#1" expanded="true" />
+            <element signature="e#4129#4162#1" expanded="true" />
+            <element signature="e#4370#4405#1" expanded="true" />
+            <element signature="e#4459#4501#0" expanded="true" />
+            <element signature="e#4459#4501#0" expanded="true" />
+            <element signature="e#4519#4544#0" expanded="true" />
+            <element signature="e#4519#4544#0" expanded="true" />
+            <element signature="e#4562#4586#0" expanded="true" />
+            <element signature="e#4562#4586#0" expanded="true" />
+            <element signature="e#4701#4733#0" expanded="true" />
+            <element signature="e#4701#4733#0" expanded="true" />
+            <element signature="e#4751#4783#0" expanded="true" />
+            <element signature="e#4751#4783#0" expanded="true" />
+            <element signature="e#4803#4851#1" expanded="true" />
+            <element signature="e#4869#4910#1" expanded="true" />
+            <element signature="e#4884#4909#0" expanded="true" />
+            <element signature="e#4928#4988#0" expanded="true" />
+            <element signature="e#4964#4980#0" expanded="true" />
+            <element signature="e#4928#4988#0" expanded="true" />
+            <element signature="e#5068#5112#1" expanded="true" />
+            <element signature="e#5086#5111#0" expanded="true" />
+            <element signature="e#5129#5209#1" expanded="true" />
+            <element signature="e#5325#5347#1" expanded="true" />
+            <element signature="e#5492#5534#0" expanded="true" />
+            <element signature="e#5520#5534#0" expanded="true" />
+            <element signature="e#5492#5534#0" expanded="true" />
+            <element signature="e#5608#5646#0" expanded="true" />
+            <element signature="e#5632#5646#0" expanded="true" />
+            <element signature="e#5608#5646#0" expanded="true" />
+            <element signature="e#5714#5746#0" expanded="true" />
+            <element signature="e#5732#5746#0" expanded="true" />
+            <element signature="e#5714#5746#0" expanded="true" />
+            <element signature="e#5812#5842#0" expanded="true" />
+            <element signature="e#5828#5842#0" expanded="true" />
+            <element signature="e#5812#5842#0" expanded="true" />
+            <element signature="method#buildURI#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#6006#6055#1" expanded="true" />
+            <element signature="e#6069#6100#0" expanded="true" />
+            <element signature="e#6165#6179#0" expanded="true" />
+            <element signature="e#6181#6197#0" expanded="true" />
+            <element signature="method#sendPostProjectSelection#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#6319#6342#1" expanded="true" />
+            <element signature="e#6550#6576#1" expanded="true" />
+            <element signature="e#6619#6690#1" expanded="true" />
+            <element signature="e#6647#6689#0" expanded="true" />
+            <element signature="e#6647#6689#0" expanded="true" />
+            <element signature="e#6874#6896#1" expanded="true" />
+            <element signature="e#7038#7080#0" expanded="true" />
+            <element signature="e#7066#7080#0" expanded="true" />
+            <element signature="e#7038#7080#0" expanded="true" />
+            <element signature="e#7154#7192#0" expanded="true" />
+            <element signature="e#7178#7192#0" expanded="true" />
+            <element signature="e#7154#7192#0" expanded="true" />
+            <element signature="e#7260#7292#0" expanded="true" />
+            <element signature="e#7278#7292#0" expanded="true" />
+            <element signature="e#7260#7292#0" expanded="true" />
+            <element signature="e#7358#7388#0" expanded="true" />
+            <element signature="e#7374#7388#0" expanded="true" />
+            <element signature="e#7358#7388#0" expanded="true" />
+            <element signature="method#convertStreamToString#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#7505#7575#1" expanded="true" />
+            <element signature="e#7584#7623#1" expanded="true" />
+            <element signature="e#7733#7761#0" expanded="true" />
+            <element signature="e#7733#7761#0" expanded="true" />
+            <element signature="e#7733#7761#0" expanded="true" />
+            <element signature="method#convertStreamToString_2#0;class#HttpHandler#0" expanded="false" />
+            <element signature="e#8143#8166#1" expanded="true" />
+            <element signature="e#8220#8244#0" expanded="true" />
+            <element signature="e#8366#8423#1" expanded="true" />
+            <element signature="e#8395#8422#0" expanded="true" />
+            <element signature="e#8444#8488#1" expanded="true" />
+            <element signature="e#8461#8487#0" expanded="true" />
+            <element signature="e#8563#8588#0" expanded="true" />
+            <element signature="e#8622#8646#0" expanded="true" />
+            <element signature="e#8693#8768#1" expanded="true" />
+            <element signature="e#8783#8802#1" expanded="true" />
+            <element signature="e#8815#8854#1" expanded="true" />
+            <element signature="e#8925#8940#0" expanded="true" />
+            <element signature="e#8925#8940#0" expanded="true" />
+            <element signature="e#8969#9014#1" expanded="true" />
+            <element signature="e#8988#9013#0" expanded="true" />
+            <element signature="e#9027#9097#1" expanded="true" />
+            <element signature="e#9067#9095#0" expanded="true" />
+            <element signature="e#9122#9175#0" expanded="true" />
+            <element signature="e#9122#9150#0" expanded="true" />
+            <element signature="e#9122#9150#0" expanded="true" />
+            <element signature="e#9122#9175#0" expanded="true" />
+            <element signature="e#9122#9175#0" expanded="true" />
+            <element signature="e#9122#9175#0" expanded="true" />
+            <element signature="e#9956#9998#0" expanded="true" />
+            <element signature="e#9984#9998#0" expanded="true" />
+            <element signature="e#9956#9998#0" expanded="true" />
+            <element signature="e#10064#10102#0" expanded="true" />
+            <element signature="e#10088#10102#0" expanded="true" />
+            <element signature="e#10064#10102#0" expanded="true" />
+            <element signature="e#10162#10194#0" expanded="true" />
+            <element signature="e#10180#10194#0" expanded="true" />
+            <element signature="e#10162#10194#0" expanded="true" />
+            <element signature="e#10252#10282#0" expanded="true" />
+            <element signature="e#10268#10282#0" expanded="true" />
+            <element signature="e#10252#10282#0" expanded="true" />
+            <element signature="e#10386#10492#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
